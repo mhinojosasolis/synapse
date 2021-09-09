@@ -1,0 +1,82 @@
+{
+	"name": "Extraction_Dispatch_Todo_Historico",
+	"properties": {
+		"activities": [
+			{
+				"name": "Extraccion_Dispatch_DLB_ShiftLoads_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_DLB_ShiftLoads_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-365,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Dispatch_DLBShifState_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_DLBShifState_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-365,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Dispatch_KPIs_Hours_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_KPIs_Hours_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-365,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Dispatch"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-19T20:47:40Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

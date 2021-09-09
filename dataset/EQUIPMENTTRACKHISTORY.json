@@ -1,0 +1,107 @@
+{
+	"name": "EQUIPMENTTRACKHISTORY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UpdateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ReadTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Location",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OperatorId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MaterialType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GpsLocation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastAction",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastActionTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NextAction",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NextActionTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ReasonCode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StatusId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "ReasonCodeDescription",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MineRealmId",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EquipmentTrackHistory"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

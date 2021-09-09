@@ -1,0 +1,26 @@
+{
+	"name": "ds_Midas_AlarmsDefinitions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Midas"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Midas_AlarmsDefinitions",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Midas_AlarmsDefinitions.xls",
+				"folderPath": "midas/UserData",
+				"fileSystem": "devraw"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

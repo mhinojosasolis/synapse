@@ -1,0 +1,292 @@
+{
+	"name": "Spark_Load_ft_ShiftState_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de fact ft_ShiftState"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"view_name = 'shiftstate'\r\n",
+					"shiftstate = spark.sql(\"select * from delta.dlb_shiftstate_historico \")\r\n",
+					"shiftstate.createOrReplaceTempView(view_name)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"                SELECT\n",
+					"                    id as id_ShiftState\n",
+					"                    ,fieldid\n",
+					"                    ,shiftid as id_shift\n",
+					"                    ,Timestamp\n",
+					"                    ,crew as lk_crew\n",
+					"                    ,duration\n",
+					"                    ,ifnull(ReasonId,0) as lk_Reason\n",
+					"                    ,ifnull(TimeCatIdx,0) as lk_TimeCat\n",
+					"                    ,vEvent\n",
+					"                    ,statusid as id_status\n",
+					"                    ,fieldcomment\n",
+					"                    ,ifnull(OperId,0) as lk_OperId\n",
+					"                    ,isauxil\n",
+					"                    ,unit as lk_unit\n",
+					"                    ,eqmt as lk_eqmt\n",
+					"                    ,Events\n",
+					"                    ,fieldtime\n",
+					"                    ,nextFieldTime\n",
+					"                    ,Start_hos\n",
+					"                    ,End_hos\n",
+					"                    ,GpsX\n",
+					"                    ,GpsY\n",
+					"                    ,Date_format(current_timestamp(),'yyyy-MM') as Month\n",
+					"                    ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                    ,current_timestamp() InsertDate\n",
+					"                FROM {view_name}\n",
+					"                where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"\n",
+					"                '''\n",
+					"new_data = spark.sql(sql_command)                "
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"nombre_tabla = 'ft_shiftstate'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").partitionBy('Month').save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.id_ShiftState = new_data.id_ShiftState\"\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"fieldid\": \"new_data.fieldid\",\\\n",
+					"        \"id_shift\": \"new_data.id_shift\",\\\n",
+					"        \"Timestamp\": \"new_data.Timestamp\",\\\n",
+					"        \"lk_crew\": \"new_data.lk_crew\",\\\n",
+					"        \"duration\": \"new_data.duration\",\\\n",
+					"        \"lk_Reason\": \"new_data.lk_Reason\",\\\n",
+					"        \"lk_TimeCat\": \"new_data.lk_TimeCat\",\\\n",
+					"        \"vEvent\": \"new_data.vEvent\",\\\n",
+					"        \"id_status\": \"new_data.id_status\",\\\n",
+					"        \"fieldcomment\": \"new_data.fieldcomment\",\\\n",
+					"        \"lk_OperId\": \"new_data.lk_OperId\",\\\n",
+					"        \"lk_unit\": \"new_data.lk_unit\",\\\n",
+					"        \"lk_eqmt\": \"new_data.lk_eqmt\",\\\n",
+					"        \"Events\": \"new_data.Events\",\\\n",
+					"        \"fieldtime\": \"new_data.fieldtime\",\\\n",
+					"        \"nextFieldTime\": \"new_data.nextFieldTime\",\\\n",
+					"        \"Start_hos\": \"new_data.Start_hos\",\\\n",
+					"        \"End_hos\": \"new_data.End_hos\",\\\n",
+					"        \"GpsX\": \"new_data.GpsX\",\\\n",
+					"        \"GpsY\": \"new_data.GpsY\",\\\n",
+					"        \"Month\": \"new_data.Month\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

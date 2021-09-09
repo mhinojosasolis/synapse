@@ -1,0 +1,305 @@
+{
+	"name": "Extraccion_Minecare_AggregatedOemParamValue_His",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data to AggregatedOemParamValue-His",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT \n       [Id]\n      ,[SiteId]\n      ,[SetId]\n      ,[EquipmentId]\n      ,[ConsumerId]\n      ,[OemParamTypeId]\n      ,[ReadTime]\n      ,[MinValue]\n      ,[MaxValue]\n      ,[MeanValue]\n      ,[MedianValue]\n      ,[StdDevValue]\n      ,[NumberOfSamples]\n      ,GETUTCDATE() as [ExtractDate]\n  FROM [Minecare267].[dbo].[AggregatedOemParamValue]\n  where ReadTime BETWEEN  '@{pipeline().parameters.historico_desde}' and '@{pipeline().parameters.historico_hasta}'",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "Id",
+									"type": "Int64",
+									"physicalType": "INT_64"
+								}
+							},
+							{
+								"source": {
+									"name": "SiteId",
+									"type": "Byte",
+									"physicalType": "tinyint"
+								},
+								"sink": {
+									"name": "SiteId",
+									"type": "Byte",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "SetId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "SetId",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "EquipmentId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "EquipmentId",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "ConsumerId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ConsumerId",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "OemParamTypeId",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "OemParamTypeId",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "ReadTime",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "ReadTime",
+									"type": "DateTime",
+									"physicalType": "INT_96"
+								}
+							},
+							{
+								"source": {
+									"name": "MinValue",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "MinValue",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "MaxValue",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "MaxValue",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "MeanValue",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "MeanValue",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "MedianValue",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "MedianValue",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "StdDevValue",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "StdDevValue",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "NumberOfSamples",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "NumberOfSamples",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "ExtractDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "ExtractDate",
+									"type": "DateTime",
+									"physicalType": "INT_96"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AGGREGATEDOEMPARAMVALUE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "MINECARE_RAWHISTORY_PARAMETRIZADO",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "@{variables('v_nombre_tabla')}_HIS.parquet"
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "v_nombre_tabla",
+					"value": "AGGREGATEDOEMPARAMVALUE"
+				}
+			},
+			{
+				"name": "Insert_Parquet_to_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data to AggregatedOemParamValue-His",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Common_Notebooks/Insert_Parquet_to_Delta",
+					"baseParameters": {
+						"p_nombre_tabla": {
+							"value": "@variables('v_nombre_tabla')",
+							"type": "Expression"
+						},
+						"p_tipo_carga": "HISTORICO",
+						"p_origen": "MINECARE"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"historico_desde": {
+				"type": "string"
+			},
+			"historico_hasta": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"v_nombre_tabla": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Minecare/History"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-13T21:50:01Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,99 @@
+{
+	"name": "Minecare_Load_STG_ft_oemeventsnapshotvalue",
+	"properties": {
+		"activities": [
+			{
+				"name": "Load Stage to DIM-Load_ft_OemEventSnapshotValue_Delta",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Bulk Parket to Synapse",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[DM_Minecare].[sp_load_ft_OemEventSnapshotValue]"
+				}
+			},
+			{
+				"name": "Spark_Load_ft_OemEventSnapshotValue_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Minecare/Spark_Load_ft_OemEventSnapshotValue_Delta",
+					"baseParameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Bulk Parket to Synapse",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Spark_Load_ft_OemEventSnapshotValue_Delta",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[STG_Minecare].[sp_bulk_ft_OemEventSnapshotValue]"
+				}
+			}
+		],
+		"parameters": {
+			"cdc": {
+				"type": "string",
+				"defaultValue": "1900-01-01"
+			}
+		},
+		"folder": {
+			"name": "Minecare/Load Stage"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-26T16:22:56Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

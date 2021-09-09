@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 20",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nALTER PROC [DM_Minecare].[sp_load_ft_AggregatedOemParamValue] AS\nDECLARE\n  @date_min [date]\n  \nBEGIN\n\n      select @date_min = (select min(UpdateDate)  date_min  from STG_Minecare.ft_AggregatedOemParamValue);  \n     \n      MERGE [DM_Minecare].[ft_AggregatedOemParamValue] AS TARGET\n      USING [STG_Minecare].[ft_AggregatedOemParamValue] AS SOURCE\n      ON TARGET.Id_AggOemParamValue = SOURCE.Id_AggOemParamValue\n      and    TARGET.UpdateDate >= @date_min \n      WHEN MATCHED \n        THEN UPDATE SET\n                    TARGET.SiteId = SOURCE.SiteId\n                    ,TARGET.SetId = SOURCE.SetId\n                    ,TARGET.id_Equipment  = SOURCE.id_Equipment\n                    ,TARGET.ConsumerId  = SOURCE.ConsumerId\n                    ,TARGET.OemParamTypeId  = SOURCE.OemParamTypeId\n                    ,TARGET.ReadTime  = SOURCE.ReadTime\n                    ,TARGET.MinValue = SOURCE.MinValue\n                    ,TARGET.MaxValue = SOURCE.MaxValue\n                    ,TARGET.MeanValue  = SOURCE.MeanValue\n                    ,TARGET.MedianValue  = SOURCE.MedianValue\n                    ,TARGET.StdDevValue = SOURCE.StdDevValue\n                    ,TARGET.NumberOfSamples = SOURCE.NumberOfSamples\n                    ,TARGET.UpdateDate = SOURCE.UpdateDate\n                    ,TARGET.InsertDate  = SOURCE.InsertDate\n        WHEN NOT MATCHED BY TARGET\n          THEN INSERT (Id_AggOemParamValue\n                      ,SiteId\n                      ,SetId\n                      ,id_Equipment\n                      ,ConsumerId\n                      ,OemParamTypeId\n                      ,ReadTime\n                      ,MinValue\n                      ,MaxValue\n                      ,MeanValue\n                      ,MedianValue\n                      ,StdDevValue\n                      ,NumberOfSamples\n                      ,UpdateDate\n                      ,InsertDate)\n              VALUES ( SOURCE.Id_AggOemParamValue\n                      ,SOURCE.SiteId\n                      ,SOURCE.SetId\n                      ,SOURCE.id_Equipment\n                      ,SOURCE.ConsumerId\n                      ,SOURCE.OemParamTypeId\n                      ,SOURCE.ReadTime\n                      ,SOURCE.MinValue\n                      ,SOURCE.MaxValue\n                      ,SOURCE.MeanValue\n                      ,SOURCE.MedianValue\n                      ,SOURCE.StdDevValue\n                      ,SOURCE.NumberOfSamples\n                      ,SOURCE.UpdateDate\n                      ,SOURCE.InsertDate);\n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,56 @@
+{
+	"name": "NATURALOEMPARAMVALUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemParamTypeId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReadTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FloatValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "StringValue",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "NaturalOemParamValue"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,244 @@
+{
+	"name": "Spark_Load_dm_MaterialType_Delta",
+	"properties": {
+		"folder": {
+			"name": "Minecare/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"view_name = 'materialType'\r\n",
+					"materialType = spark.sql(\"select * from delta.equipmenttrackhistory_historico \")\r\n",
+					"materialType.createOrReplaceTempView(view_name)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"                SELECT distinct\n",
+					"                        sha1(COALESCE(MaterialType,'NaN')) id_MaterialType,\n",
+					"                        COALESCE(MaterialType,'NaN') MaterialType,\n",
+					"                        '1990-01-01' UpdateDate,\n",
+					"                        current_timestamp() InsertDate\n",
+					"                FROM {view_name} \n",
+					"                where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"\n",
+					"                '''\n",
+					"new_data = spark.sql(sql_command)                "
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"nombre_tabla = 'dm_materialType'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/minecare/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table minecare.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.id_MaterialType = new_data.id_MaterialType\"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"new_data.alias(\"new_data\"),\n",
+					"merge_command)\\\n",
+					".whenMatchedUpdateAll()\\\n",
+					".whenNotMatchedInsertAll()\\\n",
+					".execute()"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

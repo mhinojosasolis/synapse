@@ -1,0 +1,110 @@
+{
+	"name": "DLB_SHIFTINFO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dispatch",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/1-DSSQLDispatch"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ShiftId",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ShiftName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DbName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShiftYear",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "ShiftMonth",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ShiftWeek",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ShiftDay",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "ShiftSuffix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FullShiftSuffix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShiftStartSecSinceMidnight",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ShiftStartTimestamp",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ShiftStartDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ShiftStartDateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FullShiftName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Holiday",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Crew",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShiftDuration",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ShiftDate",
+				"type": "date"
+			},
+			{
+				"name": "ShiftFilter",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DLB_ShiftInfo"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,315 @@
+{
+	"name": "Spark NotificationDetails",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"a9e285e3-4d98-460e-8a51-5bb71a90c483": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:11:44.447Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594365718660,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "99283,368560:100092,431115",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:15:55.667Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365719300,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100079,477031:100429,426847",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:25:58.98Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365721310,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101010,914386:98955,992727",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:26:48.17Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365721440,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101052,588335:99362,337425",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:34:32.783Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365722580,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100979,421834:99964,260562",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:41:05.293Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594365723870,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101008,127091:99954,754055",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:46:50.06Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594365725070,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101033,177191:99892,451634",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:47:01.947Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594365725120,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101034,544192:99892,128397",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:48:43.97Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365725380,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101036,342970:99891,210553",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-09T00:59:08.04Z",
+										"OperatorName": "DANNY ALEJANDRO DIAZ SEPULVEDA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051160",
+										"EventId": 72057594365727730,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "101061,024028:99134,397030",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									}
+								],
+								"schema": {
+									"NotificationID": "bigint",
+									"SiteId": "int",
+									"EventId": "bigint",
+									"ModelName": "string",
+									"ModelId": "int",
+									"EquipmentId": "int",
+									"EquipmentName": "string",
+									"GroupId": "int",
+									"OemEventId": "int",
+									"OemEvent": "string",
+									"OemId": "string",
+									"Interface": "string",
+									"InterfaceId": "int",
+									"Level": "int",
+									"NLevel": "int",
+									"ReadTime": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"GPSLocation": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"NotificationID"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"#df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/DLB_KPIS_HOUR_TEMP.parquet', format='parquet')\r\n",
+					"df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/MINECARE_NOTIFICATIONDETAILS_TEMP.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 1
+			}
+		]
+	}
+}

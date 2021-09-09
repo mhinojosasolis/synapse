@@ -1,0 +1,774 @@
+{
+	"name": "Spark_Crear_Historico",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"12032214-44ab-458e-b14f-4de04f8cec55": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_D02_TR17",
+										"LastActionTime": "2021-05-20T03:02:39Z",
+										"Operator": "FREDDY CHRISTIAN FARFAN PINTO",
+										"NextActionTime": "2021-05-20T03:09:11Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6081001",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777239,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Remanejo",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_BGAR_TR01",
+										"LastActionTime": "2021-05-20T03:02:43Z",
+										"Operator": "ISRAEL RODRIGO PARRA ROJAS",
+										"NextActionTime": "2021-05-20T03:07:05Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6112256",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777247,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_D02_TR15",
+										"LastActionTime": "2021-05-20T03:02:33Z",
+										"Operator": "ALEJANDRO ANDRES ROA LECAROS",
+										"NextActionTime": "2021-05-20T03:07:21Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6112274",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777248,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR03",
+										"LastActionTime": "2021-05-20T03:02:49Z",
+										"Operator": "CESAR COSTA SALAZAR",
+										"NextActionTime": "2021-05-20T03:13:16Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "193325",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777254,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "PRIM",
+										"LastActionTime": "2021-05-20T03:02:29Z",
+										"Operator": "MANUEL ANTONIO GOMEZ ORELLANA",
+										"NextActionTime": "2021-05-20T03:03:54Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6106637",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777256,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "STK_DONOSO_ML",
+										"LastActionTime": "2021-05-20T03:02:52Z",
+										"Operator": "GABRIELA ANGIE CANALES LLANOS",
+										"NextActionTime": "2021-05-20T03:03:53Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6099511",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777266,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-05-20T03:02:38Z",
+										"Operator": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"NextActionTime": "2021-05-20T03:04:14Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777267,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF_TR15",
+										"LastActionTime": "2021-05-20T03:02:32Z",
+										"Operator": "DANIEL RODRIGO ARMIJO PEÑA",
+										"NextActionTime": "2021-05-20T03:18:15Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6032370",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777273,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_D02_TR08",
+										"LastActionTime": "2021-05-20T03:02:51Z",
+										"Operator": "MIGUEL ANTONIO BERRIOS CONTRERAS",
+										"NextActionTime": "2021-05-20T03:05:07Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6097590",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777276,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Remanejo",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-05-20T03:02:30Z",
+										"Operator": "LUIS ALBERTO SALGADO NORAMBUENA",
+										"NextActionTime": "2021-05-20T03:04:06Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "192137",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"MineRealmId": 0,
+										"EquipmentId": 16777277,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"a191fc52-0fe8-48e6-a868-535cde4141d7": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_D02_TR17",
+										"LastActionTime": "2021-05-20T03:02:39Z",
+										"Operator": "FREDDY CHRISTIAN FARFAN PINTO",
+										"NextActionTime": "2021-05-20T03:09:11Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6081001",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "c9f5218dbabcc239a193350faa9478b9ca5a7e85",
+										"MineRealmId": 0,
+										"EquipmentId": 16777239,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Remanejo",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_BGAR_TR01",
+										"LastActionTime": "2021-05-20T03:02:43Z",
+										"Operator": "ISRAEL RODRIGO PARRA ROJAS",
+										"NextActionTime": "2021-05-20T03:07:05Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6112256",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "2bec1b44e3ebff8b54942d46e255968dcc31db3e",
+										"MineRealmId": 0,
+										"EquipmentId": 16777247,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398260,
+										"Location": "NDO_D02_TR15",
+										"LastActionTime": "2021-05-20T03:02:33Z",
+										"Operator": "ALEJANDRO ANDRES ROA LECAROS",
+										"NextActionTime": "2021-05-20T03:07:21Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6112274",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "62ea5fce9a2c67afc9a44d5dfea22b3a5f37c5e6",
+										"MineRealmId": 0,
+										"EquipmentId": 16777248,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR03",
+										"LastActionTime": "2021-05-20T03:02:49Z",
+										"Operator": "CESAR COSTA SALAZAR",
+										"NextActionTime": "2021-05-20T03:13:16Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "193325",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "1bd46135cd4aea07be4b3ada07fa8f3e2a5e0fa9",
+										"MineRealmId": 0,
+										"EquipmentId": 16777254,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "PRIM",
+										"LastActionTime": "2021-05-20T03:02:29Z",
+										"Operator": "MANUEL ANTONIO GOMEZ ORELLANA",
+										"NextActionTime": "2021-05-20T03:03:54Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6106637",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "425c95b2a99337b89e48e0013df428b2e8d19d46",
+										"MineRealmId": 0,
+										"EquipmentId": 16777256,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "STK_DONOSO_ML",
+										"LastActionTime": "2021-05-20T03:02:52Z",
+										"Operator": "GABRIELA ANGIE CANALES LLANOS",
+										"NextActionTime": "2021-05-20T03:03:53Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6099511",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "f11be4f98a8fc355e8b4e85cbbe7ec516df1e0fb",
+										"MineRealmId": 0,
+										"EquipmentId": 16777266,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-05-20T03:02:38Z",
+										"Operator": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"NextActionTime": "2021-05-20T03:04:14Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "b8529b0ead8460bff1bf363b350777f0379ab68c",
+										"MineRealmId": 0,
+										"EquipmentId": 16777267,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF_TR15",
+										"LastActionTime": "2021-05-20T03:02:32Z",
+										"Operator": "DANIEL RODRIGO ARMIJO PEÑA",
+										"NextActionTime": "2021-05-20T03:18:15Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6032370",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "e1b9d91c1bcb85f81b798698bf1ce8533f4bcd38",
+										"MineRealmId": 0,
+										"EquipmentId": 16777273,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_D02_TR08",
+										"LastActionTime": "2021-05-20T03:02:51Z",
+										"Operator": "MIGUEL ANTONIO BERRIOS CONTRERAS",
+										"NextActionTime": "2021-05-20T03:05:07Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "6097590",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "4ba6f51326aec5db8480b52717b4320fef932466",
+										"MineRealmId": 0,
+										"EquipmentId": 16777276,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Remanejo",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070398270,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-05-20T03:02:30Z",
+										"Operator": "LUIS ALBERTO SALGADO NORAMBUENA",
+										"NextActionTime": "2021-05-20T03:04:06Z",
+										"ReadTime": "2021-05-20T03:02:54.157Z",
+										"SiteId": 1,
+										"OperatorId": "192137",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "115ee6d6ea741f83b5acd15f0d78ad87c0dd2941",
+										"MineRealmId": 0,
+										"EquipmentId": 16777277,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-20T03:02:54.157Z",
+										"NextAction": "Llegada"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para crear el histórico con checksum de alguna tabla"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"# definimos las variables para los archivos de entrada y salida\r\n",
+					"nombre_archivo_origen = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/EQUIPMENTTRACKHISTORY.parquet'\r\n",
+					"nombre_archivo_destino = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos la tabla histórica del origen\r\n",
+					"df = spark.read.load(nombre_archivo_origen, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 27
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.count()"
+				],
+				"attachments": null,
+				"execution_count": 28
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.columns"
+				],
+				"attachments": null,
+				"execution_count": 29
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"cols"
+				],
+				"attachments": null,
+				"execution_count": 30
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# concateno todas las columnas y luego calculo el checksum con sha1\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\r\n",
+					"\r\n",
+					"df = df.withColumn(\"checksum\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"        .withColumn(\"PartitionDate\", concat_ws('-', date_format(col('UpdateTime'), \"yyyy\"), date_format(col('UpdateTime'), \"MM\")))\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 33
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo el histórico en el destino. Hago overwrite porque es la carga inicial\r\n",
+					"\r\n",
+					"try:\r\n",
+					"    df.write.mode(\"overwrite\").partitionBy(\"PartitionDate\").parquet(nombre_archivo_destino)\r\n",
+					"except:\r\n",
+					"  print(\"No se pudo grabar la información correctamente\")"
+				],
+				"attachments": null,
+				"execution_count": 34
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

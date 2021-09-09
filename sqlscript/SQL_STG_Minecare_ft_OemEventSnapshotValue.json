@@ -1,0 +1,17 @@
+{
+	"name": "SQL_STG_Minecare_ft_OemEventSnapshotValue",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.objects O JOIN sys.schemas S ON O.schema_id = S.schema_id WHERE O.NAME = 'ft_OemEventSnapshotValue' AND O.TYPE = 'U' AND S.NAME = 'STG_Minecare')\nCREATE TABLE STG_Minecare.ft_OemEventSnapshotValue\n\t(\n\t [Id_OemEventSnap] bigint,\n\t [SiteId] int,\n\t [id_Equipment] int,\n\t [OemEventTypeId] int,\n\t [EventTime] datetime2(7),\n\t [OemParamTypeId] int,\n\t [ReadTime] datetime2(7),\n\t [FloatValue] float,\n\t [StringValue] nvarchar(4000),\n\t [UpdateDate] datetime2(7),\n\t [InsertDate] datetime2(7)\n\t)\nWITH\n\t(\n\tDISTRIBUTION = ROUND_ROBIN,\n\t CLUSTERED COLUMNSTORE INDEX\n\t -- HEAP\n\t)\nGO\n\n\n--CREATE PROC STG_Minecare.bulk_load_ft_OemEventSnapshotValue\n--AS\n--BEGIN\nCOPY INTO STG_Minecare.ft_OemEventSnapshotValue\n(Id_OemEventSnap 1, SiteId 2, id_Equipment 3, OemEventTypeId 4, EventTime 5, OemParamTypeId 6, ReadTime 7, FloatValue 8, StringValue 9, UpdateDate 10, InsertDate 11)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/ft_OemEventSnapshotValue'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n)\n--END\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.ft_OemEventSnapshotValue\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

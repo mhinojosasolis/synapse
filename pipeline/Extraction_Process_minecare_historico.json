@@ -1,0 +1,49 @@
+{
+	"name": "Extraction_Process_minecare_historico",
+	"properties": {
+		"activities": [
+			{
+				"name": "Proc_Modelo_Minecare",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Extracion_Minecare_Todo_Historico",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Proc_Modelo_Minecare",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": "1900-01-01"
+					}
+				}
+			},
+			{
+				"name": "Extracion_Minecare_Todo_Historico",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extracion_Minecare_Todo_Historico",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Minecare"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-25T21:36:59Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL all tables",
+	"properties": {
+		"content": {
+			"query": "SELECT name as table_name, schema_name(schema_id) AS schema_name, create_date, modify_date\nFROM sys.tables\nWHERE schema_id <> 1\nORDER BY 1, 2",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

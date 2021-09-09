@@ -1,0 +1,490 @@
+{
+	"name": "delta test documentacion",
+	"properties": {
+		"folder": {
+			"name": "pruebas"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"b58daaaa-ec77-4c99-9100-1efd2e5be0cd": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"timestamp": "2021-06-23T19:43:29Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "21",
+											"numTargetRowsInserted": "17",
+											"numTargetRowsUpdated": "3",
+											"numOutputRows": "20",
+											"numSourceRows": "20",
+											"numTargetFilesRemoved": "3"
+										},
+										"operationParameters": {
+											"predicate": "(oldData.`id` = newData.`id`)"
+										},
+										"version": 4,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 3
+									},
+									{
+										"timestamp": "2021-06-23T19:41:45Z",
+										"operationMetrics": {
+											"numRemovedFiles": "2",
+											"numDeletedRows": "2",
+											"numAddedFiles": "1",
+											"numCopiedRows": "0"
+										},
+										"operationParameters": {
+											"predicate": "[\"((`id` % CAST(2 AS BIGINT)) = CAST(0 AS BIGINT))\"]"
+										},
+										"version": 3,
+										"operation": "DELETE",
+										"isBlindAppend": false,
+										"readVersion": 2
+									},
+									{
+										"timestamp": "2021-06-23T19:40:25Z",
+										"operationMetrics": {
+											"numRemovedFiles": "2",
+											"numAddedFiles": "2",
+											"numUpdatedRows": "2",
+											"numCopiedRows": "0"
+										},
+										"operationParameters": {
+											"predicate": "((id#499L % cast(2 as bigint)) = cast(0 as bigint))"
+										},
+										"version": 2,
+										"operation": "UPDATE",
+										"isBlindAppend": false,
+										"readVersion": 1
+									},
+									{
+										"timestamp": "2021-06-23T19:35:07Z",
+										"operationMetrics": {
+											"numFiles": "6",
+											"numOutputBytes": "2407",
+											"numOutputRows": "5"
+										},
+										"operationParameters": {
+											"mode": "Overwrite",
+											"partitionBy": "[]"
+										},
+										"version": 1,
+										"operation": "WRITE",
+										"isBlindAppend": false,
+										"readVersion": 0
+									},
+									{
+										"timestamp": "2021-06-23T19:32:25Z",
+										"operationMetrics": {
+											"numFiles": "6",
+											"numOutputBytes": "2407",
+											"numOutputRows": "5"
+										},
+										"operationParameters": {
+											"mode": "ErrorIfExists",
+											"partitionBy": "[]"
+										},
+										"version": 0,
+										"operation": "WRITE",
+										"isBlindAppend": true
+									}
+								],
+								"schema": {
+									"version": "bigint",
+									"timestamp": "int",
+									"userId": "string",
+									"userName": "string",
+									"operation": "string",
+									"operationParameters": "MapType(StringType,StringType,true)",
+									"job": "StructType(StructField(jobId,StringType,true), StructField(jobName,StringType,true), StructField(runId,StringType,true), StructField(jobOwnerId,StringType,true), StructField(triggerType,StringType,true))",
+									"notebook": "StructType(StructField(notebookId,StringType,true))",
+									"clusterId": "string",
+									"readVersion": "bigint",
+									"isolationLevel": "string",
+									"isBlindAppend": "boolean",
+									"operationMetrics": "MapType(StringType,StringType,true)"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"timestamp"
+									],
+									"seriesFieldKeys": [
+										"version"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Test delta lake en Synapse\r\n",
+					"https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"import random\r\n",
+					"\r\n",
+					"session_id = random.randint(0,1000000)\r\n",
+					"delta_table_path = \"/delta/delta-table-{0}\".format(session_id)\r\n",
+					"\r\n",
+					"delta_table_path"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# create a table\r\n",
+					"data = spark.range(0,5)\r\n",
+					"data.show()\r\n",
+					"data.write.format(\"delta\").save(delta_table_path)"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# read data\r\n",
+					"df = spark.read.format(\"delta\").load(delta_table_path)\r\n",
+					"df.show()"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Update table data\r\n",
+					"data = spark.range(5,10)\r\n",
+					"data.write.format(\"delta\").mode(\"overwrite\").save(delta_table_path)\r\n",
+					"df.show()"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Save as catalog tables\r\n",
+					"data.write.format(\"delta\").saveAsTable(\"ManagedDeltaTable\")\r\n",
+					"spark.sql(\"CREATE TABLE ExternalDeltaTable USING DELTA LOCATION '{0}'\".format(delta_table_path))\r\n",
+					"spark.sql(\"SHOW TABLES\").show()"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"spark.sql(\"DESCRIBE EXTENDED ManagedDeltaTable\").show(truncate=False)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"spark.sql(\"DESCRIBE EXTENDED ExternalDeltaTable\").show(truncate=False)"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Conditional update without overwrite\r\n",
+					"# Here you just add 100 to every even ID.\r\n",
+					"from delta.tables import *\r\n",
+					"from pyspark.sql.functions import *\r\n",
+					"\r\n",
+					"delta_table = DeltaTable.forPath(spark, delta_table_path)\r\n",
+					"\r\n",
+					"delta_table.update(\r\n",
+					"  condition = expr(\"id % 2 == 0\"),\r\n",
+					"  set = { \"id\": expr(\"id + 100\") })\r\n",
+					"delta_table.toDF().show()"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# delete every even row\r\n",
+					"delta_table.delete(\"id % 2 == 0\")\r\n",
+					"delta_table.toDF().show()"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Here you have a combination of the existing data. \r\n",
+					"# The existing data has been assigned the value -1 in the update(WhenMatched) code path. \r\n",
+					"# The new data that was created at the top of the snippet and was added via the insert code path \r\n",
+					"# (WhenNotMatched), was also added.\r\n",
+					"\r\n",
+					"new_data = spark.range(0,20).alias(\"newData\")\r\n",
+					"\r\n",
+					"delta_table.alias(\"oldData\")\\\r\n",
+					"    .merge(new_data.alias(\"newData\"), \"oldData.id = newData.id\")\\\r\n",
+					"    .whenMatchedUpdate(set = { \"id\": lit(\"-1\")})\\\r\n",
+					"    .whenNotMatchedInsert(values = { \"id\": col(\"newData.id\") })\\\r\n",
+					"    .execute()\r\n",
+					"\r\n",
+					"delta_table.toDF().show(100)"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# history\r\n",
+					"display(delta_table.history())"
+				],
+				"attachments": null,
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Read older versions of data using Time Travel\r\n",
+					"df = spark.read.format(\"delta\").option(\"versionAsOf\", 0).load(delta_table_path)\r\n",
+					"df.show()"
+				],
+				"attachments": null,
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

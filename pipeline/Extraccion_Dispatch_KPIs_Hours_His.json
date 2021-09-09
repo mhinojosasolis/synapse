@@ -1,0 +1,135 @@
+{
+	"name": "Extraccion_Dispatch_KPIs_Hours_His",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data to DLBKPIs_Hours",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT\n[ShiftId]\n,[Eqmt]\n,[EqmtType]\n,[Unit]\n,[Hos]\n,[P200]\n,[P100]\n,[L300]\n,[L200]\n,[L100]\n,[D300]\n,[D200]\n,[D100]\n,[N200]\n,[N100]\n,[T300]\n,[T200]\n,[T100]\n,[T000]\n,[L000]\n,[D000]\n,[N000]\n,GETDATE() as [ExtractDate]\nFROM [DLBReports].[dbo].[DLB_KPIs_hour] (NOLOCK)\nWHERE  ShiftId between @{substring(adddays(pipeline().parameters.historico_desde,-1,'yyyy-MM-dd'),2,2)}@{substring(adddays(pipeline().parameters.historico_desde,-1,'yyyy-MM-dd'),5,2)}@{substring(adddays(pipeline().parameters.historico_desde,-1,'yyyy-MM-dd'),8,2)}002 and @{substring(pipeline().parameters.historico_hasta,2,2)}@{substring(pipeline().parameters.historico_hasta,5,2)}@{substring(pipeline().parameters.historico_hasta,8,2)}002",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DLB_KPIs",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DISPACH_RAWHISTORY_PARAMETRIZADO",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "@{variables('v_nombre_tabla')}_HIS.parquet"
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "v_nombre_tabla",
+					"value": "DLB_KPIS_HOUR"
+				}
+			},
+			{
+				"name": "Insert_Parquet_to_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data to DLBKPIs_Hours",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Common_Notebooks/Insert_Parquet_to_Delta",
+					"baseParameters": {
+						"p_nombre_tabla": {
+							"value": "@variables('v_nombre_tabla')",
+							"type": "Expression"
+						},
+						"p_tipo_carga": "HISTORICO",
+						"p_origen": "DISPATCH"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"historico_desde": {
+				"type": "string"
+			},
+			"historico_hasta": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"v_nombre_tabla": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Dispatch/History"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-20T21:47:26Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,325 @@
+{
+	"name": "dm_Action_Incremental",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga incremental de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Action.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen para armar el incremental\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import when, col\r\n",
+					"\r\n",
+					"# ordenamos los datos de acuerdo al requerimento de la dimensión\r\n",
+					"df_dim_new = df.select('NextAction').distinct().orderBy('NextAction')\r\n",
+					"\r\n",
+					"# limpiamos los textos vacios y nulos de la columna MaterialType\r\n",
+					"\r\n",
+					"na_string = '<N/A>'\r\n",
+					"\r\n",
+					"df_dim_new = df_dim_new.withColumn('NextAction', \\\r\n",
+					"       when(col('NextAction')==\"\" ,na_string) \\\r\n",
+					"          .otherwise(col('NextAction'))) \\\r\n",
+					"          .na.fill(value=na_string,subset=['NextAction'])\\\r\n",
+					"          .orderBy('NextAction')\r\n",
+					"display(df_dim_new)"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traigo la dimensión original del data lake\r\n",
+					"df_dim_original = spark.read.load(nombre_archivo_dimesion, format='parquet')\r\n",
+					"\r\n",
+					"display(df_dim_original.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df_new_rows = df_dim_new.join(df_dim_original, df_dim_new.NextAction ==  df_dim_original.NextAction, 'left')\r\n",
+					"display(df_new_rows)"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Comparo los datos con la dimensión original del data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import monotonically_increasing_id, row_number\r\n",
+					"\r\n",
+					"# creamos un id incremental\r\n",
+					"# genera un id único e incremental, pero no consecutivo\r\n",
+					"# ref: https://kb.databricks.com/sql/gen-unique-increasing-values.html\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn(\"monotonically_increasing_id\", monotonically_increasing_id())\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos el nro de id con row_number según el valor incremental creado antes\r\n",
+					"\r\n",
+					"window = Window.orderBy(col('monotonically_increasing_id'))\r\n",
+					"df_dim_with_id = df_dim.withColumn('ActionId', row_number().over(window))\\\r\n",
+					"    .drop('monotonically_increasing_id')\\\r\n",
+					"    .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					" \r\n",
+					"display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim_with_id.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

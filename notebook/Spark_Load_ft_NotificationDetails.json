@@ -1,0 +1,715 @@
+{
+	"name": "Spark_Load_ft_NotificationDetails",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"d936188d-0a37-4630-94e9-08b3c94ef9a4": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T01:32:02.883Z",
+										"OperatorName": "ROBERTO CLODOMIRO REYES ALVAREZ",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "192257",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368355000,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100314,356388:100880,740268",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T05:51:27.117Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368400340,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100235,469722:100819,713896",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T11:28:38.58Z",
+										"OperatorName": "HECTOR ALEJANDRO FIGUEROA MENA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6080991",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368445260,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100177,056307:100760,553751",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T16:52:41.183Z",
+										"OperatorName": "AXEL ARCEU POBLETE",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6035199",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368521070,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100292,001788:100021,587823",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T17:53:09.527Z",
+										"OperatorName": "JOSE LUIS PUGA PINO",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6139213",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368535420,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100176,133462:100208,286389",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-20T22:15:59.5Z",
+										"OperatorName": "JOSE LUIS PUGA PINO",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6139213",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368591790,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100178,854292:100207,991627",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-21T07:48:46.697Z",
+										"OperatorName": "RODRIGO PATRICIO CISTERNAS PRADO",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6051163",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368698850,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100284,333299:100014,535035",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-22T01:25:04.853Z",
+										"OperatorName": "JUAN CARLOS BUSTOS TAPIA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "191817",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594368897730,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100145,238432:100743,575473",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-23T03:58:36.023Z",
+										"OperatorName": "HENRY JHONNY ARANCIBIA DELGADO",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "192870",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594369158540,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100255,136796:100839,229181",
+										"OemEvent": "Dumping"
+									},
+									{
+										"NotificationID": 72057594038030370,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 2,
+										"ModelName": "Generic Truck",
+										"Interface": "PLM",
+										"OemEventId": 33619978,
+										"EquipmentName": "CDH81",
+										"ReadTime": "2021-06-23T07:46:35.837Z",
+										"OperatorName": "ALEXIS DURAN BELTRAN",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6106632",
+										"ExtractDate": "2021-07-02T22:28:19.163Z",
+										"EventId": 72057594369200030,
+										"EquipmentId": 16777272,
+										"NLevel": 1,
+										"GPSLocation": "100207,562163:100796,237905",
+										"OemEvent": "Dumping"
+									}
+								],
+								"schema": {
+									"NotificationID": "bigint",
+									"SiteId": "int",
+									"EventId": "bigint",
+									"ModelName": "string",
+									"ModelId": "int",
+									"EquipmentId": "int",
+									"EquipmentName": "string",
+									"GroupId": "int",
+									"OemEventId": "int",
+									"OemEvent": "string",
+									"OemId": "string",
+									"Interface": "string",
+									"InterfaceId": "int",
+									"Level": "int",
+									"NLevel": "int",
+									"ReadTime": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"GPSLocation": "string",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"NotificationID"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"a6e5a4f6-cfa9-4482-90c2-f98defbfb2fa": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T01:32:02.883Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "192257",
+										"EventId": 72057594368355000,
+										"id_Equipment": 16777272,
+										"id_Notification": "d8086a292f6319b4369f65aa29bef7dfadb5fbde",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100314,356388:100880,740268",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T05:51:27.117Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594368400340,
+										"id_Equipment": 16777272,
+										"id_Notification": "13215e1b1025a8e35c5654b4fe513ec1d80c97ce",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100235,469722:100819,713896",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T11:28:38.58Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6080991",
+										"EventId": 72057594368445260,
+										"id_Equipment": 16777272,
+										"id_Notification": "8fe42bbb04ad8fd22297b9d11dee3822fc529e13",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100177,056307:100760,553751",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T16:52:41.183Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6035199",
+										"EventId": 72057594368521070,
+										"id_Equipment": 16777272,
+										"id_Notification": "c3f73358bc18571cbeec50f43fd6bd30aaa0b9f6",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100292,001788:100021,587823",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T17:53:09.527Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6139213",
+										"EventId": 72057594368535420,
+										"id_Equipment": 16777272,
+										"id_Notification": "e8207d1a41872a13a25d646308a69dc83c08d89e",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100176,133462:100208,286389",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-20T22:15:59.5Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6139213",
+										"EventId": 72057594368591790,
+										"id_Equipment": 16777272,
+										"id_Notification": "860e72996531bfb3da18963fd87b1ef4db08ead2",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100178,854292:100207,991627",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-21T07:48:46.697Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6051163",
+										"EventId": 72057594368698850,
+										"id_Equipment": 16777272,
+										"id_Notification": "9c4cb947d2d158c3390bb51ee0954fb09a0415c3",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100284,333299:100014,535035",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-22T01:25:04.853Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "191817",
+										"EventId": 72057594368897730,
+										"id_Equipment": 16777272,
+										"id_Notification": "bc3e6ea7eab48a68ac01ee5ef5d275a7d940c398",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100145,238432:100743,575473",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-23T03:58:36.023Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "192870",
+										"EventId": 72057594369158540,
+										"id_Equipment": 16777272,
+										"id_Notification": "4408db23e169c1b744979d2448b8915475896395",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100255,136796:100839,229181",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									},
+									{
+										"Level": 2,
+										"BatchDate": "2021-07-07T01:16:08.418Z",
+										"ReadTime": "2021-06-23T07:46:35.837Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"id_Operator": "6106632",
+										"EventId": 72057594369200030,
+										"id_Equipment": 16777272,
+										"id_Notification": "ca065209fa0ce1ef6448cc77db476f98dc54611e",
+										"NLevel": 1,
+										"id_Model": 16777217,
+										"GPSLocation": "100207,562163:100796,237905",
+										"id_Interface": 2,
+										"NotificationId": 72057594038030370,
+										"id_OemEvent": 33619978
+									}
+								],
+								"schema": {
+									"id_Notification": "string",
+									"NotificationId": "bigint",
+									"SiteId": "int",
+									"EventId": "bigint",
+									"id_Model": "int",
+									"id_Equipment": "int",
+									"GroupId": "int",
+									"id_OemEvent": "int",
+									"id_Interface": "int",
+									"Level": "int",
+									"NLevel": "int",
+									"ReadTime": "int",
+									"id_Operator": "string",
+									"GPSLocation": "string",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"id_Notification"
+									],
+									"seriesFieldKeys": [
+										"NotificationId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión ft_NotificationDetails"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"# Archivo final para la fact table\r\n",
+					"nombre_archivo_ft = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/ft_NotificationDetails.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/REPORTING_NOTIFICATIONDETAILS_HIS.parquet'\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 20
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"cols"
+				],
+				"attachments": null,
+				"execution_count": 21
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se concatenan las columnas sugeridas como clave para luego calcular el checksum con sha1 para obtener el Id de la tabla\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\r\n",
+					"\r\n",
+					"cols = ['NotificationID','EventId','EquipmentId', 'ReadTime']\r\n",
+					"cols\r\n",
+					"\r\n",
+					"#df = df.withColumn(\"id_Notification\", sha1(concat_ws('-',*cols)))\r\n",
+					"\r\n",
+					"#display(df.limit(5))"
+				],
+				"attachments": null,
+				"execution_count": 23
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se renombran las columnas y se generan los id dimensionales\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format,to_utc_timestamp, current_timestamp\r\n",
+					"\r\n",
+					"df = df.withColumn(\"id_Notification\", sha1(concat_ws('-',*cols))).withColumnRenamed(\"ModelId\",\"id_Model\").withColumnRenamed(\"EquipmentId\",\"id_Equipment\").withColumnRenamed(\"OemEventId\",\"id_OemEvent\").withColumnRenamed(\"OperatorId\",\"id_Operator\").withColumnRenamed(\"InterfaceId\",\"id_interface\").withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\r\n",
+					"df = df.select(\"id_Notification\",\"NotificationId\",\"SiteId\",\"EventId\",\"id_Model\",\"id_Equipment\",\"GroupId\",\"id_OemEvent\",\"id_Interface\",\"Level\",\"NLevel\",\"ReadTime\",\"id_Operator\",\"GPSLocation\",\"BatchDate\")\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 24
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df.write.mode(\"overwrite\").parquet(nombre_archivo_ft)"
+				],
+				"attachments": null,
+				"execution_count": 25
+			}
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 16",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nALTER PROC [DM_Minecare].[sp_load_ft_TrendEventDetails] AS\nDECLARE\n  @date_min [date]\n\nBEGIN\n\n    select @date_min = (select min(UpdateDate)  date_min  from STG_Minecare.ft_TrendEventDetails);  \n     \n      MERGE [DM_Minecare].[ft_TrendEventDetails] AS TARGET\n      USING [STG_Minecare].[ft_TrendEventDetails] AS SOURCE\n      ON TARGET.id_Equipment = SOURCE.id_Equipment\n      and TARGET.TrendId = SOURCE.TrendId\n      and TARGET.SiteId = SOURCE.SiteId\n      and TARGET.CreateTime  = SOURCE.CreateTime\n      and    TARGET.UpdateDate >= @date_min \n      WHEN MATCHED \n        THEN UPDATE SET\n                    TARGET.id_Model  = SOURCE.id_Model\n                    ,TARGET.CreateTime  = SOURCE.CreateTime\n                    ,TARGET.UdfExtLevel = SOURCE.UdfExtLevel\n                    ,TARGET.UdfExtLevel2 = SOURCE.UdfExtLevel2\n                    ,TARGET.id_Operator  = SOURCE.id_Operator\n                    ,TARGET.EventName = SOURCE.EventName\n                    ,TARGET.GpsLocation = SOURCE.GpsLocation\n                    ,TARGET.UpdateDate  = SOURCE.UpdateDate\n                    ,TARGET.InsertDate  = SOURCE.InsertDate\n        WHEN NOT MATCHED BY TARGET\n          THEN INSERT (id_Equipment\n                      ,TrendId\n                      ,SiteId\n                      ,id_Model\n                      ,CreateTime\n                      ,UdfExtLevel\n                      ,UdfExtLevel2\n                      ,id_Operator\n                      ,EventName\n                      ,GpsLocation\n                      ,UpdateDate\n                      ,InsertDate)\n              VALUES ( SOURCE.id_Equipment\n                      ,SOURCE.TrendId\n                      ,SOURCE.SiteId\n                      ,SOURCE.id_Model\n                      ,SOURCE.CreateTime\n                      ,SOURCE.UdfExtLevel\n                      ,SOURCE.UdfExtLevel2\n                      ,SOURCE.id_Operator\n                      ,SOURCE.EventName\n                      ,SOURCE.GpsLocation\n                      ,SOURCE.UpdateDate\n                      ,SOURCE.InsertDate);\n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,117 @@
+{
+	"name": "EQUIPMENTUNIT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UpdateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RecordStatus",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "ModelId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GroupId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FleetId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CategoryId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SerialNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ModelNo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GrossWeight",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EngineManufacturer1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EngineSerialNo1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EngineManufacturer2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EngineSerialNo2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tonnage",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Volume",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Param1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Param2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Photo",
+				"type": "varbinary"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EquipmentUnit"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

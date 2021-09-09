@@ -1,0 +1,686 @@
+{
+	"name": "Spark_AggregatedOemParamValue",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"94cc30f4-df75-44d8-85a2-1dc30bb37c17": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575497,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575496,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575499,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575498,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575501,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575500,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575503,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575502,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575491,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575490,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"SiteId": "int",
+									"SetId": "int",
+									"EquipmentId": "int",
+									"ConsumerId": "int",
+									"OemParamTypeId": "int",
+									"ReadTime": "int",
+									"MinValue": "double",
+									"MaxValue": "double",
+									"MeanValue": "double",
+									"MedianValue": "double",
+									"StdDevValue": "double",
+									"NumberOfSamples": "int",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"a816fc05-9cb9-4df9-9116-826a721ba5dd": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575497,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "2b026ef7e8104d9edef05680f1aaf8b0e2f6fc1d",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575496,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "f80637a95cdaa2ae36f57a069aa1be7677052979",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575499,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "447705c9b44c7136ba17418c874c31093a7d8711",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575498,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "01b0ccf6e4c85ef73a5715bf9edebf90fc3ee16d",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575501,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "ba71f79a90a2882ba2a19588509d28b451917a09",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575500,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "440e2367bffe6ed87ef942ea98ab002e40a9a26f",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575503,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "6bc391a5dfdb055108ee150d0989b50b96cdf337",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575502,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "a38945e7b220142f90a6ce616dcef67c8d792bd7",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575491,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "a2fea4d51fea5504fe29364a9ab411b6ed0bbcfd",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595794766130,
+										"OemParamTypeId": 906575490,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 21240053,
+										"ReadTime": "2021-06-16T12:51:24Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-06-16T16:32:56.367Z",
+										"checksum": "d4b669366be51180351008cc676c72280c6beacd",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"PartitionDate": "2021-06",
+										"MeanValue": 0,
+										"MaxValue": 0
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"SiteId": "int",
+									"SetId": "int",
+									"EquipmentId": "int",
+									"ConsumerId": "int",
+									"OemParamTypeId": "int",
+									"ReadTime": "int",
+									"MinValue": "double",
+									"MaxValue": "double",
+									"MeanValue": "double",
+									"MedianValue": "double",
+									"StdDevValue": "double",
+									"NumberOfSamples": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para crear el histórico con checksum de alguna tabla"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"# definimos las variables para los archivos de entrada y salida\r\n",
+					"nombre_archivo_origen = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/AGGREGATEDOEMPARAMVALUE_HIS.parquet'\r\n",
+					"nombre_archivo_destino = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/AGGREGATEDOEMPARAMVALUE_HIS.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos la tabla histórica del origen\r\n",
+					"df = spark.read.load(nombre_archivo_origen, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.count()"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.columns"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"cols"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# concateno todas las columnas y luego calculo el checksum con sha1\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\r\n",
+					"\r\n",
+					"df = df.withColumn(\"checksum\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"       .withColumn(\"PartitionDate\", concat_ws('-', date_format(col('ReadTime'), \"yyyy\"), date_format(col('ReadTime'), \"MM\")))        \r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo el histórico en el destino. Hago overwrite porque es la carga inicial\r\n",
+					"\r\n",
+					"##TODO agregar TRY/CATCH\r\n",
+					"\r\n",
+					"try:\r\n",
+					"    df.write.mode(\"overwrite\").partitionBy(\"PartitionDate\").parquet(nombre_archivo_destino)\r\n",
+					"except:\r\n",
+					"  print(\"No se pudo grabar la información correctamente\")"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

@@ -1,0 +1,81 @@
+{
+	"name": "Dispatch_Load_STG_ft_ShiftLoads",
+	"properties": {
+		"activities": [
+			{
+				"name": "Spark_Load_ft_ShiftLoads_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Dispatch/Spark_Load_ft_ShiftLoads_Delta",
+					"baseParameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Load Stage to DIM",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Spark_Load_ft_ShiftLoads_Delta",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[DM_Dispatch].[sp_load_ft_shiftloads]",
+					"storedProcedureParameters": {
+						"date_min": {
+							"value": {
+								"value": "@pipeline().parameters.cdc",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"cdc": {
+				"type": "string",
+				"defaultValue": "1900-01-01"
+			}
+		},
+		"folder": {
+			"name": "Dispatch/Load Stage"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-20T21:13:27Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

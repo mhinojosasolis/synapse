@@ -1,0 +1,242 @@
+{
+	"name": "Spark_Load_dm_Equipment_dispatch_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_Equipment"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta, dependiendo si el archivo delta final existe o no se agrega fila de valores\n",
+					"# no definidos\n",
+					"\n",
+					"\n",
+					"nombre_tabla = 'dm_Equipment'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    sql_command = f'''\n",
+					"                    select distinct sha(eqmt) as id_Equipment, \n",
+					"                           eqmt, \n",
+					"                           eqmttype \n",
+					"                           ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                           ,current_timestamp() InsertDate   \n",
+					"                    from delta.dlb_shiftstate_historico\n",
+					"                    where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"                    '''                \n",
+					"else:\n",
+					"    sql_command = f'''\n",
+					"                    select 0 id_Equipment, \n",
+					"                           '<N/A>' AS eqmt, \n",
+					"                           '<N/A>' AS eqmttype \n",
+					"                           ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                           ,current_timestamp() InsertDate   \n",
+					"                    UNION\n",
+					"                    select distinct sha(eqmt) as id_Equipment, \n",
+					"                           eqmt, \n",
+					"                           eqmttype \n",
+					"                           ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                           ,current_timestamp() InsertDate   \n",
+					"                    from delta.dlb_shiftstate_historico\n",
+					"                    where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"                    \n",
+					"                    '''\n",
+					"\n",
+					"new_data = spark.sql(sql_command)                \n",
+					"new_data.createOrReplaceTempView(nombre_tabla)\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.id_Equipment = new_data.id_Equipment\"\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"eqmt\": \"new_data.eqmt\",\\\n",
+					"        \"eqmttype\": \"new_data.eqmttype\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

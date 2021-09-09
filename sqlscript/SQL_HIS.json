@@ -1,0 +1,20 @@
+{
+	"name": "SQL_HIS",
+	"properties": {
+		"folder": {
+			"name": "minecare"
+		},
+		"content": {
+			"query": "/*SELECT\n    'AGGREGATEDOEMPARAMVALUE_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/AGGREGATEDOEMPARAMVALUE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION */\nSELECT\n    'OEMEVENTSNAPSHOTVALUE_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/OEMEVENTSNAPSHOTVALUE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION \nSELECT\n    'EQUIPMENTTRACKHISTORY_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/EQUIPMENTTRACKHISTORY_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION \nSELECT\n    'EQMTMODEL_HIS' AS TableName, COUNT(*) AS Rows, Min(UpdateTime) AS MinDate, Max(UpdateTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/EQMTMODEL_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION \nSELECT\n    'NATURALOEMPARAMVALUE_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/NATURALOEMPARAMVALUE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION\nSELECT\n    'OEMEVENTVALUE_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/OEMEVENTVALUE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION\nSELECT\n    'REPORTING_NOTIFICATIONDETAILS_HIS' AS TableName, COUNT(*) AS Rows, Min(ReadTime) AS MinDate, Max(ReadTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/REPORTING_NOTIFICATIONDETAILS_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION\nSELECT\n    'REPORTING_TRENDEVENTDETAILS_HIS' AS TableName, COUNT(*) AS Rows, Min(CreateTime) AS MinDate, Max(CreateTime) AS MaxDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/REPORTING_TRENDEVENTDETAILS_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n\nORDER BY 1",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

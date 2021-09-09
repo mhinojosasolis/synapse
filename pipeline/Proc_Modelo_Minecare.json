@@ -1,0 +1,313 @@
+{
+	"name": "Proc_Modelo_Minecare",
+	"properties": {
+		"activities": [
+			{
+				"name": "Minecare_Load_STG_dm_equipment",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_equipment",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_equipmentunit",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_equipmentunit",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_location",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_location",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_materialtype",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_materialtype",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_mc_site_name",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_mc_site_name",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_Model",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_Model",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_oemeventtype",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_oemeventtype",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_oeminterface",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_oeminterface",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_operator",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_operator",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_trend",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_trend",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_EquipmentTrackHistory",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_EquipmentTrackHistory",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_naturaloemparamvalue",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_naturaloemparamvalue",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_oemeventsnapshotvalue",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_oemeventsnapshotvalue",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_oemeventvalue",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_oemeventvalue",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_trendeventdetails",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_trendeventdetails",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_notificationdetails",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_notificationdetails",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_interfaces",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_interfaces",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_dm_action",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_dm_action",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Minecare_Load_STG_ft_aggregatedoemparamvalue",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Minecare_Load_STG_ft_aggregatedoemparamvalue",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"cdc": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Minecare"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-24T21:51:39Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,39 @@
+{
+	"name": "MINECARE_APPLICATIONCONFIGURATION_CONFIGURATION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Scope",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Key",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Value",
+				"type": "ntext"
+			},
+			{
+				"name": "Timestamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "ApplicationConfiguration",
+			"table": "Configuration"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

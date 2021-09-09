@@ -1,0 +1,79 @@
+{
+	"name": "Extraction_Process_minecare_incremental",
+	"properties": {
+		"activities": [
+			{
+				"name": "Proc_Modelo_Minecare",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Extraction_Minecare_Incremental",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Proc_Modelo_Minecare",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cdc": {
+							"value": "@addhours(utcnow(),-8)",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraction_Minecare_Incremental",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraction_Minecare_Incremental",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Signos Vitales Minecare",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Proc_Modelo_Minecare",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[DM_VitalSigns].[sp_load_ft_VitalSigns]"
+				}
+			}
+		],
+		"folder": {
+			"name": "Minecare"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-09-01T03:06:34Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

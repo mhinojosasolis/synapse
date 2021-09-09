@@ -1,0 +1,109 @@
+{
+	"name": "Test conexion  SQL",
+	"properties": {
+		"folder": {
+			"name": "pruebas"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"collapsed": false
+				},
+				"source": [
+					"#hostname = \"fersqldatafactory.database.windows.net\"\r\n",
+					"#database = \"sqldatafactory\"\r\n",
+					"#hostname = \"10.187.7.29\"\r\n",
+					"#database = \"DLBReports\"\r\n",
+					"#hostname = \"MTABCLLOB511\\AMLOBPRO_RRA\"\r\n",
+					"#database = \"SMLBReports\"\r\n",
+					"hostname = \"GSCLSCL6019\\BI\"\r\n",
+					"database = \"SORD\"\r\n",
+					"port = 1433\r\n",
+					"#port = 56821\r\n",
+					"url = \"jdbc:sqlserver://{0}:{1};database={2}\".format(hostname, port, database)\r\n",
+					"\r\n",
+					"#prop = {\r\n",
+					"#\"user\" : \"fsgpsqladmin\",\r\n",
+					"#\"password\" : \"Pa55w.rd\",\r\n",
+					"#\"driver\" : \"com.microsoft.sqlserver.jdbc.SQLServerDriver\"\r\n",
+					"#}\r\n",
+					"\r\n",
+					"#prop = {\r\n",
+					"#\"user\" : \"user_query_dispatch_temp\",\r\n",
+					"#\"password\" : \"l2ct5r1\",\r\n",
+					"#\"driver\" : \"com.microsoft.sqlserver.jdbc.SQLServerDriver\"\r\n",
+					"#}\r\n",
+					"\r\n",
+					"#prop = {\r\n",
+					"#\"user\" : \"user_lee_SMLBReports\",\r\n",
+					"#\"password\" : \"user_lee_SMLBReports.202102\",\r\n",
+					"#\"driver\" : \"com.microsoft.sqlserver.jdbc.SQLServerDriver\"\r\n",
+					"#}\r\n",
+					"\r\n",
+					"prop = {\r\n",
+					"\"user\" : \"Tableau\",\r\n",
+					"\"password\" : \"sord\",\r\n",
+					"\"driver\" : \"com.microsoft.sqlserver.jdbc.SQLServerDriver\"\r\n",
+					"}\r\n",
+					"\r\n",
+					"sql = \"(SELECT * FROM sys.databases) a\"\r\n",
+					"\r\n",
+					"df = spark \\\r\n",
+					"  .read \\\r\n",
+					"  .jdbc(url=url, table=sql, properties=prop)\r\n",
+					"\r\n",
+					"display(df)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			}
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 19",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nALTER PROC [STG_Minecare].[sp_bulk_ft_AggregatedOemParamValue ] AS\nBEGIN\nTRUNCATE table STG_Minecare.ft_AggregatedOemParamValue;\n\nCOPY INTO STG_Minecare.ft_AggregatedOemParamValue\n(Id_AggOemParamValue 1, SiteId 2, SetId 3, id_Equipment 4, ConsumerId 5, OemParamTypeId 6, ReadTime 7, MinValue 8, MaxValue 9, MeanValue 10, MedianValue 11, StdDevValue 12, NumberOfSamples 13, Month 14, UpdateDate 15, InsertDate 16)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/novedades/ft_AggregatedOemParamValue'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n);\n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,81 @@
+{
+	"name": "TRENDEVENTDETAILS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TrendId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "EquipmentName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ModelId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ModelName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CreateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UdfExtLevel",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UdfExtLevel2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OperatorId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OperatorName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EventName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GpsLocation",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Reporting",
+			"table": "TrendEventDetails"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

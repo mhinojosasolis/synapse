@@ -1,0 +1,344 @@
+{
+	"name": "PySpark DLB_ShiftInfo Historico",
+	"properties": {
+		"folder": {
+			"name": "dispatch/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"d57e96a0-9e8d-4f15-980f-e1b0b73430f9": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ShiftStartDateTime": "2019-01-01T08:00:00Z",
+										"FullShiftSuffix": "A",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190101a",
+										"ShiftSuffix": "a",
+										"ShiftDay": 1,
+										"DbName": "sh190101a.ddb",
+										"ShiftStartDate": "2019-01-01T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 28800,
+										"Crew": "Grupo 3",
+										"ShiftStartTimestamp": 1546329600,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-01 A",
+										"ShiftDate": "2019-01-01",
+										"FullShiftName": "01-ENE-2019 A",
+										"ShiftId": 190101001
+									},
+									{
+										"ShiftStartDateTime": "2019-01-01T20:00:00Z",
+										"FullShiftSuffix": "B",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190101b",
+										"ShiftSuffix": "b",
+										"ShiftDay": 1,
+										"DbName": "sh190101b.ddb",
+										"ShiftStartDate": "2019-01-01T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 72000,
+										"Crew": "Grupo 1",
+										"ShiftStartTimestamp": 1546372800,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-01 B",
+										"ShiftDate": "2019-01-01",
+										"FullShiftName": "01-ENE-2019 B",
+										"ShiftId": 190101002
+									},
+									{
+										"ShiftStartDateTime": "2019-01-02T08:00:00Z",
+										"FullShiftSuffix": "A",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190102a",
+										"ShiftSuffix": "a",
+										"ShiftDay": 2,
+										"DbName": "sh190102a.ddb",
+										"ShiftStartDate": "2019-01-02T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 28800,
+										"Crew": "Grupo 3",
+										"ShiftStartTimestamp": 1546416000,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-02 A",
+										"ShiftDate": "2019-01-02",
+										"FullShiftName": "02-ENE-2019 A",
+										"ShiftId": 190102001
+									},
+									{
+										"ShiftStartDateTime": "2019-01-02T20:00:00Z",
+										"FullShiftSuffix": "B",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190102b",
+										"ShiftSuffix": "b",
+										"ShiftDay": 2,
+										"DbName": "sh190102b.ddb",
+										"ShiftStartDate": "2019-01-02T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 72000,
+										"Crew": "Grupo 1",
+										"ShiftStartTimestamp": 1546459200,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-02 B",
+										"ShiftDate": "2019-01-02",
+										"FullShiftName": "02-ENE-2019 B",
+										"ShiftId": 190102002
+									},
+									{
+										"ShiftStartDateTime": "2019-01-03T08:00:00Z",
+										"FullShiftSuffix": "A",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190103a",
+										"ShiftSuffix": "a",
+										"ShiftDay": 3,
+										"DbName": "sh190103a.ddb",
+										"ShiftStartDate": "2019-01-03T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 28800,
+										"Crew": "Grupo 4",
+										"ShiftStartTimestamp": 1546502400,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-03 A",
+										"ShiftDate": "2019-01-03",
+										"FullShiftName": "03-ENE-2019 A",
+										"ShiftId": 190103001
+									},
+									{
+										"ShiftStartDateTime": "2019-01-03T20:00:00Z",
+										"FullShiftSuffix": "B",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190103b",
+										"ShiftSuffix": "b",
+										"ShiftDay": 3,
+										"DbName": "sh190103b.ddb",
+										"ShiftStartDate": "2019-01-03T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 1,
+										"ShiftStartSecSinceMidnight": 72000,
+										"Crew": "Grupo 3",
+										"ShiftStartTimestamp": 1546545600,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-03 B",
+										"ShiftDate": "2019-01-03",
+										"FullShiftName": "03-ENE-2019 B",
+										"ShiftId": 190103002
+									},
+									{
+										"ShiftStartDateTime": "2019-01-04T08:00:00Z",
+										"FullShiftSuffix": "A",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190104a",
+										"ShiftSuffix": "a",
+										"ShiftDay": 4,
+										"DbName": "sh190104a.ddb",
+										"ShiftStartDate": "2019-01-04T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 2,
+										"ShiftStartSecSinceMidnight": 28800,
+										"Crew": "Grupo 4",
+										"ShiftStartTimestamp": 1546588800,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-04 A",
+										"ShiftDate": "2019-01-04",
+										"FullShiftName": "04-ENE-2019 A",
+										"ShiftId": 190104001
+									},
+									{
+										"ShiftStartDateTime": "2019-01-04T20:00:00Z",
+										"FullShiftSuffix": "B",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190104b",
+										"ShiftSuffix": "b",
+										"ShiftDay": 4,
+										"DbName": "sh190104b.ddb",
+										"ShiftStartDate": "2019-01-04T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 2,
+										"ShiftStartSecSinceMidnight": 72000,
+										"Crew": "Grupo 3",
+										"ShiftStartTimestamp": 1546632000,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-04 B",
+										"ShiftDate": "2019-01-04",
+										"FullShiftName": "04-ENE-2019 B",
+										"ShiftId": 190104002
+									},
+									{
+										"ShiftStartDateTime": "2019-01-05T08:00:00Z",
+										"FullShiftSuffix": "A",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190105a",
+										"ShiftSuffix": "a",
+										"ShiftDay": 5,
+										"DbName": "sh190105a.ddb",
+										"ShiftStartDate": "2019-01-05T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 2,
+										"ShiftStartSecSinceMidnight": 28800,
+										"Crew": "Grupo 2",
+										"ShiftStartTimestamp": 1546675200,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-05 A",
+										"ShiftDate": "2019-01-05",
+										"FullShiftName": "05-ENE-2019 A",
+										"ShiftId": 190105001
+									},
+									{
+										"ShiftStartDateTime": "2019-01-05T20:00:00Z",
+										"FullShiftSuffix": "B",
+										"ShiftMonth": 1,
+										"Holiday": 0,
+										"ShiftDuration": 43200,
+										"ShiftName": "190105b",
+										"ShiftSuffix": "b",
+										"ShiftDay": 5,
+										"DbName": "sh190105b.ddb",
+										"ShiftStartDate": "2019-01-05T00:00:00Z",
+										"ExtractDate": "2021-06-09T21:02:59.257Z",
+										"ShiftWeek": 2,
+										"ShiftStartSecSinceMidnight": 72000,
+										"Crew": "Grupo 4",
+										"ShiftStartTimestamp": 1546718400,
+										"ShiftYear": 19,
+										"ShiftFilter": "19-01-05 B",
+										"ShiftDate": "2019-01-05",
+										"FullShiftName": "05-ENE-2019 B",
+										"ShiftId": 190105002
+									}
+								],
+								"schema": {
+									"ShiftId": "bigint",
+									"ShiftName": "string",
+									"DbName": "string",
+									"ShiftYear": "int",
+									"ShiftMonth": "int",
+									"ShiftWeek": "int",
+									"ShiftDay": "int",
+									"ShiftSuffix": "string",
+									"FullShiftSuffix": "string",
+									"ShiftStartSecSinceMidnight": "int",
+									"ShiftStartTimestamp": "int",
+									"ShiftStartDate": "int",
+									"ShiftStartDateTime": "int",
+									"FullShiftName": "string",
+									"Holiday": "int",
+									"Crew": "string",
+									"ShiftDuration": "int",
+									"ShiftDate": "date",
+									"ShiftFilter": "string",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"ShiftName"
+									],
+									"seriesFieldKeys": [
+										"ShiftId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"#df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/DLB_KPIS_HOUR_TEMP.parquet', format='parquet')\r\n",
+					"df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/history/DISPATCH_DLB_SHIFTINFO_TEMP_HIS.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 2
+			}
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 10",
+	"properties": {
+		"content": {
+			"query": "DECLARE @p_cdc datetime2(7) ='1900-01-01'\n\n -- TODO: Set parameter values here \n\n EXECUTE [DM_Dispatch].[sp_load_dm_crew]\n\t@p_cdc",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

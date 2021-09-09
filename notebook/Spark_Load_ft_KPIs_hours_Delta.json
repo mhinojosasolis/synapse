@@ -1,0 +1,268 @@
+{
+	"name": "Spark_Load_ft_KPIs_hours_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# traemos los datos de origen históricos\n",
+					"view_name = 'kpis_hour'\n",
+					"kpishour = spark.sql(\"select * from delta.dlb_kpis_hour_historico\")\n",
+					"kpishour.createOrReplaceTempView(view_name)\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"                SELECT ShiftId id_Shift\n",
+					"                ,Eqmt lk_Eqmt\n",
+					"                ,Unit lk_Unit\n",
+					"                ,Hos\n",
+					"                ,P200\n",
+					"                ,P100\n",
+					"                ,L300\n",
+					"                ,L200\n",
+					"                ,L100\n",
+					"                ,D300\n",
+					"                ,D200\n",
+					"                ,D100\n",
+					"                ,N200\n",
+					"                ,N100\n",
+					"                ,T300\n",
+					"                ,T200\n",
+					"                ,T100\n",
+					"                ,T000\n",
+					"                ,L000\n",
+					"                ,D000\n",
+					"                ,N000\n",
+					"                ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                ,current_timestamp() InsertDate\n",
+					"                FROM {view_name} sh\n",
+					"                where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"\n",
+					"                '''\n",
+					"new_data = spark.sql(sql_command)      "
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\n",
+					"\n",
+					"nombre_tabla = 'ft_KPIs_hours'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.id_Shift = new_data.id_Shift \\\n",
+					"                and historico.lk_Eqmt = new_data.lk_Eqmt \\\n",
+					"                and historico.Hos = new_data.Hos\"\n",
+					"\n",
+					"#falla por valores repetidos en el campo id_shift\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"id_Shift\": \"new_data.id_Shift\",\\\n",
+					"        \"lk_Eqmt\": \"new_data.lk_Eqmt\",\\\n",
+					"        \"lk_Unit\": \"new_data.lk_Unit\",\\\n",
+					"        \"Hos\": \"new_data.Hos\",\\\n",
+					"        \"P200\": \"new_data.P200\",\\\n",
+					"        \"P100\": \"new_data.P100\",\\\n",
+					"        \"L300\": \"new_data.L300\",\\\n",
+					"        \"L200\": \"new_data.L200\",\\\n",
+					"        \"L100\": \"new_data.L100\",\\\n",
+					"        \"D300\": \"new_data.D300\",\\\n",
+					"        \"D200\": \"new_data.D200\",\\\n",
+					"        \"D100\": \"new_data.D100\",\\\n",
+					"        \"N200\": \"new_data.N200\",\\\n",
+					"        \"N100\": \"new_data.N100\",\\\n",
+					"        \"T300\": \"new_data.T300\",\\\n",
+					"        \"T200\": \"new_data.T200\",\\\n",
+					"        \"T100\": \"new_data.T100\",\\\n",
+					"        \"T000\": \"new_data.T000\",\\\n",
+					"        \"L000\": \"new_data.L000\",\\\n",
+					"        \"D000\": \"new_data.D000\",\\\n",
+					"        \"N000\": \"new_data.N000\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()"
+				],
+				"attachments": null,
+				"execution_count": 15
+			}
+		]
+	}
+}

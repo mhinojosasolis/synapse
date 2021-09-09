@@ -1,0 +1,10 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Storage/storageAccounts/devmycdlake",
+		"groupId": "dfs",
+		"fqdns": [
+			"devmycdlake.dfs.core.windows.net"
+		]
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"name": "MINECARE_OEMPARAMTYPE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemInterfaceId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ValueType",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "UnitType",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "MaxValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MinValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ValidInterval",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OemParamType"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "Minecare_ft_AggregatedOemParamValue_Delta",
+	"properties": {
+		"folder": {
+			"name": "minecare"
+		},
+		"content": {
+			"query": "SELECT count(*), MIN(ReadTime) AS MinReadTime, MAX(ReadTime) AS MinReadTime\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/ft_AggregatedOemParamValue/Month=*/part-*.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

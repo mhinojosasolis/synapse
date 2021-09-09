@@ -1,0 +1,330 @@
+{
+	"name": "DISPATCH_DLB_SHIFTINFO_TEMP_HIS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/History"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DISPATCH_DLB_SHIFTINFO_TEMP_HIS.parquet",
+				"folderPath": "dispatch/history",
+				"fileSystem": "devraw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Id",
+				"type": "INT64"
+			},
+			{
+				"name": "ShiftId",
+				"type": "INT64"
+			},
+			{
+				"name": "ShiftDate",
+				"type": "DATE"
+			},
+			{
+				"name": "ShiftYear",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftMonth",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftDay",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftStartTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "ShiftEndTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "FullShiftName",
+				"type": "UTF8"
+			},
+			{
+				"name": "ShiftName",
+				"type": "UTF8"
+			},
+			{
+				"name": "Shift",
+				"type": "UTF8"
+			},
+			{
+				"name": "Crew",
+				"type": "UTF8"
+			},
+			{
+				"name": "TruckId",
+				"type": "INT64"
+			},
+			{
+				"name": "Truck",
+				"type": "UTF8"
+			},
+			{
+				"name": "TruckType",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcavId",
+				"type": "INT64"
+			},
+			{
+				"name": "Excav",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcavType",
+				"type": "UTF8"
+			},
+			{
+				"name": "GradeId",
+				"type": "INT64"
+			},
+			{
+				"name": "Grade",
+				"type": "UTF8"
+			},
+			{
+				"name": "Phase",
+				"type": "UTF8"
+			},
+			{
+				"name": "Region",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadLocationId",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadLocation",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadLocationUnit",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadLocationUnitType",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrevDumpId",
+				"type": "INT64"
+			},
+			{
+				"name": "NextShiftDumpId",
+				"type": "INT64"
+			},
+			{
+				"name": "Tons",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "TruckSize",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "LoadfactorValue",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "Tonnage",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "ExpectedEmptyTravelDuration",
+				"type": "INT32"
+			},
+			{
+				"name": "EmptyTravelDuration",
+				"type": "INT64"
+			},
+			{
+				"name": "FullTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "ArriveTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "QueueTime",
+				"type": "INT64"
+			},
+			{
+				"name": "SpottingTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "SpotTime",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadingTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "LoadingTime",
+				"type": "INT64"
+			},
+			{
+				"name": "ShovelIdleTime",
+				"type": "INT64"
+			},
+			{
+				"name": "TruckIdleTime",
+				"type": "INT64"
+			},
+			{
+				"name": "EquivalentFlatHaulDistance",
+				"type": "INT32"
+			},
+			{
+				"name": "TotalDistance",
+				"type": "INT32"
+			},
+			{
+				"name": "AssignTimestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "MaterialTypeID",
+				"type": "INT64"
+			},
+			{
+				"name": "Material",
+				"type": "UTF8"
+			},
+			{
+				"name": "MaterialType",
+				"type": "UTF8"
+			},
+			{
+				"name": "MaterialGroupId",
+				"type": "INT64"
+			},
+			{
+				"name": "MaterialUnits",
+				"type": "UTF8"
+			},
+			{
+				"name": "MaterialTypeIdx",
+				"type": "INT32"
+			},
+			{
+				"name": "MaterialGroup",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadIdx",
+				"type": "INT32"
+			},
+			{
+				"name": "IsOre",
+				"type": "INT32"
+			},
+			{
+				"name": "IsWaste",
+				"type": "INT32"
+			},
+			{
+				"name": "IsTrammed",
+				"type": "UTF8"
+			},
+			{
+				"name": "IsExtraload",
+				"type": "INT32"
+			},
+			{
+				"name": "TruckOperatorId",
+				"type": "INT64"
+			},
+			{
+				"name": "TruckOperatorName",
+				"type": "UTF8"
+			},
+			{
+				"name": "TruckOperId",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcavOperatorId",
+				"type": "INT64"
+			},
+			{
+				"name": "ExcavOperatorName",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcavOperId",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldGpsxtkl",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "FieldGpsytkl",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "FieldGpsxex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "FieldGpsyex",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "hos",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftHour",
+				"type": "INT96"
+			},
+			{
+				"name": "FieldDlock",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldElock",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldEdlock",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldRlock",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldPvs3id",
+				"type": "UTF8"
+			},
+			{
+				"name": "FieldFuelremain",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

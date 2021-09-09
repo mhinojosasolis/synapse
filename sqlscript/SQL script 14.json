@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 14",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nALTER PROC [DM_Dispatch].[sp_load_ft_KPIs_Hours] @date_min [date] AS\nBEGIN\n    \n     \n      MERGE [DM_Dispatch].[FT_KPIS_HOURS] AS TARGET\n      USING [STG_Dispatch].[FT_KPIS_HOURS] AS SOURCE\n      ON TARGET.id_Shift = SOURCE.id_Shift\n      and TARGET.lk_Eqmt  = SOURCE.lk_Eqmt\n      and TARGET.Hos  = SOURCE.Hos\n      and    TARGET.UpdateDate >= @date_min \n      WHEN MATCHED \n        THEN UPDATE SET \n             TARGET.lk_Unit = SOURCE.lk_Unit\n            ,TARGET.P200 = SOURCE.P200\n            ,TARGET.P100 = SOURCE.P100\n            ,TARGET.L300 = SOURCE.L300\n            ,TARGET.L200 = SOURCE.L200\n            ,TARGET.L100 = SOURCE.L100\n            ,TARGET.D300 = SOURCE.D300\n            ,TARGET.D200 = SOURCE.D200\n            ,TARGET.D100 = SOURCE.D100\n            ,TARGET.N200 = SOURCE.N200\n            ,TARGET.N100 = SOURCE.N100\n            ,TARGET.T300 = SOURCE.T300\n            ,TARGET.T200 = SOURCE.T200\n            ,TARGET.T100 = SOURCE.T100\n            ,TARGET.T000 = SOURCE.T000\n            ,TARGET.L000 = SOURCE.L000\n            ,TARGET.D000 = SOURCE.D000\n            ,TARGET.N000 = SOURCE.N000\n            ,TARGET.UpdateDate = SOURCE.UpdateDate\n        WHEN NOT MATCHED BY TARGET\n        THEN INSERT ( id_Shift, lk_Eqmt, lk_Unit, Hos, P200, P100, L300, L200, L100,\n                    D300, D200, D100, N200, N100, T300, T200, T000, L000, D000, N000, UpdateDate, InsertDate) \n        VALUES (SOURCE.id_Shift, SOURCE.lk_Eqmt, SOURCE.lk_Unit, SOURCE.Hos, SOURCE.P200, SOURCE.P100, \n                SOURCE.L300, SOURCE.L200, SOURCE.L100, SOURCE.D300, SOURCE.D200, SOURCE.D100, SOURCE.N200, SOURCE.N100, SOURCE.T300, \n                SOURCE.T200, SOURCE.T000, SOURCE.L000, SOURCE.D000, SOURCE.N000, SOURCE.UpdateDate, SOURCE.InsertDate);\n  \n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,578 @@
+{
+	"name": "Spark_Load_ft_AggregatedOemParamValue",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"678331c9-5f7e-4a04-862e-17613ba0ee84": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575495,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575494,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575513,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575512,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575516,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575505,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540720,
+										"OemParamTypeId": 906575504,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540740,
+										"OemParamTypeId": 906575507,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540740,
+										"OemParamTypeId": 906575506,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"Id": 72057595858540740,
+										"OemParamTypeId": 906575508,
+										"NumberOfSamples": 0,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"ExtractDate": "2021-07-02T20:17:58.62Z",
+										"EquipmentId": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"SiteId": "int",
+									"SetId": "int",
+									"EquipmentId": "int",
+									"ConsumerId": "int",
+									"OemParamTypeId": "int",
+									"ReadTime": "int",
+									"MinValue": "double",
+									"MaxValue": "double",
+									"MeanValue": "double",
+									"MedianValue": "double",
+									"StdDevValue": "double",
+									"NumberOfSamples": "int",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"575387c3-6b15-41f2-bbfd-b109b1beffc2": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"OemParamTypeId": 906575495,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575494,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575513,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575512,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575516,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575505,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575504,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540720,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575507,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540740,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575506,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540740,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									},
+									{
+										"OemParamTypeId": 906575508,
+										"NumberOfSamples": 0,
+										"id_AggOemParamValue": 72057595858540740,
+										"ConsumerId": 16779445,
+										"SetId": 22288920,
+										"ReadTime": "2021-06-23T05:25:27Z",
+										"SiteId": 1,
+										"StdDevValue": 0,
+										"id_Equipment": 16777277,
+										"MedianValue": 0,
+										"MinValue": 0,
+										"MeanValue": 0,
+										"MaxValue": 0
+									}
+								],
+								"schema": {
+									"id_AggOemParamValue": "bigint",
+									"SiteId": "int",
+									"SetId": "int",
+									"id_Equipment": "int",
+									"ConsumerId": "int",
+									"OemParamTypeId": "int",
+									"ReadTime": "int",
+									"MinValue": "double",
+									"MaxValue": "double",
+									"MeanValue": "double",
+									"MedianValue": "double",
+									"StdDevValue": "double",
+									"NumberOfSamples": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"id_AggOemParamValue"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de fact table ft_AggregatedOemParamValue"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"# Archivo final para la fact table\r\n",
+					"nombre_archivo_ft = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/ft_AggregatedOemParamValue.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/AGGREGATEDOEMPARAMVALUE_HIS.parquet'\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se renombran las columnas y se generan los id dimensionales\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format,to_utc_timestamp, current_timestamp\r\n",
+					"\r\n",
+					"df = df.withColumnRenamed(\"Id\",\"id_AggOemParamValue\").withColumnRenamed(\"EquipmentId\",\"id_Equipment\").withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\r\n",
+					"df = df.select(\"id_AggOemParamValue\",\"SiteId\",\"SetId\",\"id_Equipment\",\"ConsumerId\",\"OemParamTypeId\",\"ReadTime\",\"MinValue\",\"MaxValue\",\"MeanValue\",\"MedianValue\",\"StdDevValue\",\"NumberOfSamples\")\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df.write.mode(\"overwrite\").parquet(nombre_archivo_ft)"
+				],
+				"attachments": null,
+				"execution_count": 7
+			}
+		]
+	}
+}

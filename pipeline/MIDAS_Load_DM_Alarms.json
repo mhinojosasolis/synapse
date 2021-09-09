@@ -1,0 +1,33 @@
+{
+	"name": "MIDAS_Load_DM_Alarms",
+	"properties": {
+		"activities": [
+			{
+				"name": "Spark_Load_dm_Alarms",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Midas/Spark_Load_dm_Alarms"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Midas/Load Stage"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-09-08T21:58:52Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

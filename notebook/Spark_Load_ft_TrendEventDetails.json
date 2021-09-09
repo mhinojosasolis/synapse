@@ -1,0 +1,508 @@
+{
+	"name": "Spark_Load_ft_TrendEventDetails",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"5d69d08a-fef6-469f-8f82-19b231ab4dd1": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ALEJANDRO ANDRES VALDIVIA MARTINEZ",
+										"SiteId": 1,
+										"OperatorId": "6038665",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-07-01T23:09:34.023Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-07T00:05:48Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Nicolas Alejandro Zambrano Acevedo",
+										"SiteId": 1,
+										"OperatorId": "6148521",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-07-01T23:09:34.023Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-07T18:01:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Fernando Jesus Gonzalez Nuñez",
+										"SiteId": 1,
+										"OperatorId": "6139316",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-07-01T23:09:34.023Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-13T20:55:10Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "DANIEL JAIME CORTES CONTRERAS",
+										"SiteId": 1,
+										"OperatorId": "6076186",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-07-01T23:09:34.023Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-17T13:51:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ARIEL FABIAN RENE VILLA CARRASCO",
+										"SiteId": 1,
+										"OperatorId": "6112273",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-07-01T23:09:34.023Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-20T22:20:55Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									}
+								],
+								"schema": {
+									"EquipmentId": "int",
+									"TrendId": "int",
+									"SiteId": "int",
+									"EquipmentName": "string",
+									"ModelId": "int",
+									"ModelName": "string",
+									"CreateTime": "int",
+									"UdfExtLevel": "int",
+									"UdfExtLevel2": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"EventName": "string",
+									"GpsLocation": "string",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"TrendId"
+									],
+									"seriesFieldKeys": [
+										"EquipmentId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"de5c0b4f-a5d3-4889-acde-d09b60b18b5a": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6038665",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-07T00:05:48Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "def31ef7887c27dbc389bd6df4050a4e0a424830",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6148521",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-07T18:01:57Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "d0df9fa68e19d5d6fdf22a9f946e3e2d90594bd6",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6139316",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-13T20:55:10Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "3fa64fb7319f51a2138a4391d0b0086c1b907744",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6076186",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-17T13:51:57Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "41e6a81cbb56a631ae1e45332ec8811286e2d3f0",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6112273",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-20T22:20:55Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "7dcb77669c4e0f762489913b8cdea60e0b996593",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6055291",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-23T21:45:21Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "41e5e6e4b72c57637c6338e06272212c218c1963",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6080983",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-24T02:01:19Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "96cbda790197ec42237e26a229dbbd443fbf12df",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6038669",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-26T12:04:38Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "97ff4abd8dc8f11a4c1a96dfe8f8fa3b29ef898b",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6055287",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-03-29T10:45:31Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "249b6d4f939de7ac0124cebe8a2c925da204f738",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"BatchDate": "2021-07-07T23:30:43.916Z",
+										"SiteId": 1,
+										"id_Operator": "6139316",
+										"TrendId": 16781678,
+										"id_Equipment": 16777230,
+										"UdfExtLevel2": 2,
+										"id_Model": 16777217,
+										"CreateTime": "2021-04-06T10:55:36Z",
+										"UdfExtLevel": 1,
+										"id_TrendEventDet": "642ee26b6fb7d5b891fdf66cb1449dd4e4a53a22",
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									}
+								],
+								"schema": {
+									"id_TrendEventDet": "string",
+									"id_Equipment": "int",
+									"TrendId": "int",
+									"SiteId": "int",
+									"id_Model": "int",
+									"CreateTime": "int",
+									"UdfExtLevel": "int",
+									"UdfExtLevel2": "int",
+									"id_Operator": "string",
+									"EventName": "string",
+									"GpsLocation": "string",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"id_TrendEventDet"
+									],
+									"seriesFieldKeys": [
+										"id_Equipment"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión ft_TrendEventDetails"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"# Archivo final para la fact table\r\n",
+					"nombre_archivo_ft = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/ft_TrendEventDetails.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/REPORTING_TRENDEVENTDETAILS_HIS.parquet'\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(5))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"cols"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se crea la clave de la fact, se renombran las columnas y se selccionas las columnas definitivas\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format,to_utc_timestamp, current_timestamp\r\n",
+					"\r\n",
+					"df = df.withColumn(\"id_TrendEventDet\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"     .withColumnRenamed(\"EquipmentId\",\"id_Equipment\").withColumnRenamed(\"ModelId\",\"id_Model\")\\\r\n",
+					"     .withColumnRenamed(\"OperatorId\",\"id_Operator\").withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\r\n",
+					"df = df.select(\"id_TrendEventDet\",\"id_Equipment\",\"TrendId\",\"SiteId\",\"id_Model\",\"CreateTime\",\"UdfExtLevel\",\"UdfExtLevel2\",\"id_Operator\",\"EventName\",\"GpsLocation\",\"BatchDate\")\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df.write.mode(\"overwrite\").parquet(nombre_archivo_ft)"
+				],
+				"attachments": null,
+				"execution_count": 12
+			}
+		]
+	}
+}

@@ -1,0 +1,197 @@
+{
+	"name": "Extracion_Minecare_Todo_Historico",
+	"properties": {
+		"activities": [
+			{
+				"name": "Extraccion_Minecare_AggregatedOemParamValue_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_AggregatedOemParamValue_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_EqmtModel_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_EqmtModel_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_EquipmentTrackHistory_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_EquipmentTrackHistory_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_NaturalOemParamValue_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_NaturalOemParamValue_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_NotificationDetails_Historico",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_NotificationDetails_Historico",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_OemEventSnapShotValue_Historico",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_OemEventSnapShotValue_Historico",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_OemEventValue-His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_OemEventValue-His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Extraccion_Minecare_Reporting_TrendEventDetails_His",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Minecare_Reporting_TrendEventDetails_His",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"historico_desde": {
+							"value": "@{adddays(utcnow(),-30,'yyyy-MM-dd')}",
+							"type": "Expression"
+						},
+						"historico_hasta": {
+							"value": "@{adddays(utcnow(),-1,'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Minecare"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-17T21:52:47Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

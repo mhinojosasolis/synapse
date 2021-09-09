@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sql--mbrs-synapse-dev-cym-001",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001",
+		"groupId": "sql",
+		"fqdns": [
+			"mbrs-synapse-dev-cym-001.7fb33b29-6b74-449e-b027-9e6d6882bd12.sql.azuresynapse.net"
+		]
+	}
+}

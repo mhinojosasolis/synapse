@@ -1,0 +1,7 @@
+{
+	"name": "devdfselfirsyncym",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "SelftHosted IR for Synapse\""
+	}
+}

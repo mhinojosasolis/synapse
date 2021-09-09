@@ -1,0 +1,234 @@
+{
+	"name": "Spark_Load_ft_AggregatedOemParamValue_Delta",
+	"properties": {
+		"folder": {
+			"name": "Minecare/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga ft_AggregatedOemParamValue en formato delta"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\r\n",
+					"from notebookutils import mssparkutils\r\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta historica antes de crear la vista temporal se eliminan duplicado segun la clave\r\n",
+					"# se agregan los campos de fecha de insert y update al data frame\r\n",
+					"from pyspark.sql.functions import to_utc_timestamp, current_timestamp, lit\r\n",
+					"import dateutil.parser\r\n",
+					"\r\n",
+					"nombre_tabla = 'ft_AggregatedOemParamValue'\r\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/minecare/delta/'+ nombre_tabla\r\n",
+					"\r\n",
+					"sql_command = f'''select id as Id_AggOemParamValue\r\n",
+					"                ,SiteId\r\n",
+					"                ,SetId\r\n",
+					"                ,EquipmentId as id_Equipment\r\n",
+					"                ,ConsumerId\r\n",
+					"                ,OemParamTypeId\r\n",
+					"                ,ReadTime\r\n",
+					"                ,MinValue\r\n",
+					"                ,MaxValue\r\n",
+					"                ,MeanValue\r\n",
+					"                ,MedianValue\r\n",
+					"                ,StdDevValue\r\n",
+					"                ,NumberOfSamples\r\n",
+					"                ,Date_format(current_timestamp(),'yyyy-MM') as Month\r\n",
+					"                from delta.aggregatedoemparamvalue_historico\r\n",
+					"                    '''\r\n",
+					"                    \r\n",
+					"new_data = spark.sql(sql_command).dropDuplicates(subset=[\"Id_AggOemParamValue\"])\r\n",
+					"updatetime = dateutil.parser.parse('1901-01-01')\r\n",
+					"new_data = new_data.dropna(how=\"all\").withColumn(\"UpdateDate\", to_utc_timestamp(lit(updatetime),\"UTC\")).withColumn(\"InsertDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))               \r\n",
+					"new_data.createOrReplaceTempView(nombre_tabla)"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\r\n",
+					"\r\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\r\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\r\n",
+					"else:\r\n",
+					"    new_data.write.format(\"delta\").partitionBy('Month').save(table_delta_path)\r\n",
+					"    spark.sql(f''' create table minecare.{nombre_tabla} using delta location '{table_delta_path}' ''')\r\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\r\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se realiza el merge, en el caso de update se debe actulizar el campo de fecha de update\r\n",
+					"merge_command = \"historico.Id_AggOemParamValue = new_data.Id_AggOemParamValue\"\r\n",
+					"\r\n",
+					"deltaTable.alias(\"historico\").merge(\r\n",
+					"    new_data.alias(\"new_data\"),\r\n",
+					"    merge_command)\\\r\n",
+					"    .whenMatchedUpdate(\\\r\n",
+					"        set = {\\\r\n",
+					"        #\"Id_AggOemParamValue\": \"new_data.Id_AggOemParamValue\",\\#\r\n",
+					"        \"SiteId\": \"new_data.SiteId\",\\\r\n",
+					"        \"SetId\": \"new_data.SetId\",\\\r\n",
+					"        \"id_Equipment\": \"new_data.id_Equipment\",\\\r\n",
+					"        \"ConsumerId\": \"new_data.ConsumerId\",\\\r\n",
+					"        \"OemParamTypeId\": \"new_data.OemParamTypeId\",\\\r\n",
+					"        \"ReadTime\": \"new_data.ReadTime\",\\\r\n",
+					"        \"MinValue\": \"new_data.MinValue\",\\\r\n",
+					"        \"MaxValue\": \"new_data.MaxValue\",\\\r\n",
+					"        \"MeanValue\": \"new_data.MeanValue\",\\\r\n",
+					"        \"MedianValue\": \"new_data.MedianValue\",\\\r\n",
+					"        \"StdDevValue\": \"new_data.StdDevValue\",\\\r\n",
+					"        \"NumberOfSamples\": \"new_data.NumberOfSamples\",\\\r\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\r\n",
+					"        }\\\r\n",
+					"                        )\\\r\n",
+					"    .whenNotMatchedInsertAll()\\\r\n",
+					"    .execute()\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

@@ -1,0 +1,341 @@
+{
+	"name": "Spark_Load_ft_ShiftLoads_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión ft_ShiftLoads"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta historica antes de crear la vista temporal se eliminan duplicado segun la clave\r\n",
+					"# se agregan los campos de fecha de insert y update al data frame\r\n",
+					"from pyspark.sql.functions import to_utc_timestamp, current_timestamp, lit\r\n",
+					"import dateutil.parser\r\n",
+					"\r\n",
+					"nombre_tabla = 'ft_ShiftLoads'\r\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\r\n",
+					"\r\n",
+					"sql_command = f'''SELECT\r\n",
+					"                         Id as id_Loads\r\n",
+					"                        ,ShiftId as id_Shift\r\n",
+					"                        ,sha1(Crew) as id_Crew\r\n",
+					"                        ,Truckid as id_Truck\r\n",
+					"                        ,Excavid as id_Excav\r\n",
+					"                        ,sha1(cast(GradeId as string)) as id_Grade\r\n",
+					"                        ,sha1(Phase) as id_Phase\r\n",
+					"                        ,sha1(Region) as id_Region\r\n",
+					"                        ,LoadLocationId as id_LoadLocation\r\n",
+					"                        ,PrevDumpId\r\n",
+					"                        ,NextShiftDumpId\r\n",
+					"                        ,Tons\r\n",
+					"                        ,TruckSize\r\n",
+					"                        ,LoadfactorValue\r\n",
+					"                        ,Tonnage\r\n",
+					"                        ,ExpectedEmptyTravelDuration\r\n",
+					"                        ,EmptyTravelDuration\r\n",
+					"                        ,FullTimestamp\r\n",
+					"                        ,ArriveTimestamp\r\n",
+					"                        ,QueueTime\r\n",
+					"                        ,SpottingTimestamp\r\n",
+					"                        ,SpotTime\r\n",
+					"                        ,LoadingTimestamp\r\n",
+					"                        ,LoadingTime\r\n",
+					"                        ,ShovelIdleTime\r\n",
+					"                        ,TruckIdleTime\r\n",
+					"                        ,EquivalentFlatHaulDistance\r\n",
+					"                        ,TotalDistance\r\n",
+					"                        ,AssignTimestamp\r\n",
+					"                        ,MaterialTypeID as id_MaterialType\r\n",
+					"                        ,Material\r\n",
+					"                        ,LoadIdx\r\n",
+					"                        ,IsOre\r\n",
+					"                        ,IsWaste\r\n",
+					"                        ,IsTrammed\r\n",
+					"                        ,IsExtraload\r\n",
+					"                        ,sha1(cast(TruckOperatorId as string)) as id_TruckOperator\r\n",
+					"                        ,TruckOperatorId\r\n",
+					"                        ,sha1(cast(ExcavOperatorId as string)) as id_ExcavOperator\r\n",
+					"                        ,ExcavOperatorId\r\n",
+					"                        ,FieldGpsxtkl\r\n",
+					"                        ,FieldGpsytkl\r\n",
+					"                        ,FieldGpsxex\r\n",
+					"                        ,FieldGpsyex\r\n",
+					"                        ,hos\r\n",
+					"                        ,ShiftHour\r\n",
+					"                        ,FieldDlock\r\n",
+					"                        ,FieldElock\r\n",
+					"                        ,FieldEdlock\r\n",
+					"                        ,FieldRlock\r\n",
+					"                        ,FieldPvs3id\r\n",
+					"                        ,FieldFuelremain\r\n",
+					"                        ,Date_format(current_timestamp(),'yyyy-MM') as Month\r\n",
+					"                        ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\r\n",
+					"                        ,current_timestamp() InsertDate\r\n",
+					"                        FROM delta.dlb_shiftloads_historico\r\n",
+					"                        where cdc >= ifnull('{cdc}','1900-01-01')\r\n",
+					"                    '''\r\n",
+					"                    \r\n",
+					"new_data = spark.sql(sql_command).dropDuplicates(subset=[\"id_Loads\"])\r\n",
+					"updatetime = dateutil.parser.parse('1901-01-01')\r\n",
+					"new_data = new_data.withColumn(\"UpdateDate\", to_utc_timestamp(lit(updatetime),\"UTC\")).withColumn(\"InsertDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))               \r\n",
+					"new_data.createOrReplaceTempView(nombre_tabla)\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").partitionBy('Month').save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se realiza el merge, en el caso de update se debe actulizar el campo de fecha de update\n",
+					"merge_command = \"historico.id_Loads = new_data.id_Loads\"\n",
+					"\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"id_Shift\": \"new_data.id_Shift\",\\\n",
+					"        \"id_Crew\": \"new_data.id_Crew\",\\\n",
+					"        \"id_Truck\": \"new_data.id_Truck\",\\\n",
+					"        \"id_Excav\": \"new_data.id_Excav\",\\\n",
+					"        \"id_Grade\": \"new_data.id_Grade\",\\\n",
+					"        \"id_Phase\": \"new_data.id_Phase\",\\\n",
+					"        \"id_Region\": \"new_data.id_Region\",\\\n",
+					"        \"id_LoadLocation\": \"new_data.id_LoadLocation\",\\\n",
+					"        \"PrevDumpId\": \"new_data.PrevDumpId\",\\\n",
+					"        \"NextShiftDumpId\": \"new_data.NextShiftDumpId\",\\\n",
+					"        \"Tons\": \"new_data.Tons\",\\\n",
+					"        \"TruckSize\": \"new_data.TruckSize\",\\\n",
+					"        \"LoadfactorValue\": \"new_data.LoadfactorValue\",\\\n",
+					"        \"Tonnage\": \"new_data.Tonnage\",\\\n",
+					"        \"ExpectedEmptyTravelDuration\": \"new_data.ExpectedEmptyTravelDuration\",\\\n",
+					"        \"EmptyTravelDuration\": \"new_data.EmptyTravelDuration\",\\\n",
+					"        \"FullTimestamp\": \"new_data.FullTimestamp\",\\\n",
+					"        \"ArriveTimestamp\": \"new_data.ArriveTimestamp\",\\\n",
+					"        \"QueueTime\": \"new_data.QueueTime\",\\\n",
+					"        \"SpottingTimestamp\": \"new_data.SpottingTimestamp\",\\\n",
+					"        \"SpotTime\": \"new_data.SpotTime\",\\\n",
+					"        \"LoadingTimestamp\": \"new_data.LoadingTimestamp\",\\\n",
+					"        \"LoadingTime\": \"new_data.LoadingTime\",\\\n",
+					"        \"ShovelIdleTime\": \"new_data.ShovelIdleTime\",\\\n",
+					"        \"TruckIdleTime\": \"new_data.TruckIdleTime\",\\\n",
+					"        \"EquivalentFlatHaulDistance\": \"new_data.EquivalentFlatHaulDistance\",\\\n",
+					"        \"TotalDistance\": \"new_data.TotalDistance\",\\\n",
+					"        \"AssignTimestamp\": \"new_data.AssignTimestamp\",\\\n",
+					"        \"id_MaterialType\": \"new_data.id_MaterialType\",\\\n",
+					"        \"Material\": \"new_data.Material\",\\\n",
+					"        \"LoadIdx\": \"new_data.LoadIdx\",\\\n",
+					"        \"IsOre\": \"new_data.IsOre\",\\\n",
+					"        \"IsWaste\": \"new_data.IsWaste\",\\\n",
+					"        \"IsTrammed\": \"new_data.IsTrammed\",\\\n",
+					"        \"IsExtraload\": \"new_data.IsExtraload\",\\\n",
+					"        \"id_TruckOperator\": \"new_data.id_TruckOperator\",\\\n",
+					"        \"TruckOperatorId\": \"new_data.TruckOperatorId\",\\\n",
+					"        \"id_ExcavOperator\": \"new_data.id_ExcavOperator\",\\\n",
+					"        \"ExcavOperatorId\": \"new_data.ExcavOperatorId\",\\\n",
+					"        \"FieldGpsxtkl\": \"new_data.FieldGpsxtkl\",\\\n",
+					"        \"FieldGpsytkl\": \"new_data.FieldGpsytkl\",\\\n",
+					"        \"FieldGpsxex\": \"new_data.FieldGpsxex\",\\\n",
+					"        \"FieldGpsyex\": \"new_data.FieldGpsyex\",\\\n",
+					"        \"hos\": \"new_data.hos\",\\\n",
+					"        \"ShiftHour\": \"new_data.ShiftHour\",\\\n",
+					"        \"FieldDlock\": \"new_data.FieldDlock\",\\\n",
+					"        \"FieldElock\": \"new_data.FieldElock\",\\\n",
+					"        \"FieldEdlock\": \"new_data.FieldEdlock\",\\\n",
+					"        \"FieldRlock\": \"new_data.FieldRlock\",\\\n",
+					"        \"FieldPvs3id\": \"new_data.FieldPvs3id\",\\\n",
+					"        \"FieldFuelremain\": \"new_data.FieldFuelremain\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 13
+			}
+		]
+	}
+}

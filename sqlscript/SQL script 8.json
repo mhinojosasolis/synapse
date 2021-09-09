@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 8",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nALTER PROC [DM_Dispatch].[sp_load_dm_crew] @p_cdc DATETIME2 AS\nBEGIN\n\nTRUNCATE TABLE [DM_Dispatch].[DM_CREW];\n\nINSERT INTO [DM_Dispatch].[DM_CREW]\n           ([id_Crew]\n           ,[Crew]\n           ,[UpdateDate]\n           ,[InsertDate])\n\nSELECT [id_Crew]\n      ,[Crew]\n      ,[UpdateDate]\n      ,[InsertDate]\n  FROM [STG_Dispatch].[DM_CREW]\n  where UpdateDate >= @p_cdc\n\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

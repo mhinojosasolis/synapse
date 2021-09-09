@@ -1,0 +1,287 @@
+{
+	"name": "NotificationDetailsHistory_Historico_Delta",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga de datos incrementales de tabla de origen NotificationDetailsHistory de Minecare"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\n",
+					"from notebookutils import mssparkutils\n",
+					"    \n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Seteo Variables\n",
+					"nombre_archivo_origen = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/MINECARE_NOTIFICATIONDETAILS_TEMP.parquet'\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/NOTIFICATIODETAILS_HIS.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#Cargo el archivo nuevo y el archivo historico en dataframes\r\n",
+					"new_data = spark.read.load(nombre_archivo_origen, format='parquet')\r\n",
+					"\r\n",
+					"\r\n",
+					"#Elimino columnas ExtractDate y checksum\r\n",
+					"cols = new_data.columns\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"#Agrego columnas checksum y PartitionDate  \r\n",
+					"\r\n",
+					"new_data = new_data.withColumn(\"checksum\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"        .withColumn(\"PartitionDate\", concat_ws('-', date_format(col('ReadTime'), \"yyyy\"), date_format(col('ReadTime'), \"MM\")))\r\n",
+					"\r\n",
+					"# creamos vistas temporales para trabajar con las novedades con SQL\r\n",
+					"new_data.createOrReplaceTempView('new_data') \r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Seteo Fecha maxima y minima de los nuevos datos\n",
+					"sql_command= \"select max(ReadTime) fecha_max, min(ReadTime) fecha_min from new_data\"\n",
+					"df_fechas = spark.sql(sql_command)\n",
+					"fecha_max = df_fechas.collect()[0]['fecha_max']\n",
+					"fecha_max = str(fecha_max)[0:10]\n",
+					"fecha_min = df_fechas.collect()[0]['fecha_min']\n",
+					"fecha_min = str(fecha_min)[0:10]"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\n",
+					"select count(*),max(ReadTime), min(ReadTime) from delta.NOTIFICATIODETAILS_HISTORICO"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"from delta.tables import *\n",
+					"table_name= 'NOTIFICATIODETAILS_HISTORICO'\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/delta/' + table_name +'/'\n",
+					"deltaTable = DeltaTable.forPath(spark, table_data_path)"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"\n",
+					"deltaTable.alias(\"NOTIFICATIODETAILS_HISTORICO\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    f'''NOTIFICATIODETAILS_HISTORICO.NotificationId = new_data.NotificationId \\\n",
+					"    and NOTIFICATIODETAILS_HISTORICO.EventId = new_data.EventId \\\n",
+					"    and NOTIFICATIODETAILS_HISTORICO.EquipmentId = new_data.EquipmentId \\\n",
+					"    and NOTIFICATIODETAILS_HISTORICO.ReadTime = new_data.ReadTime \\\n",
+					"    and NOTIFICATIODETAILS_HISTORICO.ReadTime  >= '{fecha_min}'\n",
+					"    and NOTIFICATIODETAILS_HISTORICO.ReadTime  <= '{fecha_max}' ''')\\\n",
+					"    .whenMatchedUpdateAll()\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()"
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\n",
+					"select count(*),max(ReadTime), min(ReadTime) from delta.NOTIFICATIODETAILS_HISTORICO"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

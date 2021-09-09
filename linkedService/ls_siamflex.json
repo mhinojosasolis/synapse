@@ -1,0 +1,16 @@
+{
+	"name": "ls_siamflex",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MariaDB",
+		"typeProperties": {
+			"connectionString": "server=10.187.0.127;port=3306;database=alb_siamflex_operativa;uid=alblectura",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZjRjYzk4OS03ZTQxLTRlNTUtOTAzOS03ZDA5ZDdmMmMzZjciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "devdfselfirsyncym",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

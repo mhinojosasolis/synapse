@@ -1,0 +1,20 @@
+{
+	"name": "DS_MIDAS_TABLES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Midas",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Midas"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "AlarmDefinitionTable"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

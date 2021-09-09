@@ -1,0 +1,448 @@
+{
+	"name": "PySpark DLB_KPIS_HOUR folder",
+	"properties": {
+		"folder": {
+			"name": "dispatch/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"08586c92-1a69-4cfd-8aa9-30f71dbcef63": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 3600,
+										"Hos": 3,
+										"T300": 0,
+										"checksum": "5693bc8af9b624bb1b4ca1d75f9139f221d4dfcf",
+										"L200": 3600,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "Bulldozer",
+										"Eqmt": "ICV732",
+										"L000": 3600,
+										"P100": 0,
+										"EqmtType": "Otros",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 0,
+										"Hos": 2,
+										"T300": 0,
+										"checksum": "fa5cc6925324db65d6896199536986ad369191ba",
+										"L200": 0,
+										"D100": 3600,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 3600,
+										"Unit": "Excavadora",
+										"Eqmt": "RET04",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "CAT 385C",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 3600,
+										"T200": 3600,
+										"Hos": 0,
+										"T300": 3600,
+										"checksum": "1126db18ffa75d78e43754d636675b76d85c573b",
+										"L200": 0,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "Sala Chancado",
+										"Eqmt": "PRIM 2-1",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "CHANC PRIMARIO",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 3600,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 0,
+										"Hos": 4,
+										"T300": 0,
+										"checksum": "6c09411c39db48aae939dcabcf928f148b80d931",
+										"L200": 0,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 3600,
+										"Unit": "Camion",
+										"Eqmt": "CDH72",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "KOM 930E",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 3600,
+										"Hos": 5,
+										"T300": 0,
+										"checksum": "904432c105e0604b8ec84722547ed0ee8c13a69b",
+										"L200": 3600,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "Rodillo",
+										"Eqmt": "RCC41",
+										"L000": 3600,
+										"P100": 0,
+										"EqmtType": "CAT 533D",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 0,
+										"Hos": 6,
+										"T300": 0,
+										"checksum": "d58f9cbb2f21e5526ad3e1bd5035310d640005ca",
+										"L200": 0,
+										"D100": 3600,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 3600,
+										"Unit": "CAMIONETA",
+										"Eqmt": "OP-23",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "Otros",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 1535,
+										"T200": 3600,
+										"Hos": 6,
+										"T300": 1535,
+										"checksum": "fe75bdf4c3432eebd248a70926cde7ec93e8ac4e",
+										"L200": 2065,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "Wheeldozer",
+										"Eqmt": "WDC05",
+										"L000": 2065,
+										"P100": 0,
+										"EqmtType": "CAT 854K",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 3600,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 0,
+										"Hos": 2,
+										"T300": 0,
+										"checksum": "51bdd532c27c0c19fdda891a8ac8cfff450d91d4",
+										"L200": 0,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 3600,
+										"Unit": "Camion",
+										"Eqmt": "CDH91",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "KOM 930E",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 0,
+										"T200": 3600,
+										"Hos": 1,
+										"T300": 0,
+										"checksum": "bfb355b5654c28c71b52b480689cc339059920e8",
+										"L200": 3600,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "CAMIONETA",
+										"Eqmt": "OP-62",
+										"L000": 3600,
+										"P100": 0,
+										"EqmtType": "Otros",
+										"ShiftId": 210517001,
+										"N100": 0
+									},
+									{
+										"D200": 0,
+										"T000": 3600,
+										"batch_date_utc": "2021-05-27T18:44:08.842Z",
+										"T100": 3600,
+										"L100": 0,
+										"N000": 0,
+										"P200": 3600,
+										"T200": 3600,
+										"Hos": 5,
+										"T300": 3600,
+										"checksum": "47efb2e3f08d1257baef9c27ebe75c320f2aeaf5",
+										"L200": 0,
+										"D100": 0,
+										"D300": 0,
+										"N200": 0,
+										"L300": 0,
+										"D000": 0,
+										"Unit": "Camion",
+										"Eqmt": "CDH49",
+										"L000": 0,
+										"P100": 0,
+										"EqmtType": "KOM 930E",
+										"ShiftId": 210517001,
+										"N100": 0
+									}
+								],
+								"schema": {
+									"Eqmt": "string",
+									"EqmtType": "string",
+									"Unit": "string",
+									"Hos": "int",
+									"P200": "bigint",
+									"P100": "bigint",
+									"L300": "bigint",
+									"L200": "bigint",
+									"L100": "bigint",
+									"D300": "bigint",
+									"D200": "bigint",
+									"D100": "bigint",
+									"N200": "bigint",
+									"N100": "bigint",
+									"T300": "bigint",
+									"T200": "bigint",
+									"T100": "bigint",
+									"T000": "bigint",
+									"L000": "bigint",
+									"D000": "bigint",
+									"N000": "bigint",
+									"batch_date_utc": "int",
+									"checksum": "string",
+									"ShiftId": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"Eqmt"
+									],
+									"seriesFieldKeys": [
+										"Hos"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"#df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/DLB_KPIS_HOUR_TEMP.parquet', format='parquet')\r\n",
+					"df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/DLB_KPIS_HOUR.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.count()"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.columns"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df_hist"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

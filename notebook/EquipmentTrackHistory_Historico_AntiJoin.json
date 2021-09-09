@@ -1,0 +1,344 @@
+{
+	"name": "EquipmentTrackHistory_Historico_AntiJoin",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"15de5ac6-49db-4dd2-9650-330751a9b50b": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [],
+								"schema": {
+									"NotificationID": "bigint",
+									"EventId": "bigint",
+									"EquipmentId": "int",
+									"ReadTime": "int",
+									"SiteId": "int",
+									"ModelName": "string",
+									"ModelId": "int",
+									"EquipmentName": "string",
+									"GroupId": "int",
+									"OemEventId": "int",
+									"OemEvent": "string",
+									"OemId": "string",
+									"Interface": "string",
+									"InterfaceId": "int",
+									"Level": "int",
+									"NLevel": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"GPSLocation": "string",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EventId"
+									],
+									"seriesFieldKeys": [
+										"NotificationID"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"350b5342-b560-4ea6-b9b7-4976ecf9d19d": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga de datos incrementales de tabla de origen NotificationDetailsHistory de Minecare"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\n",
+					"from notebookutils import mssparkutils"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"nombre_archivo_origen = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/MINECARE_EQUIPMENTTRACKHISTORY_TEMP.parquet'\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#Cargo el archivo nuevo y el archivo historico en dataframes\r\n",
+					"new = spark.read.load(nombre_archivo_origen, format='parquet')\r\n",
+					"hist = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"\r\n",
+					"\r\n",
+					"#Elimino columnas ExtractDate y checksum\r\n",
+					"cols = new.columns\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"#Agrego columnas checksum y PartitionDate  \r\n",
+					"\r\n",
+					"new = new.withColumn(\"checksum\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"        .withColumn(\"PartitionDate\", concat_ws('-', date_format(col('ReadTime'), \"yyyy\"), date_format(col('ReadTime'), \"MM\")))\r\n",
+					"\r\n",
+					"# creamos vistas temporales para trabajar con las novedades con SQL\r\n",
+					"new.createOrReplaceTempView('new')\r\n",
+					"hist.createOrReplaceTempView('hist')\r\n",
+					"\r\n",
+					"#cacheamos las vistas \r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Realizo Antijoin para obtener los nuevos registros\n",
+					"df_insert = new.join(hist, [\"Id\"], \"leftanti\")"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#Muestro los nuevos registros\n",
+					"display(df_insert)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# inserto los nuevos datos en el archivo parquet, con modo append\n",
+					"df_insert.write.partitionBy(\"PartitionDate\").mode(\"append\").parquet(nombre_archivo_historico)"
+				],
+				"attachments": null,
+				"execution_count": 87
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#Checkeo que se hayan insertado (No debe devolver registros)\n",
+					"display(df_insert)"
+				],
+				"attachments": null,
+				"execution_count": 88
+			}
+		]
+	}
+}

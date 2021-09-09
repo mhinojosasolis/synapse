@@ -1,0 +1,114 @@
+{
+	"name": "DISPATCH_DLB_KPIS_HOUR_TEMP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/Incremental"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DLB_KPIS_HOUR_TEMP.parquet",
+				"folderPath": "dispatch/temp",
+				"fileSystem": "devraw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ShiftId",
+				"type": "INT64"
+			},
+			{
+				"name": "Eqmt",
+				"type": "UTF8"
+			},
+			{
+				"name": "EqmtType",
+				"type": "UTF8"
+			},
+			{
+				"name": "Unit",
+				"type": "UTF8"
+			},
+			{
+				"name": "Hos",
+				"type": "INT32"
+			},
+			{
+				"name": "P200",
+				"type": "INT64"
+			},
+			{
+				"name": "P100",
+				"type": "INT64"
+			},
+			{
+				"name": "L300",
+				"type": "INT64"
+			},
+			{
+				"name": "L200",
+				"type": "INT64"
+			},
+			{
+				"name": "L100",
+				"type": "INT64"
+			},
+			{
+				"name": "D300",
+				"type": "INT64"
+			},
+			{
+				"name": "D200",
+				"type": "INT64"
+			},
+			{
+				"name": "D100",
+				"type": "INT64"
+			},
+			{
+				"name": "N200",
+				"type": "INT64"
+			},
+			{
+				"name": "N100",
+				"type": "INT64"
+			},
+			{
+				"name": "T300",
+				"type": "INT64"
+			},
+			{
+				"name": "T200",
+				"type": "INT64"
+			},
+			{
+				"name": "T100",
+				"type": "INT64"
+			},
+			{
+				"name": "T000",
+				"type": "INT64"
+			},
+			{
+				"name": "L000",
+				"type": "INT64"
+			},
+			{
+				"name": "D000",
+				"type": "INT64"
+			},
+			{
+				"name": "N000",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

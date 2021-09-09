@@ -1,0 +1,109 @@
+{
+	"name": "NOTIFICATIONDETAILS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "NotificationID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "EventId",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ModelName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ModelId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EquipmentName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GroupId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemEventId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemEvent",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OemId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Interface",
+				"type": "nvarchar"
+			},
+			{
+				"name": "InterfaceId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Level",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NLevel",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReadTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OperatorId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OperatorName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GPSLocation",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Reporting",
+			"table": "NotificationDetails"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "SQL_STG_Minecare_bulk_load_ft_NotificationDetails",
+	"properties": {
+		"folder": {
+			"name": "Synapse SQL"
+		},
+		"content": {
+			"query": "ALTER PROC STG_Minecare.bulk_load_ft_NotificationDetails\nAS\nBEGIN\n\nTRUNCATE TABLE STG_Minecare.ft_NotificationDetails\n\nCOPY INTO STG_Minecare.ft_NotificationDetails\n(NotificationID 1, SiteId 2, EventId 3, id_Model 4, id_Equipment 5, GroupId 6, id_OemEvent 7, id_interface 8, Level 9, NLevel 10, ReadTime 11, OperatorId 12, GPSLocation 13, UpdateDate 14, InsertDate 15)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/ft_NotificationDetails'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n)\nEND\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.ft_NotificationDetails\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

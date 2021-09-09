@@ -1,0 +1,127 @@
+{
+	"name": "Extraccion_Minecare_EquipmentUnit",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data to EquipmentUnit",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT [Id]\n      ,[SiteId]\n      ,[UpdateTime]\n      ,[RecordStatus]\n      ,[ModelId]\n      ,[GroupId]\n      ,[FleetId]\n      ,[CategoryId]\n      ,[Name]\n      ,[SerialNo]\n      ,[ModelNo]\n      ,[GrossWeight]\n      ,[EngineManufacturer1]\n      ,[EngineSerialNo1]\n      ,[EngineManufacturer2]\n      ,[EngineSerialNo2]\n      ,[Tonnage]\n      ,[Volume]\n      ,[Param1]\n      ,[Param2]\n      ,[Photo]\n  FROM [Minecare267].[dbo].[EquipmentUnit]",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "EQUIPMENTUNIT",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "MINECARE_RAWTEMP_PARAMETRIZADO",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "@{variables('v_nombre_tabla')}_TEMP.parquet"
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "v_nombre_tabla",
+					"value": "EQUIPMENTUNIT"
+				}
+			},
+			{
+				"name": "Insert_Parquet_to_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data to EquipmentUnit",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Common_Notebooks/Insert_Parquet_to_Delta",
+					"baseParameters": {
+						"p_nombre_tabla": {
+							"value": "@variables('v_nombre_tabla')",
+							"type": "Expression"
+						},
+						"p_tipo_carga": "INCREMENTAL",
+						"p_origen": "MINECARE"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"variables": {
+			"v_nombre_tabla": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Minecare/Incremental"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-13T21:47:24Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

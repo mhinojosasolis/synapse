@@ -1,0 +1,17 @@
+{
+	"name": "DM_VitalSigns etl_log",
+	"properties": {
+		"content": {
+			"query": "SELECT [table_name]\n,[indicador_id]\n,[status]\n,[insert_date]\n FROM [DM_VitalSigns].[etl_log]\n WHERE insert_date >= '2021-09-01 00:00'",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

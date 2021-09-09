@@ -1,0 +1,61 @@
+{
+	"name": "OEMEVENTVALUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "Id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemEventTypeId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReadTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EventCode",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "FloatValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "GpsLocation",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OemEventValue"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

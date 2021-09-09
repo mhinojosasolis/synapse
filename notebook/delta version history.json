@@ -1,0 +1,498 @@
+{
+	"name": "delta version history",
+	"properties": {
+		"folder": {
+			"name": "pruebas"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"af80f5cd-33c2-4915-9302-58ca54ac2159": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"timestamp": "2021-06-29T22:40:36Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "27617",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "9661",
+											"numTargetRowsUpdated": "17722",
+											"numOutputRows": "55000",
+											"numSourceRows": "27383",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new_data.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new_data.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new_data.`EquipmentId`)) AND (((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new_data.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` >= CAST('2021-06-28' AS TIMESTAMP))) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` <= CAST('2021-06-29' AS TIMESTAMP))))"
+										},
+										"version": 8,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 7
+									},
+									{
+										"timestamp": "2021-06-29T21:36:11Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "17956",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "9661",
+											"numTargetRowsUpdated": "17722",
+											"numOutputRows": "45339",
+											"numSourceRows": "27383",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`)) AND (((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` > CAST('2021-06-22' AS TIMESTAMP))) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` <= CAST('2021-06-29' AS TIMESTAMP))))"
+										},
+										"version": 7,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 6
+									},
+									{
+										"timestamp": "2021-06-29T21:29:27Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "8504",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "9452",
+											"numTargetRowsUpdated": "17722",
+											"numOutputRows": "35678",
+											"numSourceRows": "27174",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`)) AND (((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` > CAST('2021-06-22' AS TIMESTAMP))) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` <= CAST('2021-06-29' AS TIMESTAMP))))"
+										},
+										"version": 6,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 5
+									},
+									{
+										"timestamp": "2021-06-29T21:01:23Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "0",
+											"numTargetRowsUpdated": "26226",
+											"numOutputRows": "26226",
+											"numSourceRows": "26226",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`)) AND ((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` > CAST('2021-06-22' AS TIMESTAMP))))"
+										},
+										"version": 5,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 4
+									},
+									{
+										"timestamp": "2021-06-29T20:28:04Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "0",
+											"numTargetRowsUpdated": "26226",
+											"numOutputRows": "26226",
+											"numSourceRows": "26226",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "(((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND ((NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`)))"
+										},
+										"version": 4,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 3
+									},
+									{
+										"timestamp": "2021-06-29T20:27:34Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "0",
+											"numTargetRowsUpdated": "26226",
+											"numOutputRows": "26226",
+											"numSourceRows": "26226",
+											"numTargetFilesRemoved": "200"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`)) AND ((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` > CAST('2021-06-22' AS TIMESTAMP))))"
+										},
+										"version": 3,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 2
+									},
+									{
+										"timestamp": "2021-06-29T20:26:50Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "26226",
+											"numTargetRowsUpdated": "0",
+											"numOutputRows": "26226",
+											"numSourceRows": "26226",
+											"numTargetFilesRemoved": "0"
+										},
+										"operationParameters": {
+											"predicate": "((((NOTIFICATIODETAILS_HISTORICO.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HISTORICO.`EventId` = new.`EventId`)) AND (NOTIFICATIODETAILS_HISTORICO.`EquipmentId` = new.`EquipmentId`)) AND ((NOTIFICATIODETAILS_HISTORICO.`ReadTime` = new.`ReadTime`) AND (NOTIFICATIODETAILS_HISTORICO.`ReadTime` > CAST('2021-06-22' AS TIMESTAMP))))"
+										},
+										"version": 2,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 1
+									},
+									{
+										"timestamp": "2021-06-25T22:40:02Z",
+										"operationMetrics": {
+											"numTargetRowsCopied": "0",
+											"numTargetRowsDeleted": "0",
+											"numTargetFilesAdded": "200",
+											"numTargetRowsInserted": "20095",
+											"numTargetRowsUpdated": "0",
+											"numOutputRows": "20095",
+											"numSourceRows": "20095",
+											"numTargetFilesRemoved": "0"
+										},
+										"operationParameters": {
+											"predicate": "(((NOTIFICATIODETAILS_HIS.`NotificationId` = new.`NotificationId`) AND (NOTIFICATIODETAILS_HIS.`EventId` = new.`EventId`)) AND ((NOTIFICATIODETAILS_HIS.`EquipmentId` = new.`EquipmentId`) AND (NOTIFICATIODETAILS_HIS.`ReadTime` = new.`ReadTime`)))"
+										},
+										"version": 1,
+										"operation": "MERGE",
+										"isBlindAppend": false,
+										"readVersion": 0
+									},
+									{
+										"timestamp": "2021-06-25T22:35:04Z",
+										"operationMetrics": {
+											"numFiles": "2",
+											"numOutputBytes": "139729515",
+											"numOutputRows": "1861011"
+										},
+										"operationParameters": {
+											"mode": "ErrorIfExists",
+											"partitionBy": "[]"
+										},
+										"version": 0,
+										"operation": "WRITE",
+										"isBlindAppend": true
+									}
+								],
+								"schema": {
+									"version": "bigint",
+									"timestamp": "int",
+									"userId": "string",
+									"userName": "string",
+									"operation": "string",
+									"operationParameters": "MapType(StringType,StringType,true)",
+									"job": "StructType(StructField(jobId,StringType,true), StructField(jobName,StringType,true), StructField(runId,StringType,true), StructField(jobOwnerId,StringType,true), StructField(triggerType,StringType,true))",
+									"notebook": "StructType(StructField(notebookId,StringType,true))",
+									"clusterId": "string",
+									"readVersion": "bigint",
+									"isolationLevel": "string",
+									"isBlindAppend": "boolean",
+									"operationMetrics": "MapType(StringType,StringType,true)"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"timestamp"
+									],
+									"seriesFieldKeys": [
+										"version"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"92878252-dcde-4e08-90c1-bcefbf9f02f0": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"max(ReadTime)": "2021-06-29T21:31:12.103Z"
+									}
+								],
+								"schema": {
+									"max(ReadTime)": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [],
+									"seriesFieldKeys": [
+										"max(ReadTime)"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"d702c3b6-7a70-4181-a83a-dfe4a11c30b8": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"max(ReadTime)": "2021-06-17T11:46:10.73Z"
+									}
+								],
+								"schema": {
+									"max(ReadTime)": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [],
+									"seriesFieldKeys": [
+										"max(ReadTime)"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"bcd9d9ff-b8a1-4876-b448-a0c004f62a4d": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"max(ReadTime)": "2021-06-29T20:13:04.877Z"
+									}
+								],
+								"schema": {
+									"max(ReadTime)": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [],
+									"seriesFieldKeys": [
+										"max(ReadTime)"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Delta Lake Synapse - Version History\r\n",
+					""
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"from delta.tables import *\r\n",
+					"table_name= 'NOTIFICATIODETAILS_HISTORICO'\r\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/delta/' + table_name +'/'\r\n",
+					"deltaTable = DeltaTable.forPath(spark, table_data_path)"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"display(deltaTable.history())"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, max as max_\r\n",
+					"\r\n",
+					"df = spark.read.format(\"delta\").load(table_data_path)\r\n",
+					"\r\n",
+					"display(df.withColumn(\"ReadTime\", col(\"ReadTime\").cast(\"timestamp\")).agg(max_(\"ReadTime\")))"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, max as max_\r\n",
+					"\r\n",
+					"df = spark.read.format(\"delta\").option(\"versionAsOf\", 0).load(table_data_path)\r\n",
+					"\r\n",
+					"display(df.withColumn(\"ReadTime\", col(\"ReadTime\").cast(\"timestamp\")).agg(max_(\"ReadTime\")))"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, max as max_\r\n",
+					"\r\n",
+					"df = spark.read.format(\"delta\").option(\"versionAsOf\", 2).load(table_data_path)\r\n",
+					"\r\n",
+					"display(df.withColumn(\"ReadTime\", col(\"ReadTime\").cast(\"timestamp\")).agg(max_(\"ReadTime\")))"
+				],
+				"attachments": null,
+				"execution_count": 7
+			}
+		]
+	}
+}

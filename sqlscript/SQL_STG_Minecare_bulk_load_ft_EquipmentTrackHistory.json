@@ -1,0 +1,17 @@
+{
+	"name": "SQL_STG_Minecare_bulk_load_ft_EquipmentTrackHistory",
+	"properties": {
+		"content": {
+			"query": "CREATE PROC STG_Minecare.bulk_load_ft_EquipmentTrackHistory\nAS\nBEGIN\n\nTRUNCATE TABLE STG_Minecare.ft_EquipmentTrackHistory\n\nCOPY INTO STG_Minecare.ft_EquipmentTrackHistory\n(Id_equipTrackHis 1, id_Equipment 2, SiteId 3, UpdateTime 4, ReadTime 5, id_Location 6, OperatorId 7, id_MaterialType 8, GpsLocation 9, id_LastAction 10, LastActionTime 11, id_NextAction 12, NextActionTime 13, ReasonCode 14, StatusId 15, UpdateDate 16, InsertDate 17)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/ft_EquipmentTrackHistory'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n)\nEND\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.ft_EquipmentTrackHistory\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "SIAMFLEX_RAWTEMP_PARAMETRIZADO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Siamflex"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "siamflex/temp",
+				"fileSystem": "devraw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

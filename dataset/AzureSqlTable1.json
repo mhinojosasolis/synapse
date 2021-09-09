@@ -1,0 +1,388 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "1-Examples"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "database_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "source_database_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "owner_sid",
+				"type": "varbinary"
+			},
+			{
+				"name": "create_date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "compatibility_level",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "collation_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "user_access",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "user_access_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_read_only",
+				"type": "bit"
+			},
+			{
+				"name": "is_auto_close_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_auto_shrink_on",
+				"type": "bit"
+			},
+			{
+				"name": "state",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "state_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_in_standby",
+				"type": "bit"
+			},
+			{
+				"name": "is_cleanly_shutdown",
+				"type": "bit"
+			},
+			{
+				"name": "is_supplemental_logging_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "snapshot_isolation_state",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "snapshot_isolation_state_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_read_committed_snapshot_on",
+				"type": "bit"
+			},
+			{
+				"name": "recovery_model",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "recovery_model_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "page_verify_option",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "page_verify_option_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_auto_create_stats_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_auto_create_stats_incremental_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_auto_update_stats_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_auto_update_stats_async_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_ansi_null_default_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_ansi_nulls_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_ansi_padding_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_ansi_warnings_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_arithabort_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_concat_null_yields_null_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_numeric_roundabort_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_quoted_identifier_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_recursive_triggers_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_cursor_close_on_commit_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_local_cursor_default",
+				"type": "bit"
+			},
+			{
+				"name": "is_fulltext_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "is_trustworthy_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_db_chaining_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_parameterization_forced",
+				"type": "bit"
+			},
+			{
+				"name": "is_master_key_encrypted_by_server",
+				"type": "bit"
+			},
+			{
+				"name": "is_query_store_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_published",
+				"type": "bit"
+			},
+			{
+				"name": "is_subscribed",
+				"type": "bit"
+			},
+			{
+				"name": "is_merge_published",
+				"type": "bit"
+			},
+			{
+				"name": "is_distributor",
+				"type": "bit"
+			},
+			{
+				"name": "is_sync_with_backup",
+				"type": "bit"
+			},
+			{
+				"name": "service_broker_guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "is_broker_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "log_reuse_wait",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "log_reuse_wait_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_date_correlation_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_cdc_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "is_encrypted",
+				"type": "bit"
+			},
+			{
+				"name": "is_honor_broker_priority_on",
+				"type": "bit"
+			},
+			{
+				"name": "replica_id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "group_database_id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "resource_pool_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "default_language_lcid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "default_language_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "default_fulltext_language_lcid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "default_fulltext_language_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_nested_triggers_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_transform_noise_words_on",
+				"type": "bit"
+			},
+			{
+				"name": "two_digit_year_cutoff",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "containment",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "containment_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "target_recovery_time_in_seconds",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "delayed_durability",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "delayed_durability_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_memory_optimized_elevate_to_snapshot_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_federation_member",
+				"type": "bit"
+			},
+			{
+				"name": "is_remote_data_archive_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "is_mixed_page_allocation_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_temporal_history_retention_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "catalog_collation_type",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "catalog_collation_type_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "physical_database_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_result_set_caching_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_accelerated_database_recovery_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_tempdb_spill_to_remote_store",
+				"type": "bit"
+			},
+			{
+				"name": "is_stale_page_detection_on",
+				"type": "bit"
+			},
+			{
+				"name": "is_memory_optimized_enabled",
+				"type": "bit"
+			},
+			{
+				"name": "is_data_retention_enabled",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "sys",
+			"table": "databases"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

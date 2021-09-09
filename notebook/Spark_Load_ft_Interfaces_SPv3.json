@@ -1,0 +1,710 @@
+{
+	"name": "Spark_Load_ft_Interfaces_SPv3",
+	"properties": {
+		"folder": {
+			"name": "Minecare/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark3",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark3",
+				"name": "SampleSpark3",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark3",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.0",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"from delta.tables import DeltaTable\r\n",
+					"\r\n",
+					"ft_Interfaces_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/delta/ft_Interfaces/'\r\n",
+					"\r\n",
+					"\r\n",
+					"#drop ft_Interfaces\r\n",
+					"\r\n",
+					"spark.sql('drop table IF EXISTS delta.ft_Interfaces')\r\n",
+					"\r\n",
+					"if (DeltaTable.isDeltaTable(spark, ft_Interfaces_path)):\r\n",
+					"   mssparkutils.fs.rm(ft_Interfaces_path, recurse=True)"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"table_name = 'statusDetails'\n",
+					"db_name = 'delta'\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/' + table_name +'/'\n",
+					"\n",
+					"sql_command = f'''\n",
+					"                    CREATE OR REPLACE TABLE {db_name}.{table_name} (                    \n",
+					"                        eqmtId int,\n",
+					"                        eqmtName string,\n",
+					"                        lastReadyTime timestamp,\n",
+					"                        lastReadyFinishTime timestamp\n",
+					"                      )\n",
+					"                    USING DELTA\n",
+					"                    LOCATION '{table_data_path}'\n",
+					"                  '''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"            create or replace temporary view statusDetail_temp\n",
+					"            as\n",
+					"            SELECT eu.Id, eu.Name, MAX(eh.ReadTime), null\n",
+					"            FROM delta.equipmenttrackhistory_historico eh \n",
+					"            LEFT JOIN delta.equipmentunit_historico eu ON eu.Id = eh.EquipmentId\n",
+					"            WHERE eu.RecordStatus <> 3\n",
+					"            AND eh.StatusId = 2\n",
+					"            AND ReadTime BETWEEN date_Add(CURRENT_TIMESTAMP(),-90) AND CURRENT_TIMESTAMP()\n",
+					"            GROUP BY eu.Id, eu.Name\n",
+					"            '''\n",
+					"\n",
+					"spark.sql(sql_command)\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"                insert into delta.statusdetails\n",
+					"                select * from statusDetail_temp\n",
+					"                '''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"            update delta.statusdetails \n",
+					"            set lastReadyFinishTime = (SELECT  eh.ReadTime\n",
+					"                                        FROM delta.equipmenttrackhistory_historico eh \n",
+					"                                        inner join delta.statusdetails sd\n",
+					"                                        on sd.eqmtId = eh.EquipmentId\n",
+					"                                        WHERE  eh.ReadTime > sd.lastReadyTime\n",
+					"                                        AND ReadTime BETWEEN date_Add(CURRENT_TIMESTAMP(),-90) \n",
+					"                                        AND CURRENT_TIMESTAMP()\n",
+					"                                        AND eh.StatusId <> 2\n",
+					"                                        limit 1)\n",
+					"                '''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"                UPDATE delta.statusdetails \n",
+					"                SET lastReadyFinishTime = lastReadyTime\n",
+					"                WHERE lastReadyFinishTime is null\n",
+					"                '''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"table_name = 'intfMap'\r\n",
+					"db_name = 'delta'\r\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/' + table_name +'/'\r\n",
+					"sql_command = f'''\r\n",
+					"                    CREATE TABLE IF NOT EXISTS {db_name}.{table_name} (                    \r\n",
+					"                        EqmtName string,\r\n",
+					"                        InterfaceName string,\r\n",
+					"                        ReadTime timestamp\r\n",
+					"                      )\r\n",
+					"                    USING DELTA\r\n",
+					"                    LOCATION '{table_data_path}'\r\n",
+					"                  '''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\r\n",
+					"\t\t\tINSERT INTO delta.intfmap\r\n",
+					"\t\t\tSELECT eu.Name, oi.Name, MAX(ov.ReadTime) AS ReadDateTime \r\n",
+					"\t\t\tFROM delta.oemeventvalue_historico ov \r\n",
+					"\t\t\tLEFT JOIN delta.oemeventtype_historico ev  ON ev.Id = ov.OemEventTypeId\r\n",
+					"\t\t\tLEFT JOIN delta.oeminterface_historico oi  ON oi.Id = ev.OemInterfaceId\r\n",
+					"\t\t\tLEFT JOIN delta.equipmentunit_historico eu  ON eu.Id = ov.EquipmentId\r\n",
+					"\t\t\tWHERE ov.ReadTime > date_Add(CURRENT_TIMESTAMP(), -30)\r\n",
+					"\t\t\tAND ReadTime BETWEEN date_add(CURRENT_TIMESTAMP(), -90) AND CURRENT_TIMESTAMP()  \r\n",
+					"\t\t\t--AND datediff(cast((unix_timestamp(ov.ReadTime)-unix_timestamp((cast(ov.ReadTime as TIMESTAMP) + INTERVAL 3 hours)))/(60) as TIMESTAMP), CURRENT_TIMESTAMP()) > - 1 \r\n",
+					"\t\t\t--esta validación no entrega datos por lo tanto se comenta para pruebas\r\n",
+					"\t\t\tAND ov.EquipmentId IN (\r\n",
+					"\t\t\t\tSELECT eqmtId\r\n",
+					"\t\t\t\tFROM delta.statusdetails\r\n",
+					"\t\t\t)\r\n",
+					"\t\t\tAND ( -- Exclude Modular Interface generated events as this does not come from the OEM device --\r\n",
+					"\t\t\t\tev.Name NOT LIKE '%Interface%Timeout%'\r\n",
+					"\t\t\t\tOR ev.Name NOT LIKE '%Interface%Normal%'\r\n",
+					"\t\t\t)\r\n",
+					"\t\t\tGROUP BY eu.Name, oi.Name '''\r\n",
+					"\r\n",
+					"spark.sql(sql_command)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"table_name = 'intfMapNDP'\r\n",
+					"db_name = 'delta'\r\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/' + table_name +'/'\r\n",
+					"sql_command = f'''\r\n",
+					"                    CREATE TABLE IF NOT EXISTS {db_name}.{table_name} (                    \r\n",
+					"                        EqmtName string,\r\n",
+					"                        InterfaceName string,\r\n",
+					"                        ReadTime timestamp\r\n",
+					"                      )\r\n",
+					"                    USING DELTA\r\n",
+					"                    LOCATION '{table_data_path}'\r\n",
+					"                  '''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\r\n",
+					"INSERT INTO delta.intfMapNDP\r\n",
+					"SELECT eu.Name, oi.Name, MAX(ndpv.ReadTime) AS ReadDateTime\r\n",
+					"FROM delta.naturaloemparamvalue_historico ndpv \r\n",
+					"LEFT JOIN delta.oemparamtype_historico pt  ON pt.Id = ndpv.OemParamTypeId\r\n",
+					"LEFT JOIN delta.oeminterface_historico oi  ON oi.Id = pt.OemInterfaceId\r\n",
+					"LEFT JOIN delta.equipmentunit_historico eu  ON eu.Id = ndpv.EquipmentId\r\n",
+					"WHERE ndpv.ReadTime > date_add(CURRENT_TIMESTAMP(),-30) \r\n",
+					"--Modificar dias original -4 se aumenta para mostrar datos\r\n",
+					"AND ndpv.ReadTime <= CURRENT_TIMESTAMP() \r\n",
+					"AND ndpv.EquipmentId IN (\r\n",
+					"\tSELECT eqmtId\r\n",
+					"\tFROM delta.statusdetails\r\n",
+					")\r\n",
+					"GROUP BY eu.Name, oi.Name '''\r\n",
+					"\r\n",
+					"\r\n",
+					"spark.sql(sql_command)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"table_name = 'intfResult'\r\n",
+					"db_name = 'delta'\r\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/' + table_name +'/'\r\n",
+					"sql_command = f'''\r\n",
+					"                    CREATE TABLE IF NOT EXISTS {db_name}.{table_name} (                    \r\n",
+					"                        EqmtName string,\r\n",
+					"                        InterfaceName string,\r\n",
+					"                        ReadTime timestamp,\r\n",
+					"                        ReadDiff int,\r\n",
+					"                        EvntCount int\r\n",
+					"                      )\r\n",
+					"                    USING DELTA\r\n",
+					"                    LOCATION '{table_data_path}'\r\n",
+					"                  '''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\r\n",
+					"        INSERT INTO delta.intfresult\r\n",
+					"        SELECT res.EqmtName, res.InterfaceName, res.ReadTime as ReadDateTime, NULL, NULL\r\n",
+					"        FROM delta.intfmap res '''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f''' create or replace temporary view update_view \n",
+					"                as\n",
+					"                SELECT distinct intNDPRes.EqmtName EqmtName \n",
+					"                        ,intNDPRes.InterfaceName InterfaceName\n",
+					"                        ,intNDPRes.ReadTime ReadTime\n",
+					"                FROM  delta.intfresult as intfRes\n",
+					"                LEFT JOIN delta.intfmapndp intNDPRes \n",
+					"\n",
+					"                ON  intfRes.EqmtName = intNDPRes.EqmtName \n",
+					"                AND intfRes.InterfaceName = intNDPRes.InterfaceName\n",
+					"\n",
+					"                WHERE intNDPRes.ReadTime > intfRes.ReadTime\n",
+					"                  AND intNDPRes.InterfaceName = intfRes.InterfaceName\n",
+					"                '''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\n",
+					"      MERGE INTO delta.intfresult as intfRes\n",
+					"      USING update_view\n",
+					"      ON intfRes.EqmtName = update_view.EqmtName\n",
+					"      and intfRes.InterfaceName  = update_view.InterfaceName\n",
+					"      WHEN MATCHED THEN\n",
+					"        UPDATE SET intfRes.ReadTime = update_view.ReadTime'''\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\r\n",
+					"\t\tUPDATE delta.intfresult\r\n",
+					"\t\tSET ReadDiff = (\r\n",
+					"\t\t\t\t\tSELECT \r\n",
+					"\t\t\t\t\tcast(\r\n",
+					"\t\t\t\t\t\tunix_timestamp(i.ReadTime) \r\n",
+					"\t\t\t\t\t\t+ (unix_timestamp(ReadTime)  -  unix_timestamp((cast(lastReadyFinishTime as TIMESTAMP) + INTERVAL 0 hours)))/(60) \r\n",
+					"\t\t\t\t\t\tas TIMESTAMP)\r\n",
+					"\r\n",
+					"\t\t\t\t\tFROM delta.statusdetails s\r\n",
+					"\t\t\t\t\tinner join delta.intfresult i\r\n",
+					"\t\t\t\t\ton s.eqmtName = i.eqmtName\r\n",
+					"\t\t\t\t\tlimit 1\r\n",
+					"\t\t\t)'''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 16
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command =f'''\r\n",
+					"            UPDATE delta.intfresult\r\n",
+					"            SET ReadDiff = 0\r\n",
+					"            WHERE ReadDiff < 0'''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 17
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command= f'''\r\n",
+					"\t\t\tINSERT INTO delta.intfresult\r\n",
+					"\t\t\tSELECT eu.Name, oi.Name, '1970-01-01 00:00:00', 99999, NULL\r\n",
+					"\t\t\tFROM delta.eqmtoeminterfacemap_historico eim \r\n",
+					"\t\t\tLEFT JOIN delta.oeminterface_historico oi  ON oi.Id = eim.OemInterfaceId\r\n",
+					"\t\t\tLEFT JOIN delta.equipmentunit_historico eu  ON eu.Id = eim.EquipmentId\r\n",
+					"\t\t\tWHERE oi.Name + ' ' + eu.Name NOT IN\r\n",
+					"\t\t\t(\r\n",
+					"\t\t\t\tSELECT ir.InterfaceName + ' ' + ir.EqmtName\r\n",
+					"\t\t\t\tFROM delta.intfresult ir\r\n",
+					"\t\t\t)\r\n",
+					"\t\t\tAND eu.RecordStatus <> 3'''\r\n",
+					"\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 18
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"table_name = 'ft_Interfaces'\r\n",
+					"db_name = 'minecare'\r\n",
+					"table_data_path = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/delta/' + table_name +'/'\r\n",
+					"sql_command = f'''\r\n",
+					"                    CREATE TABLE IF NOT EXISTS {db_name}.{table_name} (                    \r\n",
+					"                        mc_site_name string,\r\n",
+					"                        rd_date string,\r\n",
+					"                        eqmt_name string,\r\n",
+					"                        interface_name string,\r\n",
+					"                        interface_state float,\r\n",
+					"                        last_event float,\r\n",
+					"                        ReadTime timestamp\r\n",
+					"                      )\r\n",
+					"                    USING DELTA\r\n",
+					"                    LOCATION '{table_data_path}'\r\n",
+					"                  '''\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 19
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command = f'''\r\n",
+					"                INSERT INTO  minecare.ft_interfaces\r\n",
+					"                SELECT(SELECT Value \r\n",
+					"                FROM delta.applicationconfiguration_configuration_historico\r\n",
+					"                WHERE KEY = 'client.name' AND Scope = 'global') as mc_site_name\r\n",
+					"                --,DATEADD(HH, @GMTTime, sd.lastReadyFinishTime) as rd_date\r\n",
+					"                ,date_add(sd.lastReadyFinishTime,0) as rd_date\r\n",
+					"                ,eu.Name as eqmt_name\r\n",
+					"                , t2.InterfaceName as interface_name\r\n",
+					"                ,\r\n",
+					"                        CASE\r\n",
+					"                        WHEN t2.ReadDiff = 99999 THEN 4\r\n",
+					"                        WHEN t2.ReadDiff > 1440 THEN 3\r\n",
+					"                        WHEN t2.ReadDiff < 1440 AND t2.ReadDiff > 720 THEN 2\r\n",
+					"                        ELSE 1\r\n",
+					"                        END as interface_state, t2.ReadDiff as last_event\r\n",
+					"                        ,current_timestamp()\r\n",
+					"                FROM delta.intfresult t2\r\n",
+					"                LEFT JOIN delta.statusdetails sd ON sd.eqmtName = t2.EqmtName\r\n",
+					"                LEFT JOIN delta.equipmentunit_historico eu ON eu.Id = sd.eqmtId\r\n",
+					"                LEFT JOIN delta.eqmtmodel_historico em ON em.Id = eu.ModelId\r\n",
+					"                '''\r\n",
+					"\r\n",
+					"spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": 20
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"\r\n",
+					"\r\n",
+					"statusdetailpath = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/statusDetails/'\r\n",
+					"intfMappath = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/intfMap/'\r\n",
+					"intfMapNDPpath = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/intfMapNDP/'\r\n",
+					"intfResultpath = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataTemp/minecare/delta/intfResult/'\r\n",
+					"\r\n",
+					"spark.sql('drop table IF EXISTS delta.statusdetails')\r\n",
+					"if (DeltaTable.isDeltaTable(spark, statusdetailpath)):\r\n",
+					"   mssparkutils.fs.rm(statusdetailpath, recurse=True)\r\n",
+					"\r\n",
+					"spark.sql('drop table IF EXISTS delta.intfMap')\r\n",
+					"if (DeltaTable.isDeltaTable(spark, intfMappath)):\r\n",
+					"   mssparkutils.fs.rm(intfMappath, recurse=True)\r\n",
+					"\r\n",
+					"spark.sql('drop table IF EXISTS delta.intfMapNDP')\r\n",
+					"if (DeltaTable.isDeltaTable(spark, intfMapNDPpath)):\r\n",
+					"   mssparkutils.fs.rm(intfMapNDPpath, recurse=True)\r\n",
+					"\r\n",
+					"\r\n",
+					"spark.sql('drop table IF EXISTS delta.intfResult')\r\n",
+					"if (DeltaTable.isDeltaTable(spark, intfResultpath)):\r\n",
+					"   mssparkutils.fs.rm(intfResultpath, recurse=True)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 24
+			}
+		]
+	}
+}

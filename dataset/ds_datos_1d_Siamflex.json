@@ -1,0 +1,16 @@
+{
+	"name": "ds_datos_1d_Siamflex",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_siamflex",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MariaDBTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "datos_1d"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

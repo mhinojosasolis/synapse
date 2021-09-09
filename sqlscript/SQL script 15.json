@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 15",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nCREATE PROC [DM_Minecare].[sp_load_ft_Interfaces] AS\nBEGIN\ntruncate table [DM_Minecare].[ft_Interfaces];\n\n\nmc_site_name\nrd_date\neqmt_nam\ninterface_name\ninterface_state\nlast_event\nReadTime\n\n\ninsert into [DM_Minecare].[ft_Interfaces]\n      (\n       [id_Interfaces]\n\t     ,[id_mc_site_name]\n       ,[rd_date]\n       ,[id_Equipment]\n       ,[id_Interface]\n       ,[interface_state]\n       ,[last_event]\n       ,[ReadTime]\n       ,[UpdateDate]\n       ,[InsertDate]\n\t  )\nSELECT \n       [id_Interfaces]\n\t     ,[id_mc_site_name]\n       ,[rd_date]\n       ,[id_Equipment]\n       ,[id_Interface]\n       ,[interface_state]\n       ,[last_event]\n       ,[ReadTime]\n       ,[UpdateDate]\n       ,[InsertDate]\n  FROM [STG_Minecare].[ft_Interfaces];\nEND\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "MINECARE_RAWTEMP_PARAMETRIZADO",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Minecare"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "minecare/temp",
+				"fileSystem": "devraw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

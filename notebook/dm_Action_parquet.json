@@ -1,0 +1,647 @@
+{
+	"name": "dm_Action_parquet",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"372271bf-740c-4875-a063-2be851ecc0f6": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR05",
+										"LastActionTime": "2021-04-01T00:00:11Z",
+										"Operator": "ROSSANA GALLARDO ARAYA",
+										"NextActionTime": "2021-04-01T00:11:56Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "192709",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "dae983dcfd0d404b5906734bbcf9aa9955229ad0",
+										"MineRealmId": 0,
+										"EquipmentId": 16777231,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_LUB_TR03",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "SEBASTIAN MATIAS QUILHOT SEPULVEDA",
+										"NextActionTime": "2021-04-01T00:02:04Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6055294",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "d00a8adfe4af9526f9fba3f3a0f4dc8076902b47",
+										"MineRealmId": 0,
+										"EquipmentId": 16777243,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_SFCO_TR00",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "ALEXIS DURAN BELTRAN",
+										"NextActionTime": "2021-04-01T00:08:01Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6106632",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "3e3adf17b9004a0dd9500a53e4363160cf47fb62",
+										"MineRealmId": 0,
+										"EquipmentId": 16777246,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "ESTAC_DON2",
+										"LastActionTime": "2021-03-31T23:11:41Z",
+										"Operator": "MAURICIO MIKEL SASIA MOYA",
+										"NextActionTime": "2021-03-31T23:21:41Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038673",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "2b2a5f6e9ce42fa6f61616c86282a702078c8a30",
+										"MineRealmId": 0,
+										"EquipmentId": 16777250,
+										"ReasonCodeDescription": "CAMBIO DE TURNO",
+										"MaterialType": "Esteril",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 4,
+										"StatusId": 4,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR06",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "SERGIO SEGUNDO VENEGAS MUÑOZ",
+										"NextActionTime": "2021-04-01T00:02:34Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "193023",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "114bbaac02aa161f80cb006dbaf6132688402667",
+										"MineRealmId": 0,
+										"EquipmentId": 16777253,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-04-01T00:00:02Z",
+										"Operator": "JAVIER ANDRES BASULTO BERRIOS",
+										"NextActionTime": "2021-04-01T00:19:01Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6139362",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "c759c74f8dfcea7bb6700beb90d9cf2697d2dff3",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_D02_TR18",
+										"LastActionTime": "2021-03-31T23:59:56Z",
+										"Operator": "HORACIO ERNESTO HERRERA HERRERA",
+										"NextActionTime": "2021-04-01T00:01:13Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038670",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "d55db6fd94f80e04e2f26cd177e937bb4f16f974",
+										"MineRealmId": 0,
+										"EquipmentId": 16777261,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_3520_TR01",
+										"LastActionTime": "2021-03-31T23:59:52Z",
+										"Operator": "MIGUEL  ANGEL QUIJADA OSSANDON",
+										"NextActionTime": "2021-04-01T00:06:07Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6106654",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "1b9cc1b14a82e991c8cbfd02cc1c7e85ca4f26b8",
+										"MineRealmId": 0,
+										"EquipmentId": 16777262,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "IS5-3460-556",
+										"LastActionTime": "2021-04-01T00:00:04Z",
+										"Operator": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"NextActionTime": "2021-04-01T00:08:04Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "a98b99ae1a6ab688a9a1269c53b0a8b2c45408bb",
+										"MineRealmId": 0,
+										"EquipmentId": 16777263,
+										"ReasonCodeDescription": "Espera Punto de carga",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Llegada",
+										"ReasonCode": 4,
+										"StatusId": 4,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Ini. Carga"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR03",
+										"LastActionTime": "2021-04-01T00:00:04Z",
+										"Operator": "EVELYN ELCIRA ELISONDO ABARCA",
+										"NextActionTime": "2021-04-01T00:05:45Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6055288",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "edce4fb583b3c5cfbb67b270787ab498b0a81422",
+										"MineRealmId": 0,
+										"EquipmentId": 16777274,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"7a21abfb-e6d4-43e1-a51b-f89f0935d849": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"NextAction": ""
+									},
+									{
+										"NextAction": "Asignar"
+									},
+									{
+										"NextAction": "Ini. Carga"
+									},
+									{
+										"NextAction": "Llegada"
+									},
+									{
+										"NextAction": "Lleno"
+									},
+									{
+										"NextAction": "Operativo"
+									}
+								],
+								"schema": {
+									"NextAction": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"NextAction"
+									],
+									"seriesFieldKeys": [
+										"NextAction"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"df972b1f-a32c-4307-b0fd-c23c6b8497b0": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"NextAction": "<N/A>",
+										"ActionId": "f00fda65ebe683aa3d471aaaf04315892b026747",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									},
+									{
+										"NextAction": "Asignar",
+										"ActionId": "8e935b3c6eb03a573f76c3ea6f72bbd164980d03",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									},
+									{
+										"NextAction": "Ini. Carga",
+										"ActionId": "0fab3f205b0aad54236ac058f2600acb1dc2fec5",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									},
+									{
+										"NextAction": "Llegada",
+										"ActionId": "b43031693c11b17814823beab10e7c84ffb1abf7",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									},
+									{
+										"NextAction": "Lleno",
+										"ActionId": "18eedf7452b824778e64c9bb2a1def9be1f94529",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									},
+									{
+										"NextAction": "Operativo",
+										"ActionId": "c80b3c5f6d97e924607664876632b38c86435623",
+										"BatchDate": "2021-06-25T21:04:08.612Z"
+									}
+								],
+								"schema": {
+									"NextAction": "string",
+									"ActionId": "string",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"NextAction"
+									],
+									"seriesFieldKeys": [
+										"BatchDate"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Action.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos y ordenamos los datos desde la tabla de origen, de acuerdo al requerimento de la dimensión\r\n",
+					"df_dim = df.select('NextAction').distinct().orderBy('NextAction')\\\r\n",
+					"#.filter(df.MaterialType != 'Vacio')# para dejar una fila vacía para las pruebas\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": true
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#from pyspark.sql.functions import monotonically_increasing_id, col, row_number\r\n",
+					"\r\n",
+					"# creamos un id incremental\r\n",
+					"# genera un id único e incremental, pero no consecutivo\r\n",
+					"# ref: https://kb.databricks.com/sql/gen-unique-increasing-values.html\r\n",
+					"#df_dim = df_dim.withColumn(\"monotonically_increasing_id\", monotonically_increasing_id())\r\n",
+					"#display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": true
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos el nro de id con row_number según el valor incremental creado antes\r\n",
+					"\r\n",
+					"#window = Window.orderBy(col('monotonically_increasing_id'))\r\n",
+					"#df_dim_with_id = df_dim.withColumn('MaterialId', sha1())\\\r\n",
+					"#    .drop('monotonically_increasing_id')\\\r\n",
+					"#    .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					" \r\n",
+					"#display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# limpiamos los textos vacios de la columna MaterialType\r\n",
+					"from pyspark.sql.functions import when, sha1, to_utc_timestamp, current_timestamp, col\r\n",
+					"\r\n",
+					"na_string = '<N/A>'\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn('NextAction', \\\r\n",
+					"       when(col('NextAction')==\"\" ,na_string) \\\r\n",
+					"          .otherwise(col('NextAction'))) \\\r\n",
+					"          .na.fill(value=na_string,subset=['NextAction'])\r\n",
+					"\r\n",
+					"# para la surrogate key, usamos un hash, que es facil de paralelizar\r\n",
+					"# https://towardsdatascience.com/building-a-modern-batch-data-warehouse-without-updates-7819bfa3c1ee\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn('ActionId', sha1('NextAction'))\\\r\n",
+					"               .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					"               .orderBy('NextAction')\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			}
+		]
+	}
+}

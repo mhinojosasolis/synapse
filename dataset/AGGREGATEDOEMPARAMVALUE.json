@@ -1,0 +1,87 @@
+{
+	"name": "AGGREGATEDOEMPARAMVALUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "SiteId",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "SetId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EquipmentId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ConsumerId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemParamTypeId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ReadTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MinValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MaxValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MeanValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MedianValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "StdDevValue",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "NumberOfSamples",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "AggregatedOemParamValue"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

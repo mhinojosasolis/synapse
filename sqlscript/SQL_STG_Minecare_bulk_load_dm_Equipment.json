@@ -1,0 +1,20 @@
+{
+	"name": "SQL_STG_Minecare_bulk_load_dm_Equipment",
+	"properties": {
+		"folder": {
+			"name": "Synapse SQL"
+		},
+		"content": {
+			"query": "\nALTER PROC STG_Minecare.bulk_load_dm_Equipment\nAS\n\nTRUNCATE TABLE STG_Minecare.dm_Equipment\n\nBEGIN\nCOPY INTO STG_Minecare.dm_Equipment\n(id_Equipment 1, Site 2, Equipment 3, EquipmentSerial 4, Engine1OEM 5, Engine1Serial 6, Engine2OEM 7, Engine2Serial 8, GroupId 9, [Group] 10, FleetId 11, Fleet 12, ModelId 13, Model 14, Category 15, Interfaces 16, UpdateDate 17, InsertDate 18)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/dm_Equipment'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n)\nEND\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.dm_Equipment\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

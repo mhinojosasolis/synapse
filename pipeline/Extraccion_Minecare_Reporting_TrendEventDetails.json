@@ -1,0 +1,372 @@
+{
+	"name": "Extraccion_Minecare_Reporting_TrendEventDetails",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "v_nombre_tabla",
+					"value": "REPORTING_TRENDEVENTDETAILS"
+				}
+			},
+			{
+				"name": "Lookup",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_tablas_pk_date_csv",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Lookup",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup').output.value",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().table,variables('v_nombre_tabla'))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Filter1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Filter1').output.Value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data to Reporting_TrendEventDetails-Temp",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"sqlReaderQuery": {
+										"value": "SELECT \n       [EquipmentId]\n      ,[TrendId]\n      ,[SiteId]\n      ,[EquipmentName]\n      ,[ModelId]\n      ,[ModelName]\n      ,[CreateTime]\n      ,[UdfExtLevel]\n      ,[UdfExtLevel2]\n      ,[OperatorId]\n      ,[OperatorName]\n      ,[EventName]\n      ,[GpsLocation]\n\t  ,GETUTCDATE() as [ExtractDate]\n  FROM [Minecare267].[Reporting].[TrendEventDetails]\n  where CreateTime BETWEEN  DATEADD(HOUR,-@{item().incremental_horas},GETDATE()) and GETDATE()",
+										"type": "Expression"
+									},
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"mappings": [
+										{
+											"source": {
+												"name": "EquipmentId",
+												"type": "Int32",
+												"physicalType": "int"
+											},
+											"sink": {
+												"name": "EquipmentId",
+												"type": "Int32",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "TrendId",
+												"type": "Int32",
+												"physicalType": "int"
+											},
+											"sink": {
+												"name": "TrendId",
+												"type": "Int32",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "SiteId",
+												"type": "Byte",
+												"physicalType": "tinyint"
+											},
+											"sink": {
+												"name": "SiteId",
+												"type": "Byte",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "EquipmentName",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "EquipmentName",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "ModelId",
+												"type": "Int32",
+												"physicalType": "int"
+											},
+											"sink": {
+												"name": "ModelId",
+												"type": "Int32",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "ModelName",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "ModelName",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "CreateTime",
+												"type": "DateTime",
+												"physicalType": "datetime"
+											},
+											"sink": {
+												"name": "CreateTime",
+												"type": "DateTime",
+												"physicalType": "INT_96"
+											}
+										},
+										{
+											"source": {
+												"name": "UdfExtLevel",
+												"type": "Byte",
+												"physicalType": "tinyint"
+											},
+											"sink": {
+												"name": "UdfExtLevel",
+												"type": "Byte",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "UdfExtLevel2",
+												"type": "Int32",
+												"physicalType": "int"
+											},
+											"sink": {
+												"name": "UdfExtLevel2",
+												"type": "Int32",
+												"physicalType": "INT_32"
+											}
+										},
+										{
+											"source": {
+												"name": "OperatorId",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "OperatorId",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "OperatorName",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "OperatorName",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "EventName",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "EventName",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "GpsLocation",
+												"type": "String",
+												"physicalType": "nvarchar"
+											},
+											"sink": {
+												"name": "GpsLocation",
+												"type": "String",
+												"physicalType": "UTF8"
+											}
+										},
+										{
+											"source": {
+												"name": "ExtractDate",
+												"type": "DateTime",
+												"physicalType": "datetime"
+											},
+											"sink": {
+												"name": "ExtractDate",
+												"type": "DateTime",
+												"physicalType": "INT_96"
+											}
+										}
+									],
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "TRENDEVENTDETAILS",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "MINECARE_RAWTEMP_PARAMETRIZADO",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": "@{variables('v_nombre_tabla')}_TEMP.parquet"
+									}
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"name": "Insert_Parquet_to_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Common_Notebooks/Insert_Parquet_to_Delta",
+					"baseParameters": {
+						"p_nombre_tabla": {
+							"value": "@variables('v_nombre_tabla')",
+							"type": "Expression"
+						},
+						"p_tipo_carga": "INCREMENTAL",
+						"p_origen": "MINECARE"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"variables": {
+			"v_nombre_tabla": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Minecare/Incremental"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-13T21:47:06Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

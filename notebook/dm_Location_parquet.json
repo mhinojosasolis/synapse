@@ -1,0 +1,3621 @@
+{
+	"name": "dm_Location_parquet",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"51782078-763f-409c-80b1-af49802dfa61": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR05",
+										"LastActionTime": "2021-04-01T00:00:11Z",
+										"Operator": "ROSSANA GALLARDO ARAYA",
+										"NextActionTime": "2021-04-01T00:11:56Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "192709",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "dae983dcfd0d404b5906734bbcf9aa9955229ad0",
+										"MineRealmId": 0,
+										"EquipmentId": 16777231,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_LUB_TR03",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "SEBASTIAN MATIAS QUILHOT SEPULVEDA",
+										"NextActionTime": "2021-04-01T00:02:04Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6055294",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "d00a8adfe4af9526f9fba3f3a0f4dc8076902b47",
+										"MineRealmId": 0,
+										"EquipmentId": 16777243,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_SFCO_TR00",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "ALEXIS DURAN BELTRAN",
+										"NextActionTime": "2021-04-01T00:08:01Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6106632",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "3e3adf17b9004a0dd9500a53e4363160cf47fb62",
+										"MineRealmId": 0,
+										"EquipmentId": 16777246,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "ESTAC_DON2",
+										"LastActionTime": "2021-03-31T23:11:41Z",
+										"Operator": "MAURICIO MIKEL SASIA MOYA",
+										"NextActionTime": "2021-03-31T23:21:41Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038673",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "2b2a5f6e9ce42fa6f61616c86282a702078c8a30",
+										"MineRealmId": 0,
+										"EquipmentId": 16777250,
+										"ReasonCodeDescription": "CAMBIO DE TURNO",
+										"MaterialType": "Esteril",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 4,
+										"StatusId": 4,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR06",
+										"LastActionTime": "2021-04-01T00:00:09Z",
+										"Operator": "SERGIO SEGUNDO VENEGAS MUÑOZ",
+										"NextActionTime": "2021-04-01T00:02:34Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "193023",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "114bbaac02aa161f80cb006dbaf6132688402667",
+										"MineRealmId": 0,
+										"EquipmentId": 16777253,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-04-01T00:00:02Z",
+										"Operator": "JAVIER ANDRES BASULTO BERRIOS",
+										"NextActionTime": "2021-04-01T00:19:01Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6139362",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "c759c74f8dfcea7bb6700beb90d9cf2697d2dff3",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_D02_TR18",
+										"LastActionTime": "2021-03-31T23:59:56Z",
+										"Operator": "HORACIO ERNESTO HERRERA HERRERA",
+										"NextActionTime": "2021-04-01T00:01:13Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038670",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "d55db6fd94f80e04e2f26cd177e937bb4f16f974",
+										"MineRealmId": 0,
+										"EquipmentId": 16777261,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_3520_TR01",
+										"LastActionTime": "2021-03-31T23:59:52Z",
+										"Operator": "MIGUEL  ANGEL QUIJADA OSSANDON",
+										"NextActionTime": "2021-04-01T00:06:07Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6106654",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "1b9cc1b14a82e991c8cbfd02cc1c7e85ca4f26b8",
+										"MineRealmId": 0,
+										"EquipmentId": 16777262,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "IS5-3460-556",
+										"LastActionTime": "2021-04-01T00:00:04Z",
+										"Operator": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"NextActionTime": "2021-04-01T00:08:04Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "a98b99ae1a6ab688a9a1269c53b0a8b2c45408bb",
+										"MineRealmId": 0,
+										"EquipmentId": 16777263,
+										"ReasonCodeDescription": "Espera Punto de carga",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-04",
+										"LastAction": "Llegada",
+										"ReasonCode": 4,
+										"StatusId": 4,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Ini. Carga"
+									},
+									{
+										"Id": 72057594068550180,
+										"Location": "NDO_INF5_TR03",
+										"LastActionTime": "2021-04-01T00:00:04Z",
+										"Operator": "EVELYN ELCIRA ELISONDO ABARCA",
+										"NextActionTime": "2021-04-01T00:05:45Z",
+										"ReadTime": "2021-04-01T00:00:16.277Z",
+										"SiteId": 1,
+										"OperatorId": "6055288",
+										"ExtractDate": "2021-06-11T01:57:02.88Z",
+										"checksum": "edce4fb583b3c5cfbb67b270787ab498b0a81422",
+										"MineRealmId": 0,
+										"EquipmentId": 16777274,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-04",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-04-01T00:00:16.277Z",
+										"NextAction": "Llegada"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"008f70be-b57c-4962-a0ea-f20555d8889e": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									null,
+									{
+										"Location": "BD2-3655E"
+									},
+									{
+										"Location": "BOT-CURVA 13 PRISMA"
+									},
+									{
+										"Location": "BOT-EST-BCRATER"
+									},
+									{
+										"Location": "BOT-RELLENO NODO VIAL"
+									},
+									{
+										"Location": "BOT/NIVE-PRISMA1"
+									},
+									{
+										"Location": "BOTADERO 3520"
+									},
+									{
+										"Location": "BOTADERO PRISMA"
+									},
+									{
+										"Location": "BOT_3535_LIX_RAMPA"
+									},
+									{
+										"Location": "BOT_AUX_DONOSO2"
+									},
+									{
+										"Location": "BOT_AUX_SOBRECARGA_IS5"
+									},
+									{
+										"Location": "BOT_D2_ESTANDAR"
+									},
+									{
+										"Location": "BOT_EST_3535"
+									},
+									{
+										"Location": "BOT_EST_3565_ENSANCHE"
+									},
+									{
+										"Location": "BOT_EST_3630"
+									},
+									{
+										"Location": "BOT_EST_3630_ENSANCHE"
+									},
+									{
+										"Location": "BOT_EST_3645"
+									},
+									{
+										"Location": "BOT_EST_BOS_3282"
+									},
+									{
+										"Location": "BOT_EST_CRATER"
+									},
+									{
+										"Location": "BOT_EST_CURVA DEL LORO"
+									},
+									{
+										"Location": "BOT_EST_CURVA1_D02"
+									},
+									{
+										"Location": "BOT_EST_D02_RAMPA"
+									},
+									{
+										"Location": "BOT_EST_LUBRICENTRO"
+									},
+									{
+										"Location": "BOT_GRAVA_INF 5"
+									},
+									{
+										"Location": "BOT_INF05_EST"
+									},
+									{
+										"Location": "BOT_INF05_ESTAND"
+									},
+									{
+										"Location": "BOT_INF5"
+									},
+									{
+										"Location": "BOT_LIX_3475"
+									},
+									{
+										"Location": "BOT_LIX_3505"
+									},
+									{
+										"Location": "BOT_LIX_3505_PATA"
+									},
+									{
+										"Location": "BOT_LIX_3535"
+									},
+									{
+										"Location": "BOT_LIX_3535_ENSANCHE"
+									},
+									{
+										"Location": "BOT_LIX_3535_SUPERIOR"
+									},
+									{
+										"Location": "BOT_NIEVE_DON2"
+									},
+									{
+										"Location": "BOT_PISO_PALA14"
+									},
+									{
+										"Location": "BOT_RAMPA_3445"
+									},
+									{
+										"Location": "BOT_RAMPA_3445-60"
+									},
+									{
+										"Location": "BOT_RAMPA_3460-75"
+									},
+									{
+										"Location": "BOT_RELL_RAMPA_MASMIL"
+									},
+									{
+										"Location": "BOT_REM_RAMPA-3460"
+									},
+									{
+										"Location": "BOT_REM_RAMPA_3475"
+									},
+									{
+										"Location": "BOT_REM_RAMPA_3490"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_D2"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_ESTERIL"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_LIXIVIAB"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_MINERAL"
+									},
+									{
+										"Location": "BOXCOMBUSTIBLE"
+									},
+									{
+										"Location": "BSF-RAMPA-3445-LIX"
+									},
+									{
+										"Location": "BSF3520-01"
+									},
+									{
+										"Location": "CAMINO/3505 LIX"
+									},
+									{
+										"Location": "CORRUGADO"
+									},
+									{
+										"Location": "D02-3830-999"
+									},
+									{
+										"Location": "D02-3840-999"
+									},
+									{
+										"Location": "D02-3850-999"
+									},
+									{
+										"Location": "D02-3880-990"
+									},
+									{
+										"Location": "D02-3880-999"
+									},
+									{
+										"Location": "D02-3880-CRATER"
+									},
+									{
+										"Location": "D02-3885-900"
+									},
+									{
+										"Location": "D02-3890-900"
+									},
+									{
+										"Location": "D02-3890-991"
+									},
+									{
+										"Location": "D02-3890-997"
+									},
+									{
+										"Location": "D02-3890-998"
+									},
+									{
+										"Location": "D02-3890-999"
+									},
+									{
+										"Location": "D02-3900-994"
+									},
+									{
+										"Location": "D02-3900-998"
+									},
+									{
+										"Location": "D02-3900-999"
+									},
+									{
+										"Location": "D02-3910-001"
+									},
+									{
+										"Location": "D02-3910-002"
+									},
+									{
+										"Location": "D02-3910-990"
+									},
+									{
+										"Location": "D02-3910-998"
+									},
+									{
+										"Location": "D02-3910-999"
+									},
+									{
+										"Location": "D02-3915-999"
+									},
+									{
+										"Location": "D02-3920-990"
+									},
+									{
+										"Location": "D02-3925-591"
+									},
+									{
+										"Location": "D02-3925-592"
+									},
+									{
+										"Location": "D02-3925-900"
+									},
+									{
+										"Location": "D02-3925-991"
+									},
+									{
+										"Location": "D02-3925-991/E1"
+									},
+									{
+										"Location": "D02-3925-992"
+									},
+									{
+										"Location": "D02-3925-999"
+									},
+									{
+										"Location": "D02-3930-900"
+									},
+									{
+										"Location": "D02-3940-991"
+									},
+									{
+										"Location": "ESTAC BGAR"
+									},
+									{
+										"Location": "ESTAC_3580_CHOQ.SFCO"
+									},
+									{
+										"Location": "ESTAC_3600_INFERIOR"
+									},
+									{
+										"Location": "ESTAC_3600_SUPERIOR"
+									},
+									{
+										"Location": "ESTAC_DON2"
+									},
+									{
+										"Location": "ESTAC_EST_3535"
+									},
+									{
+										"Location": "ESTAC_INF 5"
+									},
+									{
+										"Location": "ESTAC_INF5"
+									},
+									{
+										"Location": "ESTAC_MORRENA_3490"
+									},
+									{
+										"Location": "ESTAC_STAR3"
+									},
+									{
+										"Location": "ESTC_DON2 PALA 12"
+									},
+									{
+										"Location": "EST_INF5"
+									},
+									{
+										"Location": "I7A-3517-999"
+									},
+									{
+										"Location": "INFIER-00"
+									},
+									{
+										"Location": "INFIER-01"
+									},
+									{
+										"Location": "INFIER-15"
+									},
+									{
+										"Location": "INFIER-16"
+									},
+									{
+										"Location": "INFIER-17"
+									},
+									{
+										"Location": "INFIER-18"
+									},
+									{
+										"Location": "INFIER-19"
+									},
+									{
+										"Location": "INFIER-22"
+									},
+									{
+										"Location": "INFIER-25"
+									},
+									{
+										"Location": "IS5-3430-380"
+									},
+									{
+										"Location": "IS5-3430-381"
+									},
+									{
+										"Location": "IS5-3430-386"
+									},
+									{
+										"Location": "IS5-3430-390"
+									},
+									{
+										"Location": "IS5-3430-391"
+									},
+									{
+										"Location": "IS5-3430-393"
+									},
+									{
+										"Location": "IS5-3430-410"
+									},
+									{
+										"Location": "IS5-3430-410B"
+									},
+									{
+										"Location": "IS5-3430-411"
+									},
+									{
+										"Location": "IS5-3430-413"
+									},
+									{
+										"Location": "IS5-3430-414"
+									},
+									{
+										"Location": "IS5-3430-416"
+									},
+									{
+										"Location": "IS5-3430-417"
+									},
+									{
+										"Location": "IS5-3430-419"
+									},
+									{
+										"Location": "IS5-3430-992"
+									},
+									{
+										"Location": "IS5-3430-996"
+									},
+									{
+										"Location": "IS5-3430-998"
+									},
+									{
+										"Location": "IS5-3430-999"
+									},
+									{
+										"Location": "IS5-3445-559"
+									},
+									{
+										"Location": "IS5-3445-600"
+									},
+									{
+										"Location": "IS5-3445-601"
+									},
+									{
+										"Location": "IS5-3445-603"
+									},
+									{
+										"Location": "IS5-3445-604"
+									},
+									{
+										"Location": "IS5-3445-605"
+									},
+									{
+										"Location": "IS5-3445-606"
+									},
+									{
+										"Location": "IS5-3445-607"
+									},
+									{
+										"Location": "IS5-3445-608"
+									},
+									{
+										"Location": "IS5-3445-609"
+									},
+									{
+										"Location": "IS5-3445-610"
+									},
+									{
+										"Location": "IS5-3445-611"
+									},
+									{
+										"Location": "IS5-3445-614"
+									},
+									{
+										"Location": "IS5-3445-619"
+									},
+									{
+										"Location": "IS5-3445-621"
+									},
+									{
+										"Location": "IS5-3445-622"
+									},
+									{
+										"Location": "IS5-3445-623"
+									},
+									{
+										"Location": "IS5-3445-624"
+									},
+									{
+										"Location": "IS5-3445-625"
+									},
+									{
+										"Location": "IS5-3445-626"
+									},
+									{
+										"Location": "IS5-3445-628"
+									},
+									{
+										"Location": "IS5-3445-629"
+									},
+									{
+										"Location": "IS5-3445-630"
+									},
+									{
+										"Location": "IS5-3445-631"
+									},
+									{
+										"Location": "IS5-3445-632"
+									},
+									{
+										"Location": "IS5-3445-633"
+									},
+									{
+										"Location": "IS5-3445-634"
+									},
+									{
+										"Location": "IS5-3445-635"
+									},
+									{
+										"Location": "IS5-3445-637"
+									},
+									{
+										"Location": "IS5-3445-639"
+									},
+									{
+										"Location": "IS5-3445-641"
+									},
+									{
+										"Location": "IS5-3445-643"
+									},
+									{
+										"Location": "IS5-3445-644"
+									},
+									{
+										"Location": "IS5-3445-990"
+									},
+									{
+										"Location": "IS5-3445-991"
+									},
+									{
+										"Location": "IS5-3445-992"
+									},
+									{
+										"Location": "IS5-3445-993"
+									},
+									{
+										"Location": "IS5-3445-999"
+									},
+									{
+										"Location": "IS5-3460-537"
+									},
+									{
+										"Location": "IS5-3460-538"
+									},
+									{
+										"Location": "IS5-3460-543"
+									},
+									{
+										"Location": "IS5-3460-546"
+									},
+									{
+										"Location": "IS5-3460-547"
+									},
+									{
+										"Location": "IS5-3460-548"
+									},
+									{
+										"Location": "IS5-3460-550"
+									},
+									{
+										"Location": "IS5-3460-551"
+									},
+									{
+										"Location": "IS5-3460-552"
+									},
+									{
+										"Location": "IS5-3460-553"
+									},
+									{
+										"Location": "IS5-3460-554"
+									},
+									{
+										"Location": "IS5-3460-556"
+									},
+									{
+										"Location": "IS5-3460-557"
+									},
+									{
+										"Location": "IS5-3460-558"
+									},
+									{
+										"Location": "IS5-3460-559"
+									},
+									{
+										"Location": "IS5-3460-560"
+									},
+									{
+										"Location": "IS5-3460-561"
+									},
+									{
+										"Location": "IS5-3460-562"
+									},
+									{
+										"Location": "IS5-3460-563"
+									},
+									{
+										"Location": "IS5-3460-564"
+									},
+									{
+										"Location": "IS5-3460-565"
+									},
+									{
+										"Location": "IS5-3460-566"
+									},
+									{
+										"Location": "IS5-3460-567"
+									},
+									{
+										"Location": "IS5-3460-568"
+									},
+									{
+										"Location": "IS5-3460-569"
+									},
+									{
+										"Location": "IS5-3460-570"
+									},
+									{
+										"Location": "IS5-3460-571"
+									},
+									{
+										"Location": "IS5-3460-572"
+									},
+									{
+										"Location": "IS5-3460-573"
+									},
+									{
+										"Location": "IS5-3460-579"
+									},
+									{
+										"Location": "IS5-3460-580"
+									},
+									{
+										"Location": "IS5-3460-990"
+									},
+									{
+										"Location": "IS5-3460-991"
+									},
+									{
+										"Location": "IS5-3460-993"
+									},
+									{
+										"Location": "IS5-3460-994"
+									},
+									{
+										"Location": "IS5-3460-995"
+									},
+									{
+										"Location": "IS5-3460-996"
+									},
+									{
+										"Location": "IS5-3460-997"
+									},
+									{
+										"Location": "IS5-3460-998"
+									},
+									{
+										"Location": "IS5-3460-999"
+									},
+									{
+										"Location": "IS5-3475-510"
+									},
+									{
+										"Location": "IS5-3475-523"
+									},
+									{
+										"Location": "IS5-3475-534"
+									},
+									{
+										"Location": "IS5-3475-557"
+									},
+									{
+										"Location": "IS5-3475-558"
+									},
+									{
+										"Location": "IS5-3475-559"
+									},
+									{
+										"Location": "IS5-3475-560"
+									},
+									{
+										"Location": "IS5-3475-565"
+									},
+									{
+										"Location": "IS5-3475-566"
+									},
+									{
+										"Location": "IS5-3475-567"
+									},
+									{
+										"Location": "IS5-3475-568"
+									},
+									{
+										"Location": "IS5-3475-569"
+									},
+									{
+										"Location": "IS5-3475-570"
+									},
+									{
+										"Location": "IS5-3475-571"
+									},
+									{
+										"Location": "IS5-3475-572"
+									},
+									{
+										"Location": "IS5-3475-573"
+									},
+									{
+										"Location": "IS5-3475-574"
+									},
+									{
+										"Location": "IS5-3475-981"
+									},
+									{
+										"Location": "IS5-3475-991"
+									},
+									{
+										"Location": "IS5-3475-993"
+									},
+									{
+										"Location": "IS5-3475-994"
+									},
+									{
+										"Location": "IS5-3475-995"
+									},
+									{
+										"Location": "IS5-3475-996"
+									},
+									{
+										"Location": "IS5-3475-997"
+									},
+									{
+										"Location": "IS5-3490-508"
+									},
+									{
+										"Location": "IS5-3490-526"
+									},
+									{
+										"Location": "IS5-3490-535"
+									},
+									{
+										"Location": "IS5-3490-536"
+									},
+									{
+										"Location": "IS5-3700-999"
+									},
+									{
+										"Location": "IS6-3700-999"
+									},
+									{
+										"Location": "LUBRICENTRO"
+									},
+									{
+										"Location": "NDO-00"
+									},
+									{
+										"Location": "NDO-04"
+									},
+									{
+										"Location": "NDO-05-02"
+									},
+									{
+										"Location": "NDO-3475-05"
+									},
+									{
+										"Location": "NDO-3475-07"
+									},
+									{
+										"Location": "NDO-3475-08"
+									},
+									{
+										"Location": "NDO-3475-1"
+									},
+									{
+										"Location": "NDO-3475-6"
+									},
+									{
+										"Location": "NDO-3505-3"
+									},
+									{
+										"Location": "NDO-3505-4"
+									},
+									{
+										"Location": "NDO-3505-5"
+									},
+									{
+										"Location": "NDO-3520-2"
+									},
+									{
+										"Location": "NDO-3520-3"
+									},
+									{
+										"Location": "NDO-3520-4"
+									},
+									{
+										"Location": "NDO-3530-2"
+									},
+									{
+										"Location": "NDO-3600-4"
+									},
+									{
+										"Location": "NDO-INF-TR13"
+									},
+									{
+										"Location": "NDO-MAS MIL 00"
+									},
+									{
+										"Location": "NDO-MAS MIL 01"
+									},
+									{
+										"Location": "NDO-MAS MIL 02"
+									},
+									{
+										"Location": "NDO-PRISMA 13"
+									},
+									{
+										"Location": "NDO-PRISMA 3"
+									},
+									{
+										"Location": "NDO-PRISMA 5"
+									},
+									{
+										"Location": "NDO-PRISMA 7"
+									},
+									{
+										"Location": "NDO-SFCO02"
+									},
+									{
+										"Location": "NDO.3490-1"
+									},
+									{
+										"Location": "NDO_3475_TR01"
+									},
+									{
+										"Location": "NDO_3475_TR03"
+									},
+									{
+										"Location": "NDO_3520_TR01"
+									},
+									{
+										"Location": "NDO_3520_TR02"
+									},
+									{
+										"Location": "NDO_3520_TR03"
+									},
+									{
+										"Location": "NDO_BGAR_05"
+									},
+									{
+										"Location": "NDO_BGAR_TR01"
+									},
+									{
+										"Location": "NDO_BGAR_TR03"
+									},
+									{
+										"Location": "NDO_BGAR_TR04"
+									},
+									{
+										"Location": "NDO_BGAR_TR07"
+									},
+									{
+										"Location": "NDO_BGAR_TR09"
+									},
+									{
+										"Location": "NDO_BGAR_TR10"
+									},
+									{
+										"Location": "NDO_CURVALORO_TR01"
+									},
+									{
+										"Location": "NDO_D02_TR01"
+									},
+									{
+										"Location": "NDO_D02_TR05"
+									},
+									{
+										"Location": "NDO_D02_TR08"
+									},
+									{
+										"Location": "NDO_D02_TR09"
+									},
+									{
+										"Location": "NDO_D02_TR11"
+									},
+									{
+										"Location": "NDO_D02_TR12"
+									},
+									{
+										"Location": "NDO_D02_TR13"
+									},
+									{
+										"Location": "NDO_D02_TR15"
+									},
+									{
+										"Location": "NDO_D02_TR17"
+									},
+									{
+										"Location": "NDO_D02_TR18"
+									},
+									{
+										"Location": "NDO_D02_TR19"
+									},
+									{
+										"Location": "NDO_D02_TR20"
+									},
+									{
+										"Location": "NDO_D02_TR21"
+									},
+									{
+										"Location": "NDO_D02_TR22"
+									},
+									{
+										"Location": "NDO_D02_TR25"
+									},
+									{
+										"Location": "NDO_D02_TR26"
+									},
+									{
+										"Location": "NDO_IN5_TR10"
+									},
+									{
+										"Location": "NDO_INF5_TR01"
+									},
+									{
+										"Location": "NDO_INF5_TR02"
+									},
+									{
+										"Location": "NDO_INF5_TR03"
+									},
+									{
+										"Location": "NDO_INF5_TR04"
+									},
+									{
+										"Location": "NDO_INF5_TR05"
+									},
+									{
+										"Location": "NDO_INF5_TR06"
+									},
+									{
+										"Location": "NDO_INF5_TR07"
+									},
+									{
+										"Location": "NDO_INF5_TR08"
+									},
+									{
+										"Location": "NDO_INF5_TR09"
+									},
+									{
+										"Location": "NDO_INF5_TR10"
+									},
+									{
+										"Location": "NDO_INF5_TR11"
+									},
+									{
+										"Location": "NDO_INF5_TR12"
+									},
+									{
+										"Location": "NDO_INF5_TR13"
+									},
+									{
+										"Location": "NDO_INF7_TR01"
+									},
+									{
+										"Location": "NDO_INF7_TR09"
+									},
+									{
+										"Location": "NDO_INF7_TR10"
+									},
+									{
+										"Location": "NDO_INF_TR12"
+									},
+									{
+										"Location": "NDO_INF_TR14"
+									},
+									{
+										"Location": "NDO_INF_TR15"
+									},
+									{
+										"Location": "NDO_INF_TR16"
+									},
+									{
+										"Location": "NDO_IS5_TR01"
+									},
+									{
+										"Location": "NDO_LUB_TR03"
+									},
+									{
+										"Location": "NDO_MASMIL_TR01"
+									},
+									{
+										"Location": "NDO_MASMIL_TR02"
+									},
+									{
+										"Location": "NDO_MASMIL_TR03"
+									},
+									{
+										"Location": "NDO_PRIM1_TR01"
+									},
+									{
+										"Location": "NDO_PRIM2_TR01"
+									},
+									{
+										"Location": "NDO_PRIM2_TR02"
+									},
+									{
+										"Location": "NDO_SFCO_TR00"
+									},
+									{
+										"Location": "NDO_SFCO_TR01"
+									},
+									{
+										"Location": "NDO_SFCO_TR04"
+									},
+									{
+										"Location": "NDO_SFCO_TR05"
+									},
+									{
+										"Location": "NDO_SFCO_TR08"
+									},
+									{
+										"Location": "NDO_STK3600_TR01"
+									},
+									{
+										"Location": "NDO_STKDON_TR02"
+									},
+									{
+										"Location": "NDO_STKDON_TR03"
+									},
+									{
+										"Location": "NGA-02"
+									},
+									{
+										"Location": "NGA-03"
+									},
+									{
+										"Location": "NGA-04"
+									},
+									{
+										"Location": "NGA-06"
+									},
+									{
+										"Location": "NGA-07"
+									},
+									{
+										"Location": "NODO-CHOQUERA"
+									},
+									{
+										"Location": "PETROLEO_DON2"
+									},
+									{
+										"Location": "PETROLERA SF"
+									},
+									{
+										"Location": "PLAT_REL_SANFCO"
+									},
+									{
+										"Location": "PRIM"
+									},
+									{
+										"Location": "PRIM DOS"
+									},
+									{
+										"Location": "RAMPA 3535"
+									},
+									{
+										"Location": "RAMPA-3460-05"
+									},
+									{
+										"Location": "RAMPA-3460-3490-LIX"
+									},
+									{
+										"Location": "RAMPA-3505-3520-LIX"
+									},
+									{
+										"Location": "RAMPA_3460_3475_SUR"
+									},
+									{
+										"Location": "RAMPA_3460_INF"
+									},
+									{
+										"Location": "RAMPA_ESPEJO_LIX_3460"
+									},
+									{
+										"Location": "RAMPA_LIX_3460"
+									},
+									{
+										"Location": "REM_L8_CONT"
+									},
+									{
+										"Location": "ROMANA"
+									},
+									{
+										"Location": "ROT-3520-1"
+									},
+									{
+										"Location": "ROT-SFCO/3475"
+									},
+									{
+										"Location": "ROT.3520"
+									},
+									{
+										"Location": "ROT.CAS/INF7"
+									},
+									{
+										"Location": "ROTOND.CHOQ.SAN FRAC."
+									},
+									{
+										"Location": "ROTOND.CHOQ.SANSFCO-2"
+									},
+									{
+										"Location": "STC/CHANCADOR1"
+									},
+									{
+										"Location": "STC3600/3630"
+									},
+									{
+										"Location": "STC3600/3635M5"
+									},
+									{
+										"Location": "STK_3505_LIX"
+									},
+									{
+										"Location": "STK_3505_METAL_PAB10"
+									},
+									{
+										"Location": "STK_3600_3600"
+									},
+									{
+										"Location": "STK_3600_3610"
+									},
+									{
+										"Location": "STK_3600_3620"
+									},
+									{
+										"Location": "STK_3600_3625"
+									},
+									{
+										"Location": "STK_3600_3635"
+									},
+									{
+										"Location": "STK_3600_3635/M10"
+									},
+									{
+										"Location": "STK_3600_ML"
+									},
+									{
+										"Location": "STK_3600_PRIMARIO"
+									},
+									{
+										"Location": "STK_BOLONES_3600ML"
+									},
+									{
+										"Location": "STK_BOT_3505_LIX"
+									},
+									{
+										"Location": "STK_DONOSO_3557"
+									},
+									{
+										"Location": "STK_DONOSO_AL"
+									},
+									{
+										"Location": "STK_DONOSO_ML"
+									},
+									{
+										"Location": "STK_ENAEX_AL"
+									},
+									{
+										"Location": "STK_ENAEX_BOL"
+									},
+									{
+										"Location": "STK_NIEVE_DON2"
+									},
+									{
+										"Location": "STK_PARRILLAS"
+									},
+									{
+										"Location": "STK_REM_3600"
+									},
+									{
+										"Location": "STK_SFCO_AD"
+									},
+									{
+										"Location": "STK_SFCO_ML"
+									},
+									{
+										"Location": "STK_SOBRECARGAMINERAL"
+									},
+									{
+										"Location": "TALLER"
+									},
+									{
+										"Location": "TALLER ICV"
+									}
+								],
+								"schema": {
+									"Location": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"Location"
+									],
+									"seriesFieldKeys": [
+										"Location"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"67fcc48f-37df-4a8a-8abb-f92c19924c2d": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Location": "<N/A>",
+										"LocationId": "f00fda65ebe683aa3d471aaaf04315892b026747",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BD2-3655E",
+										"LocationId": "039f133af6d73e27b79d797bd008cf13adc486e6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT-CURVA 13 PRISMA",
+										"LocationId": "a78a38be7a8ed5b9ff80cbf79c10bce77825b6a1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT-EST-BCRATER",
+										"LocationId": "bde890e9dab381f0e4f28825259f9a6a6529480e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT-RELLENO NODO VIAL",
+										"LocationId": "232037abc0a3f2fed0b2d66851c6bbb4184b7e29",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT/NIVE-PRISMA1",
+										"LocationId": "8159653b408651a2e4772d0f243028b1bf45e241",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOTADERO 3520",
+										"LocationId": "863151c9fb74825cf5dd7fcf108e36763a5b600f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOTADERO PRISMA",
+										"LocationId": "45984d40b3f71031c7ed0a67e20f6725750cb175",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_3535_LIX_RAMPA",
+										"LocationId": "b0dbd36aa03f5f748f9418b8a244d336767be82a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_AUX_DONOSO2",
+										"LocationId": "1998f231ad361286f72d106bd9bfa7fa0088815a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_AUX_SOBRECARGA_IS5",
+										"LocationId": "38feb988175262a94937bcc330ba7fb86dcf6b5d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_D2_ESTANDAR",
+										"LocationId": "83272ab17681e8275bb2a92be6903ab4116f088e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_3535",
+										"LocationId": "067d166f8013ee2b6d4355eb49b218a7a20be5aa",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_3565_ENSANCHE",
+										"LocationId": "4a66c3bfdd81a9c1236ad95bdd1a1a1dd4769ed0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_3630",
+										"LocationId": "93d2c5b2e70e3cff2b029a5af326b0aa957902f9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_3630_ENSANCHE",
+										"LocationId": "76ed2a373e76396b950a0d60c6c3e289a4725cea",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_3645",
+										"LocationId": "cefa6a9e001198ba419ab0b015f34564b70ae56a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_BOS_3282",
+										"LocationId": "4adfcad9ff0e17e877c4944361a57329eb37cf08",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_CRATER",
+										"LocationId": "d5cf4f55539f5ce059c138ac50a15f81e8589700",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_CURVA DEL LORO",
+										"LocationId": "6f5eaf9bea950a3237ba50fdbb76cb6f1921175e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_CURVA1_D02",
+										"LocationId": "63f3ddae2589c8109678b49115f66b41a0653b04",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_D02_RAMPA",
+										"LocationId": "bde2e6e7eaba7da6d8510cedbda1f04543f42fa0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_EST_LUBRICENTRO",
+										"LocationId": "e9e082f51ebd3c40a34ef2816196c73ed7b218c1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_GRAVA_INF 5",
+										"LocationId": "199de71a386832a5c7c9e0c0d8dd26b691dcd05b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_INF05_EST",
+										"LocationId": "45db44ca3273f5d98f34b830fddc71a17b2d6d8c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_INF05_ESTAND",
+										"LocationId": "719194a279a226a67ed76a1caf84222aae93dfbf",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_INF5",
+										"LocationId": "5d00731003960edc42ef4a2571d30c652ad81ae4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3475",
+										"LocationId": "f006530f759ef6d0b06cad095a639618806a4e75",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3505",
+										"LocationId": "dc4891fdb816480ae7be87493922b1cc88104a33",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3505_PATA",
+										"LocationId": "010f3b25dbb197a0f5a821668575ecbb3250157d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3535",
+										"LocationId": "8bf46c84658a620db0e270719ac38da538d5975e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3535_ENSANCHE",
+										"LocationId": "1d139976bc440af08dd06f024e88d3b1415d05a5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_LIX_3535_SUPERIOR",
+										"LocationId": "179bcdea65cbb830b6e9a988ca1da7c335a8a49b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_NIEVE_DON2",
+										"LocationId": "0b3c8dcc700c130882fdc96039b4bc6a648dc49c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_PISO_PALA14",
+										"LocationId": "9d6bfed12d0be5fb929a37b984de0c57ac864bdf",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_RAMPA_3445",
+										"LocationId": "8867f28952fe334ef7923efe0f84105fdad112a4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_RAMPA_3445-60",
+										"LocationId": "ee48ef570dec2aaf4873fddf777ebe48411018c2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_RAMPA_3460-75",
+										"LocationId": "990e651df44ca863ecd26d61c315eafaaae80c3e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_RELL_RAMPA_MASMIL",
+										"LocationId": "72dfd52ea928c1c0de4f402a8513f01a9c0e8484",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_REM_RAMPA-3460",
+										"LocationId": "0f578a5603ed3faaffc77c172e06b25f1e221b79",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_REM_RAMPA_3475",
+										"LocationId": "6961068517d6f4978430718c4bdb56e487b479cb",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_REM_RAMPA_3490",
+										"LocationId": "3f87db8504c819bebd1417b0033225d011d30bbe",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_D2",
+										"LocationId": "46f8ca651847d2be318104b117e0a578bdb17ea3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_ESTERIL",
+										"LocationId": "5ada2de3d6b7c6e0d8922df69fea0b4cb97f6780",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_LIXIVIAB",
+										"LocationId": "cf8011fc4be547249fcbbbeb9efed942ce25ec6b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOT_SOBRECARGA_MINERAL",
+										"LocationId": "cf1cd7df3249be71e3b9ed971974647ce3ecba60",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BOXCOMBUSTIBLE",
+										"LocationId": "385a541df70b17f8ec5b2967b7b4423769a420af",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BSF-RAMPA-3445-LIX",
+										"LocationId": "79ca65226393315377ecf8ed2a0611100a76966a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "BSF3520-01",
+										"LocationId": "619b1933268b773511e5b3f61915ab0855e29d03",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "CAMINO/3505 LIX",
+										"LocationId": "a308ae41a2c0e3bd832db65507e3822d54b64b55",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "CORRUGADO",
+										"LocationId": "e2d479a20336bb40d1c47882ed4edaf3d964493d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3830-999",
+										"LocationId": "24ab2ff1bfcba908c32b2ace0e3cce86e753bbb6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3840-999",
+										"LocationId": "5b2e7e8c7c099e5593113edab46878e0785ddfb0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3850-999",
+										"LocationId": "41ea58d849a22a34ff493cb218251625650122d5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3880-990",
+										"LocationId": "7fbb979249a89ae33c8ddfabf382b94f2da7b033",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3880-999",
+										"LocationId": "ab1b34ef2b458cbd6bc0fbdea531c0bdddc18751",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3880-CRATER",
+										"LocationId": "488207c566cb35a5f085e3ab90a43ce058d1377e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3885-900",
+										"LocationId": "160399e22f5d550566a2e91291ffb3adea963a9f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3890-900",
+										"LocationId": "693247a7ed3cd9d21202ad89d5fbce4271167441",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3890-991",
+										"LocationId": "c85d6d9cc1ff596dc06127494939794546b994fe",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3890-997",
+										"LocationId": "499ec9533c6b230cebce7d1a298a5fd8fc69451f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3890-998",
+										"LocationId": "8065a179e0c10ee54a591f4ea443b7c903080f89",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3890-999",
+										"LocationId": "3b92da9c4473022751b91f6f43eefce0d3ba2947",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3900-994",
+										"LocationId": "3ec440db5d28ac45375d761c610d88af66581f5f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3900-998",
+										"LocationId": "aa084b502a287ff2308a13add6aee8fabb02a130",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3900-999",
+										"LocationId": "0453821b811dae435370c365d72f3d086e8acbb6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3910-001",
+										"LocationId": "885559f6ee4e73de9d23cb5664e9a3c677f4381e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3910-002",
+										"LocationId": "08a403c31404c38a2548cd257d38f5ef2e1f831e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3910-990",
+										"LocationId": "6a0c8bad75f23c8387e0a4224b43a0edffc24782",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3910-998",
+										"LocationId": "26984127a9048607225487943343c777ff22258a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3910-999",
+										"LocationId": "79c1391cddd6a0903c4fbadbd1f2c58572cb42f5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3915-999",
+										"LocationId": "a3a6fe858251a106fc030c6cdd0d6afeb96a338c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3920-990",
+										"LocationId": "c8c6fa62471babfae28d07304cd6731edf83c971",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-591",
+										"LocationId": "956cc9656f49f5edd4f1622de51ef4916a107539",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-592",
+										"LocationId": "ca54cc6dc0b701e923f7d30fc815846f1fe79b8b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-900",
+										"LocationId": "fa71f00c701bfd267afce76f6b2132db505f161f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-991",
+										"LocationId": "e2929df80b4ea5e4c1fc80f16c1c677f6b0fadee",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-991/E1",
+										"LocationId": "59d91fe065d905a6a9d9f1255ac6e7b460b2f9cd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-992",
+										"LocationId": "673bae1fa4a560e6c02d026356c2e25079aa2c34",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3925-999",
+										"LocationId": "bb53731879a38d9d67ab5760111685afcbfb6385",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3930-900",
+										"LocationId": "0560b0bfde372dea341bb59f5f9ca15de5e219e3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "D02-3940-991",
+										"LocationId": "0ab942b0ec15d36b93fcd1b24d795ef22d102c9b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC BGAR",
+										"LocationId": "2ebb1ca216d606542a677f0a827fe6a84b32a241",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_3580_CHOQ.SFCO",
+										"LocationId": "38a087a038ed19c411a01a3f832615aeb5be7141",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_3600_INFERIOR",
+										"LocationId": "e00d35cecacaa3e0c2bf445ed78885dd3d7e68f9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_3600_SUPERIOR",
+										"LocationId": "3b7e4c77bd4b5fd4d4e38ec5e98581da8c5ed290",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_DON2",
+										"LocationId": "248b96edeac13dd88bd621f5ce45d89a29ec950b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_EST_3535",
+										"LocationId": "f1e2ffa8c77ebef83e36d65c5b223803531e335e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_INF 5",
+										"LocationId": "3be37a762bfaea08082308bb231239ee177b3582",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_INF5",
+										"LocationId": "e60e310169742b860cb632ffe2aa7327fc25f9dd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_MORRENA_3490",
+										"LocationId": "a2493fb0629d51ef0e3a86d2cc834c150a1554b9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTAC_STAR3",
+										"LocationId": "d93876ed6ef5703fc7c638c1e66dbfa1b0a41403",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ESTC_DON2 PALA 12",
+										"LocationId": "523846afdfb7d920dcf2755fd5ba7189e9283bfa",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "EST_INF5",
+										"LocationId": "f379a58d23dd8535a8a051a5807a1a55ec6ce83b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "I7A-3517-999",
+										"LocationId": "c5f09fba7d171be81947a4071998f91521262bc7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-00",
+										"LocationId": "fe86971681bc946b09c212a540d606c78924a2cd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-01",
+										"LocationId": "767d219a24c12488a8b64cbc7474ed761e77179b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-15",
+										"LocationId": "207bb6114a3a52b358eb1a2c8ced349506c1e1c4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-16",
+										"LocationId": "78bf1ffdbea1958ed286569048ec44ef6d93a92f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-17",
+										"LocationId": "404b7bbafdb5531a04141cf9ba91bc3975d90478",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-18",
+										"LocationId": "6c1f0ebf280292c24c72904a2113bcf4ff41a9c6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-19",
+										"LocationId": "aa8dd5dbcf67fd36957337bc7c695649915719c9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-22",
+										"LocationId": "6b10d0a8ac5a2d069ef0c2504c3d27e422f19c5a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "INFIER-25",
+										"LocationId": "195afc792321604fe125ffca7c891fb06780951d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-380",
+										"LocationId": "2f04d830482e0d87badddb70ee34e6b59c74f98e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-381",
+										"LocationId": "fcfb948734406699229610d312a233b9a12588f3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-386",
+										"LocationId": "924fb8ec1a4690db83f864fd7aeeed1dd6a3112d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-390",
+										"LocationId": "4727cd3e9ee24b4b41674a6ed70918aea1530121",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-391",
+										"LocationId": "2e579e1adef4b1825bd49d2b8ec0309f389fbc3b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-393",
+										"LocationId": "b8760cace909562ba29cf231fb7a85c323fa1626",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-410",
+										"LocationId": "a983233df289675bbfd13f671aeeef7311445bed",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-410B",
+										"LocationId": "4307bd2c65d1047aee683c09d244a2841f9cbbe6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-411",
+										"LocationId": "9d3d8c6906b8b69b0caede4c4b0483f8c816c40d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-413",
+										"LocationId": "0f9f36979150bd5f8e1870c57b7cc68e10793424",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-414",
+										"LocationId": "2431046aede652709ac5f5d5fc230a4f2ac35b77",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-416",
+										"LocationId": "a6203ff2daa4ee103acc50f6a14441398ddbab74",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-417",
+										"LocationId": "cdd8a2b93c13814e44c59ed9e1431f91e3b791e5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-419",
+										"LocationId": "cbefdce21af16f2e496a1bdfafd5c79883609dee",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-992",
+										"LocationId": "ad2ac18c79866bc2778bd039ccb90f336172ea92",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-996",
+										"LocationId": "23795e174281599b216be3d0e2ba864202eede8a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-998",
+										"LocationId": "c4632ee5e939759285a6f1ea9cc9acbd5f37fbef",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3430-999",
+										"LocationId": "5e40488442ad458d203de208fc6f4d2dbfec8972",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-559",
+										"LocationId": "f026c08d663ea34867cbf09740e5b6a110f5f3aa",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-600",
+										"LocationId": "2824bda0d4d10773f3c2043f4207bd6877aa0430",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-601",
+										"LocationId": "768dc1765d70b96a1b4a59314a4a6c907c6810ad",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-603",
+										"LocationId": "a03cbd5ef6d2e02ac8071a380403f41a754f1c1d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-604",
+										"LocationId": "8a985055321af0847ec1cbf2c3ca598bed7fb652",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-605",
+										"LocationId": "2bb840d8bbc0c874309ebd27bb6c262cef7cbe90",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-606",
+										"LocationId": "a93fd2e9679003062e49a8297117d4173f395b4d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-607",
+										"LocationId": "367548c64bfe2bce774675b1a13b5094a30ce415",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-608",
+										"LocationId": "156cb250c1d0f0104ccbbcf6af29a5e9855de863",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-609",
+										"LocationId": "f7ef1a179e2b98d750d82587b80b9ee3613fffe1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-610",
+										"LocationId": "ff20674598291e5668136edfe687e6094b922210",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-611",
+										"LocationId": "4c0ee86c74b19c109968c04a896d12095b7a7725",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-614",
+										"LocationId": "3e74163fa896315a30e8c89393ed95480f485ad2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-619",
+										"LocationId": "04e82f01ebf1cee2d3d30b9f7cd2169a912a9e68",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-621",
+										"LocationId": "7f06960e70210eabde1aee5a199f2d5eb9c1e425",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-622",
+										"LocationId": "ae6aa6c1d5a2ab72b01ee20795adcd0e2b819c2b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-623",
+										"LocationId": "32bedeb9d60c64156b41553e1ba3b427dda71de7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-624",
+										"LocationId": "5e9239a8c465b3552f29e3934fd081a4cd5b10bf",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-625",
+										"LocationId": "9b789dbe19c5bf4bc63bf80e5a3c93a8aaeccbe5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-626",
+										"LocationId": "c180156a7c48513d766e24d6b029af4061a475c9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-628",
+										"LocationId": "0cae600216ab6e075d92ef4cd450d643ed824d06",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-629",
+										"LocationId": "3c03dab4248dfb64da1de264654a037255a4a2ba",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-630",
+										"LocationId": "d7b132c6e5a34e04089354013aa5a694d0c84b0e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-631",
+										"LocationId": "b29eec3b17a4365149f0bd8a444a3e431480e3c1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-632",
+										"LocationId": "a3a08b82422605437ff00a9a9b40cf4de7a664f6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-633",
+										"LocationId": "a7481163be797df06a750be006c5d7b38e23c83e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-634",
+										"LocationId": "c60f2f3113a08aad0b5ed85ddc2e758c512de43a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-635",
+										"LocationId": "0f2c33874e405889cf518ca993598f33ce242c8d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-637",
+										"LocationId": "0f7db619451ff17e86d4f4b28c3e717bb81d361e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-639",
+										"LocationId": "5dc8646ed04b88bf0080e2046376f27a8f3ed7f1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-641",
+										"LocationId": "4f5c83e5ecf09457f5d17ded0c9f38a4bbba8983",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-643",
+										"LocationId": "c9bbcb78c57de9cd32be7150fd5d844d4b5eaf3a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-644",
+										"LocationId": "dd07d0995a1903eeb87bb2db5825b11443d19772",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-990",
+										"LocationId": "166738720a93d86b86a2a3bf0e221486de7142d8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-991",
+										"LocationId": "470046938fb30cce684d23875e0c70cc448b88c1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-992",
+										"LocationId": "bc0dcdbb6bf02dd17b548fc0c6ff21481006fc29",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-993",
+										"LocationId": "c034dcf2b70695ac63140d8c528cab20d97e764d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3445-999",
+										"LocationId": "60f270f6e1247740ab8fb0c78e88ffc7af0f85d2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-537",
+										"LocationId": "7f72f5f27a249d3354803c02ed81f568c57807fd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-538",
+										"LocationId": "bd5cc7e4dd16bb8ba17bb33deb7ceef7ec760e27",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-543",
+										"LocationId": "970de7c6885237d8775deaba3ca5486ac205e15d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-546",
+										"LocationId": "d9ab029b2dce0a7822387c9544f194629454a06c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-547",
+										"LocationId": "e998cdb4145b3a6f58fd44fd1f7e19101710014b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-548",
+										"LocationId": "01f555141dcd3a6d3fb8c85de31468cffa236a81",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-550",
+										"LocationId": "808763b299e5ce4f5b7d4a5bd8ee8dda20a3f6bc",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-551",
+										"LocationId": "8a1af2a2ec91fafcc75b450b8a6bfd8c22f11b51",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-552",
+										"LocationId": "9c45f6ef2c43d099feb86886662b923c3e1ca972",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-553",
+										"LocationId": "68c2bfbbd03ee17254019d63cfffdd996b41a0ce",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-554",
+										"LocationId": "0131fe77f53c9dd4b7044faa21f03beda8662d42",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-556",
+										"LocationId": "17ab9362d4f167596becdc962497e8ddaa36353e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-557",
+										"LocationId": "33454288a05df84e31811dc179b262983f60024f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-558",
+										"LocationId": "52c6f165ae2b0a3012d0f600b4a01a3632be66ed",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-559",
+										"LocationId": "a957ef3ac81f605a6f31d31c6a4ff4411aee0d20",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-560",
+										"LocationId": "3d2006f6932fed7fb5782bd4ed2bcd82e8451bf8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-561",
+										"LocationId": "35b064c4de7609a4585156060ea518fafc7c0aa3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-562",
+										"LocationId": "c2a65c3598a31b3f56432d6a1f113d1e6547665b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-563",
+										"LocationId": "7322b458df1e49179fd66a6cd7bd5b2be29c4fd5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-564",
+										"LocationId": "6a34034eeaa4d2c548600c7bfbf5ad7d487ef0e5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-565",
+										"LocationId": "a97c5cb7580809264da8c56603b52027a0d941d6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-566",
+										"LocationId": "b86970b990965be2b994c43a0ea756dc741b7390",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-567",
+										"LocationId": "6c294965c2e1fa3c5dfc8f7ae948a0bf4137106f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-568",
+										"LocationId": "f057255b891b6a336b5352de46f3f755f288b2e0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-569",
+										"LocationId": "86a08c2d29686c658b8cbd9eb12403039cd9d975",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-570",
+										"LocationId": "836c9cfbf81b6e1595568a071427260a2c1e25e4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-571",
+										"LocationId": "6d7bdf49195ea6cac5ad43ad762fab259c1137b1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-572",
+										"LocationId": "444a820060a7b026630862b46d35768e4482b317",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-573",
+										"LocationId": "5f904e8156994b20447297c5c8b0352b7eff39e9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-579",
+										"LocationId": "76edd51d0cbf320ed8f3682e5216d3344ae6914c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-580",
+										"LocationId": "98fde58f678d535a85d9d2c782500fcb3fc832ad",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-990",
+										"LocationId": "6f67a9d65ac7de87f43932ecab4fd40843785cb9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-991",
+										"LocationId": "572bf17e4270675aa20983f1703a03ae84a3d25d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-993",
+										"LocationId": "f089a9792539fd1a4299eb12f2ee266ae2c8f1f2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-994",
+										"LocationId": "74724c073bc114a65c670f7cadafe2e765cc3eec",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-995",
+										"LocationId": "40afa234dc3276d118c54888cb143b6435cc30ab",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-996",
+										"LocationId": "4573c81344eb8cb7ea205933ac0fd9285b631426",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-997",
+										"LocationId": "31be3cbee5ea839e52655b7776684b6b14dae924",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-998",
+										"LocationId": "d36230c21a1722d7cabde8a5a6c20f5edc22ee29",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3460-999",
+										"LocationId": "b6af0fcb161acf20cd24d2d8b9fe16b8feb93989",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-510",
+										"LocationId": "151ff069ad39dbb889bd522de4eb5d61788d5e0b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-523",
+										"LocationId": "cec74400dd2a8e3b2e015a89948e476474215989",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-534",
+										"LocationId": "59d2c9275b9f23a0b99842e4770ecd0013291895",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-557",
+										"LocationId": "37ca3ef694df6bc9ebfe6806f7f3f632c6467633",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-558",
+										"LocationId": "0aad79dcc12fd9ddd6068b2271f836632074f7db",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-559",
+										"LocationId": "e23ad27d00d8a3c05045c45f10b2ad9cb0cf72a9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-560",
+										"LocationId": "e1e65feaa2672b6206bcc296191c9b925597a788",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-565",
+										"LocationId": "1c7aed90f35a80f1476ae267c2e85658fef180b7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-566",
+										"LocationId": "a2f144dae4f0d80a87f393ab8f9aeb3a8241a3f6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-567",
+										"LocationId": "671ba26fc1d6d76b71c8aa5eda60a900efab60e8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-568",
+										"LocationId": "d01ca668bd5ab61da58abf920e2dcc7f16d34437",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-569",
+										"LocationId": "8290cefc9e73dd93154ff4f6ceb33770e3a61e1e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-570",
+										"LocationId": "a14558ebfdc3ae57d86e15b06eaf9202f6fc2576",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-571",
+										"LocationId": "6dc57fdd5ee51525b9fe17f8138122f7f42e8297",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-572",
+										"LocationId": "b40260ec13e6d52359ce1f55d8b6a40e6f7e12b5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-573",
+										"LocationId": "d1295db7d7dcd3c69c2125cd6d6202d0b7d6b2b6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-574",
+										"LocationId": "e0d6ed52360019a856edfa9336156718b8fd090d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-981",
+										"LocationId": "283435491ffbced02bdb1a757366e1eb74396b97",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-991",
+										"LocationId": "9e2ce3bbf8d4551211ae8dddd2c97a243dbeb3a8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-993",
+										"LocationId": "4944a9ece5217de2d19904dd62f9d40c5992b732",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-994",
+										"LocationId": "f64a1012c13b6516272b20fbb1fcd16545e9317a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-995",
+										"LocationId": "1addc62e4f876240228decc5097a5945af6f28e9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-996",
+										"LocationId": "d69a4cf92043a2834590fd605cc50ffc21106de5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3475-997",
+										"LocationId": "fa48af393948d262669801cecbbc3ac35e84d4f8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3490-508",
+										"LocationId": "a485b43507eff6fe87cb59a42e3c2bce25d3c166",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3490-526",
+										"LocationId": "6a9b412186ba58d9dbed541bd2cccf69701eea2c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3490-535",
+										"LocationId": "876f0afe4bd7d15818e1fef1f3a5cbad34440f67",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3490-536",
+										"LocationId": "cd81cd82e56363a39ed6c672a3741cd4740e19c8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS5-3700-999",
+										"LocationId": "13ad4ab2f132819a4dff97f96e642af5028b1c67",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "IS6-3700-999",
+										"LocationId": "371dce94b1c685b8a3d6c2246800a2e2e5c92184",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "LUBRICENTRO",
+										"LocationId": "43788496142ce13cb9e5f3c9c5d9d91ae035c7d0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-00",
+										"LocationId": "7ff23d583a23f1c98c870dd2a6b6da74f1b046ac",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-04",
+										"LocationId": "bbabf9d4f51859d3a8e9e73217fd5c037196e0d1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-05-02",
+										"LocationId": "1abac03fd03b845273c3e1229e4e99375d3c9a21",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3475-05",
+										"LocationId": "4239e89ddad1f7b2ffb4093c598a0200ffc5e024",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3475-07",
+										"LocationId": "720d6c01bcb6e48122fe66908c2f888a2472505c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3475-08",
+										"LocationId": "0c51da879bfcfd9a3afb5fe85cf6e08815884fb7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3475-1",
+										"LocationId": "5f220a2cc9e7617d36377e7efea9845a6506dcd0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3475-6",
+										"LocationId": "d49f3770f9429ab50affb4e3c9fd5e8dbae7db4c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3505-3",
+										"LocationId": "37f0c7c98376ef88901f8032617a63de207c74b2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3505-4",
+										"LocationId": "8143e1f88b35fad29ee95af75bb52a92f0bda960",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3505-5",
+										"LocationId": "d7b11cb55511e534b6ae120f1f3a12f739ce76c4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3520-2",
+										"LocationId": "228fbf52417e5cdecb9822dccdbb54d0e9e03025",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3520-3",
+										"LocationId": "21503a89f3896a75586dd5484c0d07cbcc362ba5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3520-4",
+										"LocationId": "336a4fe4a6d66d2254cc2362f5665af11d28e863",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3530-2",
+										"LocationId": "8680d30d3a734e7e675b50c804dd83f1301ea472",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-3600-4",
+										"LocationId": "6a1ea35412eb6c2cf69b57dcd1aedd8243028bb1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-INF-TR13",
+										"LocationId": "f1680f4d28f6f4130a4c93fd2969af238f6d3426",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-MAS MIL 00",
+										"LocationId": "3286179dd2bb92e84b61a85db4358da3fca42a68",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-MAS MIL 01",
+										"LocationId": "9f9aea8795be6c4da579aba1d7bfb1eba5e2944b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-MAS MIL 02",
+										"LocationId": "d62dfcb3e575412f16fa260cf5442a329b42a7cf",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-PRISMA 13",
+										"LocationId": "744e1d4ae27ace4460526f2f2e7e9fb74ec54a18",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-PRISMA 3",
+										"LocationId": "668a639c4b2eff777d27af9c5397ea6c4a1e8578",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-PRISMA 5",
+										"LocationId": "5effefc817e91d90269649121d080bc32b41e5ce",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-PRISMA 7",
+										"LocationId": "af6525cb2ab2024bca81ff5a069f1e0c524ae0a2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO-SFCO02",
+										"LocationId": "4c0d49f02425406a9a82aa9148e8e69717b5b9e3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO.3490-1",
+										"LocationId": "7231126d76876661c4d38bc2d34dc6ff1afa0b2b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_3475_TR01",
+										"LocationId": "1ba9c85c805564456d58bfec5602d0ff57586e21",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_3475_TR03",
+										"LocationId": "548b62ee35b86d33bbfa6f8cee5d644bd2003d59",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_3520_TR01",
+										"LocationId": "fca195b6da5965cb292caa43bafcd7fb0f37ce97",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_3520_TR02",
+										"LocationId": "6739be68036fb60d98ebcf8b370ceab5ef26dbfc",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_3520_TR03",
+										"LocationId": "f5816642869128bfa4a30c6ad034bb007465ade2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_05",
+										"LocationId": "49d6707e50bee9d2dab17ddc46caab11fe6add57",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR01",
+										"LocationId": "61fd819a947bf46d176b51a04dcdcd041be757a1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR03",
+										"LocationId": "7dcb6fd60e9a5e773149deabb633df87fa768260",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR04",
+										"LocationId": "db5c16ce0ba1f430cdaffd063f03e8eafed13985",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR07",
+										"LocationId": "7223657309db1199915b713b24ed41c9c5670a9e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR09",
+										"LocationId": "f592b024770350948e02d47652eed34b6bdea1fd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_BGAR_TR10",
+										"LocationId": "4267611622b2fbe6edb9cf161f878aadd3730c78",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_CURVALORO_TR01",
+										"LocationId": "5fc4b0ed4eb175e9f9863ebdde0da87300b8f017",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR01",
+										"LocationId": "fbcb94ddc5948a0fdf4850b91b0cbd12c1e22acd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR05",
+										"LocationId": "e5ee7fd4563d811ecd9d53b843289b095ae29ad4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR08",
+										"LocationId": "bb3b227398b37040986bda778c1aea50ebf28b74",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR09",
+										"LocationId": "ed649f9f170b8cfbbd7edaafa04820544f905ac2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR11",
+										"LocationId": "7c9d528b6d79dba2f89096d191a4f35f08f495f5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR12",
+										"LocationId": "eb65c51709bbc9ff58cd2dfd48bcb3290c7944d6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR13",
+										"LocationId": "9666cdb84561904ec4172e5a784f6f6de78acdb4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR15",
+										"LocationId": "bc9a27d5cb663616e44dbf9b6bb5402ceb28bc4d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR17",
+										"LocationId": "23bd8efc366811d3c02ce49a7077aa8c61d1a3e3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR18",
+										"LocationId": "95143a0e3f2b8d2aab8c4a72ef57ab1dd001d1b7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR19",
+										"LocationId": "d1ed411a7d733bd3f7ea7ec14a65b83aeed8e831",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR20",
+										"LocationId": "bf1a60f4857f30b0b917879a9920e57b8a03851d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR21",
+										"LocationId": "dd95b906d142c8c68ccdf472d7376245cbd70c42",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR22",
+										"LocationId": "82113cfae2610ad7f5faf8b71060a39fcd4dd1f2",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR25",
+										"LocationId": "37fe59dbf9d44ea049d6ebb3cb1eaa5175f83290",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_D02_TR26",
+										"LocationId": "506e15a35dee836df3e26ad7a29f1afbf5fa3df3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_IN5_TR10",
+										"LocationId": "4f2923a97b094e42d83974736e543945d59f26e4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR01",
+										"LocationId": "49ea3faf8a1c45f27f06fd1139fa235a5b72a5e6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR02",
+										"LocationId": "c0a7ffcd5b5a2bc1569c15453539703b20a683a3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR03",
+										"LocationId": "f2ce2d103424f094d9842565198349f3ea9d8ae7",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR04",
+										"LocationId": "2ad3b294b24c4271dbb497c8254d415ca3a654b8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR05",
+										"LocationId": "e0b9ea25daa104becb33543583a2fcb484c2a878",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR06",
+										"LocationId": "ca660ebbf787dd6b74b9f4320d0689fa50c65673",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR07",
+										"LocationId": "42ac62c0989aeb5be2dc5e66aa405226eab91f33",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR08",
+										"LocationId": "a82fa87e9d20e537c9487eae16b959b546846aee",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR09",
+										"LocationId": "b5d182fba58b4f24aaa0bcfdf81d136a5355a895",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR10",
+										"LocationId": "fd536f2bc8ac65d514c213814bd1b30c3b80d499",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR11",
+										"LocationId": "9ee658540a97c8aea56876a686499fc169f06027",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR12",
+										"LocationId": "ac397b2bdc4fb5e5db21606d6048f979492b65d4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF5_TR13",
+										"LocationId": "5399dfdde8a6b99493a1d1df7d43bc625133828b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF7_TR01",
+										"LocationId": "a9dd2504c163a10ab5482418437036ab5c682dab",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF7_TR09",
+										"LocationId": "6e978a6adfcd015c4c594205c30e5cb071597a06",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF7_TR10",
+										"LocationId": "a767672331f4cdf8c20a8d7d4f10e64ffba5ebfd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF_TR12",
+										"LocationId": "8e3340fc14201fe3866d066a8efd6e3473c43a07",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF_TR14",
+										"LocationId": "1d863f69fcd95183227579bf44883e2bc1cd5b0d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF_TR15",
+										"LocationId": "cc3a66ddb0ef5b718563495ac6a7ba4ed8fa44bf",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_INF_TR16",
+										"LocationId": "234a9d72df1d801ff5c5b2c835a6ec3fabf8c759",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_IS5_TR01",
+										"LocationId": "c9d0bb3af3ca11299c5f8dae194a350b84ca7661",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_LUB_TR03",
+										"LocationId": "a6ed14b236d9f4eb1d49a5c8677c6169435b9fed",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_MASMIL_TR01",
+										"LocationId": "291ea6a76adf2b7210ebde94e6f308891b9c5a6d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_MASMIL_TR02",
+										"LocationId": "e52a61bf8321c191dc62b2487799851d7238b3ce",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_MASMIL_TR03",
+										"LocationId": "0431f2cd127fadedfef17bea57fb490db30752d0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_PRIM1_TR01",
+										"LocationId": "8dd6cbf74531ad03dde7673848ba9bbc623bcf51",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_PRIM2_TR01",
+										"LocationId": "d09c454a4cbceff8f731ea06f4a14b31d69b539a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_PRIM2_TR02",
+										"LocationId": "4f8fbdc11564f50aecd2a04893f6c1ee88ab383f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_SFCO_TR00",
+										"LocationId": "f3735f6e436b1be34afd954b81b70d6764997d6b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_SFCO_TR01",
+										"LocationId": "7b73fbf55b91fe7c9b39bc6991069ea2258de4e6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_SFCO_TR04",
+										"LocationId": "e8198efafa19318fc54b3ce3977c357da56afabe",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_SFCO_TR05",
+										"LocationId": "62d08bff7cd321e714115f6bc79cc1b759ab6c3e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_SFCO_TR08",
+										"LocationId": "c32c4169888f2f5056331e4815f07cb65d254ead",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_STK3600_TR01",
+										"LocationId": "c7b622487b5a56d21adcba7ac237c1b5fb71fbe8",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_STKDON_TR02",
+										"LocationId": "6f012b2ed192ef3ad3786424622f52a9aca32383",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NDO_STKDON_TR03",
+										"LocationId": "e087cfc78bfa8ba3832dbcf1debf4c4f54802ce4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NGA-02",
+										"LocationId": "d9d028c5131182076892cc7e11d4a5280a5311a5",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NGA-03",
+										"LocationId": "35508ae238a96a85701bd14e2c92d7d2ae34d382",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NGA-04",
+										"LocationId": "34d406a247f1bd3bad467d4138d12d90e27a504d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NGA-06",
+										"LocationId": "e96249313a82d385683c8e741a5c5cec798e78c9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NGA-07",
+										"LocationId": "5d576f002b6182faa5133dfc42c669234b62ca8d",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "NODO-CHOQUERA",
+										"LocationId": "bcc65d08cccf5987515593e8c2dfc90f3a7842b3",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "PETROLEO_DON2",
+										"LocationId": "7878746626f27fcd5efab3382ce9c2832c390c16",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "PETROLERA SF",
+										"LocationId": "cf97c0b86fa1e94f9e31ef1619df63847d5e67ad",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "PLAT_REL_SANFCO",
+										"LocationId": "f746fb2c50b1cddab31f675114037c0d72f475e1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "PRIM",
+										"LocationId": "5d644c8df107d1046d0aa93c435d56cd32a145eb",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "PRIM DOS",
+										"LocationId": "1d09e22dec3bfaf0b45ae4b5c2efd21b443e6b76",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA 3535",
+										"LocationId": "e7def03b5c7d1a32022b7f79dc233c65468ddf60",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA-3460-05",
+										"LocationId": "2485452d7875f2113b06b87599c791536215894e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA-3460-3490-LIX",
+										"LocationId": "a31f9d3e0dd44cc6e6aeead723006f31423c57d9",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA-3505-3520-LIX",
+										"LocationId": "a7c6243b9da2777bed69dd163c1443e877838c9f",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA_3460_3475_SUR",
+										"LocationId": "3a16ab85dd7b83a5b9c6cb68a5756e934d227ebd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA_3460_INF",
+										"LocationId": "d7620599491d5b19ad7eef47506de7d249991f35",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA_ESPEJO_LIX_3460",
+										"LocationId": "a55f45d80ff64e07cfff9333a5b31ff51d275b1e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "RAMPA_LIX_3460",
+										"LocationId": "bbb9204703d520965743d4d251fab41fe5f27792",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "REM_L8_CONT",
+										"LocationId": "79da1d68d89d930a4551769b9b777384132fc3b1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROMANA",
+										"LocationId": "bc96841bd51444faf4dba0743efc140367976bfc",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROT-3520-1",
+										"LocationId": "66a7c9d66caa9da1855d526f7a6a23155e518bcd",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROT-SFCO/3475",
+										"LocationId": "4bfb9215a4c76458b76018278851c9c22708bd4b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROT.3520",
+										"LocationId": "c7a8850fbcbc6df4e0f9bc9825e5e0185e22c244",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROT.CAS/INF7",
+										"LocationId": "91b9a5fc2d227a1ffc2fc7cfdcbfc64a0ce45673",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROTOND.CHOQ.SAN FRAC.",
+										"LocationId": "f914821cb1a5bb392779c314b5ae9f60391d8910",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "ROTOND.CHOQ.SANSFCO-2",
+										"LocationId": "eee7134f9139e57d8fb127869cd1aedd44a7f135",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STC/CHANCADOR1",
+										"LocationId": "25e54ec4fc97ef1381ca022cf5d567242f1228f0",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STC3600/3630",
+										"LocationId": "844fa1d95eba88783e22b7b0f28f761b7fb9821c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STC3600/3635M5",
+										"LocationId": "c50e9df653f8943ecfb6deb28a283c9ce2132756",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3505_LIX",
+										"LocationId": "b4fd95413d46b1a1f00ea9fb2cf438535e2c456e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3505_METAL_PAB10",
+										"LocationId": "f5403c7868b6ccdc82c2596cb043f3c37e0312b4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3600",
+										"LocationId": "cc960ab85c42a6d30e7a3fb8a03f17a1563d4eef",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3610",
+										"LocationId": "32b3a6fa479025d08009a469ae345c81dac1d376",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3620",
+										"LocationId": "c13002bdeea78e4681c62c204bc2feb84741610a",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3625",
+										"LocationId": "2fedad40804a67c0a6b28dba01e456e6900d6b55",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3635",
+										"LocationId": "52144adf956db41ef52efabcc37ba35ceb688e73",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_3635/M10",
+										"LocationId": "b83cd48c610bcf7249c63bb72dba502a39cc814e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_ML",
+										"LocationId": "fd489abd64a4ffed3e61d4bf520d75e66b1b1b0c",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_3600_PRIMARIO",
+										"LocationId": "d4c73972aa38e6853901a32fc400a01f46010886",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_BOLONES_3600ML",
+										"LocationId": "e866dc6930ed944e59c2090a9b3a47759db2c643",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_BOT_3505_LIX",
+										"LocationId": "5016a12df789db2f3c731d7bcee11d082b843896",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_DONOSO_3557",
+										"LocationId": "df334b9a1ed7e327701ae92d74712af576ed267e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_DONOSO_AL",
+										"LocationId": "38baf1c39eff7154ca59bdd11d2a0f2d27d789d6",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_DONOSO_ML",
+										"LocationId": "1f98bf7cec6e1e92756930b9321790a29e2f6548",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_ENAEX_AL",
+										"LocationId": "1f4b6283a608887a552f5ce5679a5f8b1654292b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_ENAEX_BOL",
+										"LocationId": "80508b2c526138e64b4e79f9542c226986aa939b",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_NIEVE_DON2",
+										"LocationId": "38e8df07ee8944e49c9f0765e093c2e7b57835d4",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_PARRILLAS",
+										"LocationId": "5059c487fcc26e1316d89a94737c6cebb2f914dc",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_REM_3600",
+										"LocationId": "d4651c5553c72a66e2063126245fcbad8625fa00",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_SFCO_AD",
+										"LocationId": "843b7a669afb0c214aae58dabb8d71718bf1d353",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_SFCO_ML",
+										"LocationId": "ddb52b3346d4831fa3b859d23f661785d2310a38",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "STK_SOBRECARGAMINERAL",
+										"LocationId": "0ac7759d0ef1bae8bc13e197f1a4759888c727d1",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "TALLER",
+										"LocationId": "fc10dac5dfbfe26793875c959895e2196cfe3f5e",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									},
+									{
+										"Location": "TALLER ICV",
+										"LocationId": "5f5daedcca6b7e04fa33b66e6b421cf2c0741a93",
+										"BatchDate": "2021-06-25T20:37:44.669Z"
+									}
+								],
+								"schema": {
+									"Location": "string",
+									"LocationId": "string",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"Location"
+									],
+									"seriesFieldKeys": [
+										"BatchDate"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Location.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos y ordenamos los datos desde la tabla de origen, de acuerdo al requerimento de la dimensión\r\n",
+					"df_dim = df.select('Location').distinct().orderBy('Location')\\\r\n",
+					"#.filter(df.MaterialType != 'Vacio')# para dejar una fila vacía para las pruebas\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": true
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"#from pyspark.sql.functions import monotonically_increasing_id, col, row_number\r\n",
+					"\r\n",
+					"# creamos un id incremental\r\n",
+					"# genera un id único e incremental, pero no consecutivo\r\n",
+					"# ref: https://kb.databricks.com/sql/gen-unique-increasing-values.html\r\n",
+					"#df_dim = df_dim.withColumn(\"monotonically_increasing_id\", monotonically_increasing_id())\r\n",
+					"#display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": true
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos el nro de id con row_number según el valor incremental creado antes\r\n",
+					"\r\n",
+					"#window = Window.orderBy(col('monotonically_increasing_id'))\r\n",
+					"#df_dim_with_id = df_dim.withColumn('MaterialId', sha1())\\\r\n",
+					"#    .drop('monotonically_increasing_id')\\\r\n",
+					"#    .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					" \r\n",
+					"#display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# limpiamos los textos vacios de la columna MaterialType\r\n",
+					"from pyspark.sql.functions import when, sha1, to_utc_timestamp, current_timestamp, col\r\n",
+					"\r\n",
+					"na_string = '<N/A>'\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn('Location', \\\r\n",
+					"       when(col('Location')==\"\" ,na_string) \\\r\n",
+					"          .otherwise(col('Location'))) \\\r\n",
+					"          .na.fill(value=na_string,subset=['Location'])\r\n",
+					"\r\n",
+					"# para la surrogate key, usamos un hash, que es facil de paralelizar\r\n",
+					"# https://towardsdatascience.com/building-a-modern-batch-data-warehouse-without-updates-7819bfa3c1ee\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn('LocationId', sha1('Location'))\\\r\n",
+					"               .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					"               .orderBy('Location')\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			}
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "STG_Minecare_ft_NotificationDetails_copy",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.objects O JOIN sys.schemas S ON O.schema_id = S.schema_id WHERE O.NAME = 'ft_NotificationDetails_copy' AND O.TYPE = 'U' AND S.NAME = 'STG_Minecare')\nCREATE TABLE STG_Minecare.ft_NotificationDetails_copy\n\t(\n\t [NotificationID] bigint,\n\t [SiteId] int,\n\t [EventId] bigint,\n\t [id_Model] int,\n\t [id_Equipment] int,\n\t [GroupId] int,\n\t [id_OemEvent] int,\n\t [id_interface] int,\n\t [Level] int,\n\t [NLevel] int,\n\t [ReadTime] datetime2(7),\n\t [OperatorId] nvarchar(4000),\n\t [GPSLocation] nvarchar(4000),\n\t [UpdateDate] datetime2(7),\n\t [InsertDate] datetime2(7)\n\t)\nWITH\n\t(\n\tDISTRIBUTION = ROUND_ROBIN,\n\t CLUSTERED COLUMNSTORE INDEX\n\t -- HEAP\n\t)\nGO\n\n--Uncomment the 4 lines below to create a stored procedure for data pipeline orchestration​\n--CREATE PROC bulk_load_ft_NotificationDetails_copy\n--AS\n--BEGIN\nCOPY INTO STG_Minecare.ft_NotificationDetails_copy\n(NotificationID 1, SiteId 2, EventId 3, id_Model 4, id_Equipment 5, GroupId 6, id_OemEvent 7, id_interface 8, Level 9, NLevel 10, ReadTime 11, OperatorId 12, GPSLocation 13, UpdateDate 14, InsertDate 15)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/ft_NotificationDetails'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n)\n--END\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.ft_NotificationDetails_copy\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,105 @@
+{
+	"name": "DISPATCH_DLBSHIFTSTATE_TEMP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLake_devmycdlake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/Incremental"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "dispatch/temp",
+				"fileSystem": "devraw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ShiftId",
+				"type": "INT64"
+			},
+			{
+				"name": "ShiftName",
+				"type": "UTF8"
+			},
+			{
+				"name": "DbName",
+				"type": "UTF8"
+			},
+			{
+				"name": "ShiftYear",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftMonth",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftWeek",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftDay",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftSuffix",
+				"type": "UTF8"
+			},
+			{
+				"name": "FullShiftSuffix",
+				"type": "UTF8"
+			},
+			{
+				"name": "ShiftStartSecSinceMidnight",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftStartTimestamp",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftStartDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ShiftStartDateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "FullShiftName",
+				"type": "UTF8"
+			},
+			{
+				"name": "Holiday",
+				"type": "INT32"
+			},
+			{
+				"name": "Crew",
+				"type": "UTF8"
+			},
+			{
+				"name": "ShiftDuration",
+				"type": "INT32"
+			},
+			{
+				"name": "ShiftDate",
+				"type": "DATE"
+			},
+			{
+				"name": "ShiftFilter",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExtractDate",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

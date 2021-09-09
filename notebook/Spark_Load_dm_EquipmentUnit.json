@@ -1,0 +1,651 @@
+{
+	"name": "Spark_Load_dm_EquipmentUnit",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"3ad18f00-71fa-4f39-b82e-bcd178a59f83": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 16777217,
+										"ModelId": 16777217,
+										"Name": "CAC201",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.747Z"
+									},
+									{
+										"Id": 16777218,
+										"ModelId": 16777217,
+										"Name": "CAC202",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.767Z"
+									},
+									{
+										"Id": 16777219,
+										"ModelId": 16777217,
+										"Name": "CAC203",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.78Z"
+									},
+									{
+										"Id": 16777220,
+										"ModelId": 16777217,
+										"Name": "CAC204",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.797Z"
+									},
+									{
+										"Id": 16777221,
+										"ModelId": 16777217,
+										"Name": "CAC205",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.813Z"
+									},
+									{
+										"Id": 16777222,
+										"ModelId": 16777217,
+										"Name": "CAC206",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.837Z"
+									},
+									{
+										"Id": 16777223,
+										"ModelId": 16777217,
+										"Name": "CAC207",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.847Z"
+									},
+									{
+										"Id": 16777224,
+										"ModelId": 16777217,
+										"Name": "CAC208",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.87Z"
+									},
+									{
+										"Id": 16777225,
+										"ModelId": 16777217,
+										"Name": "CAC209",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.88Z"
+									},
+									{
+										"Id": 16777226,
+										"ModelId": 16777217,
+										"Name": "CAC210",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-06-09T13:37:46.893Z"
+									}
+								],
+								"schema": {
+									"Id": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"RecordStatus": "int",
+									"ModelId": "int",
+									"GroupId": "int",
+									"FleetId": "int",
+									"CategoryId": "int",
+									"Name": "string",
+									"SerialNo": "string",
+									"ModelNo": "string",
+									"GrossWeight": "int",
+									"EngineManufacturer1": "string",
+									"EngineSerialNo1": "string",
+									"EngineManufacturer2": "string",
+									"EngineSerialNo2": "string",
+									"Tonnage": "int",
+									"Volume": "int",
+									"Param1": "string",
+									"Param2": "string",
+									"Photo": "BinaryType"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"bfe630a6-ab0b-4f54-a4ed-dc2ac8fc1ef0": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelId": "",
+										"Param2": "",
+										"Name": "<N/A>",
+										"Volume": "",
+										"EngineSerialNo1": "",
+										"CategoryId": "",
+										"RecordStatus": "",
+										"GrossWeight": "",
+										"SiteId": "",
+										"GroupId": "",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "0",
+										"Tonnage": "",
+										"SerialNo": "",
+										"EngineManufacturer2": "",
+										"EngineSerialNo2": "",
+										"Param1": "",
+										"FleetId": "",
+										"UpdateTime": ""
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC201",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777217",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.747"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC202",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777218",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.767"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC203",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777219",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.78"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC204",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777220",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.797"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC205",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777221",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.813"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC206",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777222",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.837"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC207",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777223",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.847"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC208",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777224",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.87"
+									},
+									{
+										"ModelId": "16777217",
+										"Name": "CAC209",
+										"Volume": "0",
+										"EngineSerialNo1": "",
+										"CategoryId": "1",
+										"RecordStatus": "2",
+										"GrossWeight": "0",
+										"SiteId": "1",
+										"GroupId": "16777217",
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"id_EquipmentUnit": "16777225",
+										"Tonnage": "325",
+										"SerialNo": "",
+										"FleetId": "16777225",
+										"UpdateTime": "2021-06-09 13:37:46.88"
+									}
+								],
+								"schema": {
+									"id_EquipmentUnit": "string",
+									"SiteId": "string",
+									"UpdateTime": "string",
+									"RecordStatus": "string",
+									"ModelId": "string",
+									"GroupId": "string",
+									"FleetId": "string",
+									"CategoryId": "string",
+									"Name": "string",
+									"SerialNo": "string",
+									"ModelNo": "string",
+									"GrossWeight": "string",
+									"EngineManufacturer1": "string",
+									"EngineSerialNo1": "string",
+									"EngineManufacturer2": "string",
+									"EngineSerialNo2": "string",
+									"Tonnage": "string",
+									"Volume": "string",
+									"Param1": "string",
+									"Param2": "string",
+									"Photo": "BinaryType"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"id_EquipmentUnit"
+									],
+									"seriesFieldKeys": [
+										"id_EquipmentUnit"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_EquipmentUnit.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/EQUIPMENTUNIT_TEMP.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import lit\r\n",
+					"\r\n",
+					"# Se agregan valores iniciales y se renombran los campos segun lo definido en el modelo de datos, se debe validar opciones adicionales para manejo de columnas binary\r\n",
+					"\r\n",
+					"cols2 = ['Id', 'SiteId', 'UpdateTime', 'RecordStatus', 'ModelId', 'GroupId', 'FleetId', 'CategoryId', 'Name', 'SerialNo', 'ModelNo', 'GrossWeight', 'EngineManufacturer1', 'EngineSerialNo1', 'EngineManufacturer2', 'EngineSerialNo2', 'Tonnage', 'Volume', 'Param1', 'Param2']\r\n",
+					"df_empty = spark.createDataFrame([('0','','','','','','','','<N/A>','','','','','','','','','','','')],cols2)\r\n",
+					"df_empty = df_empty.withColumn('Photo', lit(None))\r\n",
+					"\r\n",
+					"df_dim = (df_empty.union(df)).withColumnRenamed('Id','id_EquipmentUnit')\r\n",
+					"display(df_dim.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 8
+			}
+		]
+	}
+}

@@ -1,0 +1,90 @@
+{
+	"name": "EQUIPMENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Site",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Equipment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EquipmentSerial",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Engine1OEM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Engine1Serial",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Engine2OEM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Engine2Serial",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GroupId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Group",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FleetId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Fleet",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ModelId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Model",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Category",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Interfaces",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "EquipmentConfiguration",
+			"table": "Equipment"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

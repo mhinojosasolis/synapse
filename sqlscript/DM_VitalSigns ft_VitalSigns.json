@@ -1,0 +1,17 @@
+{
+	"name": "DM_VitalSigns ft_VitalSigns",
+	"properties": {
+		"content": {
+			"query": "SELECT [id_Time]\n,[id_Organization]\n,[id_Asset]\n,[id_VitalSign]\n,[id_Source]\n,[Value]\n,[InsertDate]\n FROM [DM_VitalSigns].[ft_VitalSigns]\n WHERE InsertDate >= '2021-09-01 00:00'",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

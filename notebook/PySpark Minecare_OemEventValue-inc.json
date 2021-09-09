@@ -1,0 +1,223 @@
+{
+	"name": "PySpark Minecare_OemEventValue-inc",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"1da50f57-a231-4e1a-836b-ba892feb9310": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:50.033Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101494,511200:101067,742621"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:51.037Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101490,806542:101060,350571"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:28:35.28Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 33619973,
+										"EquipmentId": 16777275,
+										"GpsLocation": "100903,242122:99745,965782"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:52.047Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101486,047125:101053,464728"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:53.09Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101480,358626:101047,269215"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:54.107Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101474,114944:101041,835574"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:55.16Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101467,301722:101037,348837"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:56.237Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101460,118580:101033,400835"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:57.367Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101460,118580:101033,400835"
+									},
+									{
+										"Id": 72057594365518660,
+										"FloatValue": 0,
+										"EventCode": 0,
+										"ReadTime": "2021-06-08T00:26:58.423Z",
+										"SiteId": 1,
+										"ExtractDate": "2021-06-10T01:39:00.393Z",
+										"OemEventTypeId": 906585346,
+										"EquipmentId": 16777281,
+										"GpsLocation": "101460,118580:101033,400835"
+									}
+								],
+								"schema": {
+									"SiteId": "int",
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"OemEventTypeId": "int",
+									"ReadTime": "int",
+									"EventCode": "int",
+									"FloatValue": "double",
+									"GpsLocation": "string",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"Id"
+									],
+									"seriesFieldKeys": [
+										"SiteId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"#df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/dispatch/DLB_KPIS_HOUR_TEMP.parquet', format='parquet')\r\n",
+					"df = spark.read.load('abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/MINECARE_OEMEVENTVALUE_TEMP.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 1
+			}
+		]
+	}
+}

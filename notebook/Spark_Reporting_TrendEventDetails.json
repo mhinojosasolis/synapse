@@ -1,0 +1,666 @@
+{
+	"name": "Spark_Reporting_TrendEventDetails",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"e5e45cd1-2908-48dd-a968-bbbc57c16dd1": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ALEJANDRO ANDRES VALDIVIA MARTINEZ",
+										"SiteId": 1,
+										"OperatorId": "6038665",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-07T00:05:48Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Nicolas Alejandro Zambrano Acevedo",
+										"SiteId": 1,
+										"OperatorId": "6148521",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-07T18:01:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Fernando Jesus Gonzalez Nuñez",
+										"SiteId": 1,
+										"OperatorId": "6139316",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-13T20:55:10Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "DANIEL JAIME CORTES CONTRERAS",
+										"SiteId": 1,
+										"OperatorId": "6076186",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-17T13:51:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ARIEL FABIAN RENE VILLA CARRASCO",
+										"SiteId": 1,
+										"OperatorId": "6112273",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-20T22:20:55Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "MARCELA SERRANO CISTERNA",
+										"SiteId": 1,
+										"OperatorId": "6055291",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-23T21:45:21Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "EDGAR ROGER FAUNDEZ FLORES",
+										"SiteId": 1,
+										"OperatorId": "6080983",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-24T02:01:19Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-26T12:04:38Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Daniela Fatima Gonzalez Donoso",
+										"SiteId": 1,
+										"OperatorId": "6055287",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-03-29T10:45:31Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Fernando Jesus Gonzalez Nuñez",
+										"SiteId": 1,
+										"OperatorId": "6139316",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"CreateTime": "2021-04-06T10:55:36Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									}
+								],
+								"schema": {
+									"EquipmentId": "int",
+									"TrendId": "int",
+									"SiteId": "int",
+									"EquipmentName": "string",
+									"ModelId": "int",
+									"ModelName": "string",
+									"CreateTime": "int",
+									"UdfExtLevel": "int",
+									"UdfExtLevel2": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"EventName": "string",
+									"GpsLocation": "string",
+									"ExtractDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"TrendId"
+									],
+									"seriesFieldKeys": [
+										"EquipmentId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"0c81e4dd-f448-455d-9016-ce0d0cd75b4e": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ALEJANDRO ANDRES VALDIVIA MARTINEZ",
+										"SiteId": 1,
+										"OperatorId": "6038665",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "def31ef7887c27dbc389bd6df4050a4e0a424830",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-07T00:05:48Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Nicolas Alejandro Zambrano Acevedo",
+										"SiteId": 1,
+										"OperatorId": "6148521",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "d0df9fa68e19d5d6fdf22a9f946e3e2d90594bd6",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-07T18:01:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Fernando Jesus Gonzalez Nuñez",
+										"SiteId": 1,
+										"OperatorId": "6139316",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "3fa64fb7319f51a2138a4391d0b0086c1b907744",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-13T20:55:10Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "DANIEL JAIME CORTES CONTRERAS",
+										"SiteId": 1,
+										"OperatorId": "6076186",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "41e6a81cbb56a631ae1e45332ec8811286e2d3f0",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-17T13:51:57Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ARIEL FABIAN RENE VILLA CARRASCO",
+										"SiteId": 1,
+										"OperatorId": "6112273",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "7dcb77669c4e0f762489913b8cdea60e0b996593",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-20T22:20:55Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "MARCELA SERRANO CISTERNA",
+										"SiteId": 1,
+										"OperatorId": "6055291",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "41e5e6e4b72c57637c6338e06272212c218c1963",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-23T21:45:21Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "EDGAR ROGER FAUNDEZ FLORES",
+										"SiteId": 1,
+										"OperatorId": "6080983",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "96cbda790197ec42237e26a229dbbd443fbf12df",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-24T02:01:19Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "ERCILIA DEL ROSARIO CEBALLOS HERMOSILLA",
+										"SiteId": 1,
+										"OperatorId": "6038669",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "97ff4abd8dc8f11a4c1a96dfe8f8fa3b29ef898b",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-26T12:04:38Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Daniela Fatima Gonzalez Donoso",
+										"SiteId": 1,
+										"OperatorId": "6055287",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "249b6d4f939de7ac0124cebe8a2c925da204f738",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-03",
+										"CreateTime": "2021-03-29T10:45:31Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									},
+									{
+										"ModelId": 16777217,
+										"ModelName": "Generic Truck",
+										"EquipmentName": "CDH39",
+										"OperatorName": "Fernando Jesus Gonzalez Nuñez",
+										"SiteId": 1,
+										"OperatorId": "6139316",
+										"TrendId": 16781678,
+										"ExtractDate": "2021-06-16T17:28:21.62Z",
+										"checksum": "642ee26b6fb7d5b891fdf66cb1449dd4e4a53a22",
+										"UdfExtLevel2": 2,
+										"EquipmentId": 16777230,
+										"PartitionDate": "2021-04",
+										"CreateTime": "2021-04-06T10:55:36Z",
+										"UdfExtLevel": 1,
+										"EventName": "Equipo ha superado sobre velocidad de 50 Km por Hora"
+									}
+								],
+								"schema": {
+									"EquipmentId": "int",
+									"TrendId": "int",
+									"SiteId": "int",
+									"EquipmentName": "string",
+									"ModelId": "int",
+									"ModelName": "string",
+									"CreateTime": "int",
+									"UdfExtLevel": "int",
+									"UdfExtLevel2": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"EventName": "string",
+									"GpsLocation": "string",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"TrendId"
+									],
+									"seriesFieldKeys": [
+										"EquipmentId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para crear el histórico con checksum de alguna tabla"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"# definimos las variables para los archivos de entrada y salida\r\n",
+					"nombre_archivo_origen = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/REPORTING_TRENDEVENTDETAILS_HIS.parquet'\r\n",
+					"nombre_archivo_destino = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/REPORTING_TRENDEVENTDETAILS_HIS.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos la tabla histórica del origen\r\n",
+					"df = spark.read.load(nombre_archivo_origen, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.count()"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df.columns"
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					"\r\n",
+					"cols"
+				],
+				"attachments": null,
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# concateno todas las columnas y luego calculo el checksum con sha1\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format\r\n",
+					"\r\n",
+					"df = df.withColumn(\"checksum\", sha1(concat_ws('-',*cols)))\\\r\n",
+					"       .withColumn(\"PartitionDate\", concat_ws('-', date_format(col('CreateTime'), \"yyyy\"), date_format(col('CreateTime'), \"MM\")))\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo el histórico en el destino. Hago overwrite porque es la carga inicial\r\n",
+					"\r\n",
+					"##TODO agregar TRY/CATCH\r\n",
+					"\r\n",
+					"try:\r\n",
+					"    df.write.mode(\"overwrite\").partitionBy(\"PartitionDate\").parquet(nombre_archivo_destino)\r\n",
+					"except:\r\n",
+					"  print(\"No se pudo grabar la información correctamente\")"
+				],
+				"attachments": null,
+				"execution_count": 16
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

@@ -1,0 +1,341 @@
+{
+	"name": "Spark_Load_dm_Shift_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_Shift"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true,
+					"tags": [
+						"parameters"
+					]
+				},
+				"source": [
+					"cdc ='1900-01-01'"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"view_name = 'shiftinfo'\r\n",
+					"shiftinfo = spark.sql(\"select * from delta.dlb_shiftinfo_historico \")\r\n",
+					"shiftinfo.createOrReplaceTempView(view_name)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"nombre_tabla = 'dm_shift'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    sql_command = f'''\n",
+					"                SELECT distinct\n",
+					"                     ShiftId id_Shift\n",
+					"                    ,ShiftName\n",
+					"                    ,DbName\n",
+					"                    ,ShiftYear\n",
+					"                    ,ShiftMonth\n",
+					"                    ,ShiftWeek\n",
+					"                    ,ShiftDay\n",
+					"                    ,ShiftSuffix\n",
+					"                    ,FullShiftSuffix\n",
+					"                    ,ShiftStartSecSinceMidnight\n",
+					"                    ,ShiftStartTimestamp\n",
+					"                    ,ShiftStartDate\n",
+					"                    ,ShiftStartDateTime\n",
+					"                    ,FullShiftName\n",
+					"                    ,Holiday\n",
+					"                    ,cr.id_crew\n",
+					"                    ,ShiftDuration\n",
+					"                    ,ShiftDate\n",
+					"                    ,ShiftFilter\n",
+					"                    ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                    ,current_timestamp() InsertDate\n",
+					"                FROM delta.dlb_shiftinfo_historico sh\n",
+					"                JOIN dispatch.dm_crew cr\n",
+					"                ON sh.Crew = cr.Crew\n",
+					"                where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"\n",
+					"                '''              \n",
+					"else:\n",
+					"    sql_command = f'''\n",
+					"                    select   0 id_Region\n",
+					"                            ,'<N/A>' AS ShiftName\n",
+					"                            ,'<N/A>' AS DbName\n",
+					"                            ,'<N/A>' AS ShiftYear\n",
+					"                            ,'<N/A>' AS ShiftMonth\n",
+					"                            ,'<N/A>' AS ShiftWeek\n",
+					"                            ,'<N/A>' AS ShiftDay\n",
+					"                            ,'<N/A>' AS ShiftSuffix\n",
+					"                            ,'<N/A>' AS FullShiftSuffix\n",
+					"                            ,'<N/A>' AS ShiftStartSecSinceMidnight\n",
+					"                            ,'<N/A>' AS ShiftStartTimestamp\n",
+					"                            ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS ShiftStartDate\n",
+					"                            ,'<N/A>' AS ShiftStartDateTime\n",
+					"                            ,'<N/A>' AS FullShiftName\n",
+					"                            ,'<N/A>' AS Holiday\n",
+					"                            ,'<N/A>' AS  cr.id_crew\n",
+					"                            ,'<N/A>' AS ShiftDuration\n",
+					"                            ,'<N/A>' AS  ShiftDate\n",
+					"                            ,'<N/A>' AS ShiftFilter\n",
+					"                            ,'1990-01-01' UpdateDate\n",
+					"                            ,current_timestamp() InsertDate\n",
+					"                    UNION\n",
+					"                    SELECT distinct\n",
+					"                            ShiftId id_Shift\n",
+					"                            ,ShiftName\n",
+					"                            ,DbName\n",
+					"                            ,ShiftYear\n",
+					"                            ,ShiftMonth\n",
+					"                            ,ShiftWeek\n",
+					"                            ,ShiftDay\n",
+					"                            ,ShiftSuffix\n",
+					"                            ,FullShiftSuffix\n",
+					"                            ,ShiftStartSecSinceMidnight\n",
+					"                            ,ShiftStartTimestamp\n",
+					"                            ,ShiftStartDate\n",
+					"                            ,ShiftStartDateTime\n",
+					"                            ,FullShiftName\n",
+					"                            ,Holiday\n",
+					"                            ,cr.id_crew\n",
+					"                            ,ShiftDuration\n",
+					"                            ,ShiftDate\n",
+					"                            ,ShiftFilter\n",
+					"                            ,date_format('1990-01-01 00:00:00', 'yyyy-MM-dd hh:mm:ss') AS UpdateDate\n",
+					"                            ,current_timestamp() InsertDate\n",
+					"                    FROM delta.dlb_shiftinfo_historico sh\n",
+					"                    JOIN dispatch.dm_crew cr\n",
+					"                    ON sh.Crew = cr.Crew\n",
+					"                    where cdc >= ifnull('{cdc}','1900-01-01')\n",
+					"                    '''\n",
+					"\n",
+					"\n",
+					"new_data = spark.sql(sql_command)                "
+				],
+				"attachments": null,
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.id_Shift = new_data.id_Shift\"\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"ShiftName\": \"new_data.ShiftName\",\\\n",
+					"        \"DbName\": \"new_data.DbName\",\\\n",
+					"        \"ShiftYear\": \"new_data.ShiftYear\",\\\n",
+					"        \"ShiftMonth\": \"new_data.ShiftMonth\",\\\n",
+					"        \"ShiftWeek\": \"new_data.ShiftWeek\",\\\n",
+					"        \"ShiftDay\": \"new_data.ShiftDay\",\\\n",
+					"        \"ShiftSuffix\": \"new_data.ShiftSuffix\",\\\n",
+					"        \"FullShiftSuffix\": \"new_data.FullShiftSuffix\",\\\n",
+					"        \"ShiftStartSecSinceMidnight\": \"new_data.ShiftStartSecSinceMidnight\",\\\n",
+					"        \"ShiftStartTimestamp\": \"new_data.ShiftStartTimestamp\",\\\n",
+					"        \"ShiftStartDate\": \"new_data.ShiftStartDate\",\\\n",
+					"        \"ShiftStartDateTime\": \"new_data.ShiftStartDateTime\",\\\n",
+					"        \"FullShiftName\": \"new_data.FullShiftName\",\\\n",
+					"        \"Holiday\": \"new_data.Holiday\",\\\n",
+					"        \"id_crew\": \"new_data.id_crew\",\\\n",
+					"        \"ShiftDuration\": \"new_data.ShiftDuration\",\\\n",
+					"        \"ShiftDate\": \"new_data.ShiftDate\",\\\n",
+					"        \"ShiftFilter\": \"new_data.ShiftFilter\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

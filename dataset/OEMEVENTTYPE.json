@@ -1,0 +1,39 @@
+{
+	"name": "OEMEVENTTYPE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Minecare",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Minecare/1-DSSQLMinecare"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemInterfaceId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OemId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "OemEventType"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

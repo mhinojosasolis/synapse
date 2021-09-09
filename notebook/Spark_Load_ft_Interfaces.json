@@ -1,0 +1,1022 @@
+{
+	"name": "Spark_Load_ft_Interfaces",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"222e6dd9-bf87-46eb-856a-012184f980d9": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 16777217,
+										"ModelId": 16777217,
+										"Name": "CAC201",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-07-05T12:26:04.677Z"
+									},
+									{
+										"Id": 16777218,
+										"ModelId": 16777217,
+										"Name": "CAC202",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-07-05T12:26:04.687Z"
+									},
+									{
+										"Id": 16777219,
+										"ModelId": 16777217,
+										"Name": "CAC203",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-07-05T12:26:04.7Z"
+									},
+									{
+										"Id": 16777220,
+										"ModelId": 16777217,
+										"Name": "CAC204",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-07-05T12:26:04.71Z"
+									},
+									{
+										"Id": 16777221,
+										"ModelId": 16777217,
+										"Name": "CAC205",
+										"Volume": 0,
+										"EngineSerialNo1": "",
+										"CategoryId": 1,
+										"RecordStatus": 2,
+										"GrossWeight": 0,
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EngineManufacturer1": "",
+										"ModelNo": "",
+										"Tonnage": 325,
+										"SerialNo": "",
+										"FleetId": 16777225,
+										"UpdateTime": "2021-07-05T12:26:04.73Z"
+									}
+								],
+								"schema": {
+									"Id": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"RecordStatus": "int",
+									"ModelId": "int",
+									"GroupId": "int",
+									"FleetId": "int",
+									"CategoryId": "int",
+									"Name": "string",
+									"SerialNo": "string",
+									"ModelNo": "string",
+									"GrossWeight": "int",
+									"EngineManufacturer1": "string",
+									"EngineSerialNo1": "string",
+									"EngineManufacturer2": "string",
+									"EngineSerialNo2": "string",
+									"Tonnage": "int",
+									"Volume": "int",
+									"Param1": "string",
+									"Param2": "string",
+									"Photo": "BinaryType"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"4f78208f-88fe-4fab-9dfe-f1df48dbe586": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"id": "16777230",
+										"Name": "CDH39",
+										"ReadTime": "2021-07-01T18:39:20.64Z"
+									},
+									{
+										"id": "16777235",
+										"Name": "CDH44",
+										"ReadTime": "2021-07-01T18:40:35.653Z"
+									},
+									{
+										"id": "16777242",
+										"Name": "CDH51",
+										"ReadTime": "2021-07-01T18:40:35.653Z"
+									},
+									{
+										"id": "16777248",
+										"Name": "CDH57",
+										"ReadTime": "2021-07-01T17:09:46.313Z"
+									},
+									{
+										"id": "16777256",
+										"Name": "CDH65",
+										"ReadTime": "2021-07-01T18:42:40.657Z"
+									}
+								],
+								"schema": {
+									"id": "int",
+									"Name": "string",
+									"ReadTime": "int",
+									"lastReadyTime": "null",
+									"lastReadyFinishTime": "null"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"Name"
+									],
+									"seriesFieldKeys": [
+										"id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"1b34af26-6042-4105-bd67-cc7e0daffa33": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"id": "1",
+										"current_date": "2021-07-09",
+										"current_UTCDATE": "2021-07-09T13:22:28.64Z",
+										"startDate": "2021-04-09T00:00:00Z"
+									}
+								],
+								"schema": {
+									"id": "string",
+									"current_date": "date",
+									"current_UTCDATE": "int",
+									"startDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"id"
+									],
+									"seriesFieldKeys": [
+										"current_UTCDATE"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark",
+				"name": "SampleSpark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Parquet Historicos\r\n",
+					"historico_equipmentTrackHistory = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/EQUIPMENTTRACKHISTORY_HIS.parquet'\r\n",
+					"historico_EquipmentUnit = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/EQUIPMENTUNIT_TEMP.parquet'\r\n",
+					"#historico_OemEventType = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMEVENTTYPE_TEMP.parquet'\r\n",
+					"#historico_OemInterface = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMINTERFACE_TEMP.parquet'\r\n",
+					"#historico_NaturalOemParamValue = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/NATURALOEMPARAMVALUE_TEMP.parquet'\r\n",
+					"#historico_OemParamType = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMPARAMTYPE_TEMP.parquet'\r\n",
+					"#historico_EqmtOemInterfaceMap = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/EQMTOEMINTERFACEMAP_TEMP.parquet'\r\n",
+					"#historico_AppConf_Conf = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/APPLICATIONCONFIGURATION_CONFIGURATION_TEMP.parquet'\r\n",
+					"#historico_OemEventValue = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMEVENTVALUE_TEMP.parquet'\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df_eth = spark.read.load(historico_equipmentTrackHistory,format='parquet')\r\n",
+					"df_eunit = spark.read.load(historico_EquipmentUnit,format='parquet')\r\n",
+					"\r\n",
+					"#Con las tablas delta\r\n",
+					"#df_eth = spark.sql(\"select * from delta.EQUIPMENTTRACKHISTORY_HISTORICO\")\r\n",
+					"#df_eunit = spark.sql(\"select * from delta.EQUIPMENTUNIT_HISTORICO\")\r\n",
+					"\r\n",
+					"df_eth.createOrReplaceTempView('df_eth')\r\n",
+					"df_eunit.createOrReplaceTempView('df_eunit')\r\n",
+					"#display(df_eunit.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command= f'''\n",
+					"            select  eu.Id eqmtId, eu.Name eqmtName, MAX(eh.ReadTime) lastReadyTime, null  lastReadyFinishTime\n",
+					"            from df_eth eh \n",
+					"            LEFT JOIN df_eunit eu\n",
+					"            ON eu.Id = eh.EquipmentId\n",
+					"            WHERE eu.RecordStatus <> 3\n",
+					"            AND eh.StatusId = 2\n",
+					"            --and Readtime BETWEEN '2021-05-07' and '2021-07-07'\n",
+					"            GROUP BY eu.Id, eu.Name\n",
+					"            '''\n",
+					"t1 = spark.sql(sql_command)     \n",
+					"t1.createOrReplaceTempView('t1')       \n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command= f'''\n",
+					"            SELECT eh.EquipmentId, max(eh.ReadTime)ReadTime\n",
+					"            FROM df_eth eh \t\n",
+					"            where eh.StatusId <> 2   \n",
+					"            --and Readtime BETWEEN '2021-05-07' and '2021-07-07'\n",
+					"            group by eh.EquipmentId\n",
+					"            '''\n",
+					"t2 = spark.sql(sql_command)  \n",
+					"t2.createOrReplaceTempView('t2')"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"sql_command= f'''\n",
+					"            select eh.EquipmentId, max(eh.ReadTime)ReadTime \n",
+					"            from df_eth eh \t\n",
+					"            where eh.StatusId <> 2  \n",
+					"            and eh.EquipmentId in (select eqmtId from t1 )\n",
+					"            group by eh.EquipmentId\n",
+					"            '''\n",
+					"t2 = spark.sql(sql_command)  \n",
+					"t2.createOrReplaceTempView('t2')\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\n",
+					"select distinct eqmtId, eqmtName,lastReadyTime, COALESCE(lastReadyFinishTime , lastReadyTime) lastReadyFinishTime  from t1 eh\n",
+					"inner join t2 eu\n",
+					"ON eu.EquipmentId = eh.eqmtId\n",
+					"and  eh.lastReadyTime > eu.ReadTime\n",
+					"--where lastReadyTime <> lastReadyFinishTime\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 14
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"UPDATE #statusDetails\n",
+					"SET lastReadyFinishTime = (\n",
+					"\tSELECT TOP 1 eh.ReadTime\n",
+					"\tFROM [dbo].[EquipmentTrackHistory] eh WITH(NOLOCK)\n",
+					"\tWHERE eh.EquipmentId = #statusDetails.eqmtId\n",
+					"\tAND eh.ReadTime > #statusDetails.lastReadyTime\n",
+					"\tAND ReadTime BETWEEN @startDate AND @endDate\n",
+					"\tAND eh.StatusId <> 2\n",
+					")"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"sql_command= f'''\n",
+					"                    select max({date_col}) fecha_max, min({date_col}) fecha_min from new_data \n",
+					"                  '''\n",
+					"    df_fechas = spark.sql(sql_command)"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, lit , to_timestamp , add_months , current_timestamp , max\r\n",
+					"\r\n",
+					"df_eunit = df_eunit.select(\"Id\",\"Name\").where(col(\"RecordStatus\") != 3)\r\n",
+					"df_eth = df_eth.select(\"ReadTime\",\"EquipmentId\").where(col(\"StatusId\") == 2)\r\n",
+					"\r\n",
+					"statusDetails = df_eth.join(df_eunit, df_eunit.Id == df_eth.EquipmentId, how='left')\r\n",
+					"\r\n",
+					"#statusDetails = statusDetails.withColumn(\"new_column\",lit(None))\r\n",
+					"\r\n",
+					"statusDetails = statusDetails.filter(col(\"ReadTime\").between(to_timestamp(add_months(current_timestamp(),-3),\"MM-dd-yyyy HH mm ss SSS\"),current_timestamp()))\r\n",
+					"\r\n",
+					"statusDetails = statusDetails.groupBy(\"id\",\"Name\").agg(max(col(\"ReadTime\")).alias(\"ReadTime\"))\r\n",
+					"\r\n",
+					"statusDetails = statusDetails.withColumn(\"lastReadyTime\",lit(None)).withColumn(\"lastReadyFinishTime\",lit(None))\r\n",
+					"\r\n",
+					"display(statusDetails.limit(5))\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df_eth = spark.read.load(historico_equipmentTrackHistory,format='parquet')\r\n",
+					"\r\n",
+					"\r\n",
+					"statusDetails.createOrReplaceTempView(\"statusDetail\")\r\n",
+					"df_eth.createOrReplaceTempView(\"df_eth\")\r\n",
+					"\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 16
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"select * from df_eth LIMIT 2"
+				],
+				"attachments": null,
+				"execution_count": 216
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"select * from statusDetail LIMIT 2"
+				],
+				"attachments": null,
+				"execution_count": 219
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"\r\n",
+					"SELECT  eh.ReadTime\r\n",
+					"\tFROM df_eth eh , statusDetail\r\n",
+					"\tWHERE eh.EquipmentId = statusDetail.id\r\n",
+					"\tAND eh.ReadTime > statusDetail.lastReadyTime\r\n",
+					"\t--AND ReadTime BETWEEN SELECT DATEADD(MONTH,-3,GETDATE()) AND GETDATE()\r\n",
+					"\tAND eh.StatusId <> 2\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 17
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"display(df_eunit.limit(5))"
+				],
+				"attachments": null,
+				"execution_count": 74
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"statusDetai = df_eth.select(\"\")"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import *\r\n",
+					"data=[[\"1\"]]\r\n",
+					"fechas=spark.createDataFrame(data,[\"id\"])\r\n",
+					"\r\n",
+					"fechas = fechas.withColumn(\"current_date\",current_date()) \\\r\n",
+					".withColumn(\"current_UTCDATE\",current_timestamp()) \\\r\n",
+					".withColumn(\"startDate\",to_timestamp(add_months(current_timestamp(),-3),\"MM-dd-yyyy HH mm ss SSS\"))\\\r\n",
+					"\r\n",
+					"#a = fechas.select(fechas[\"current_UTCDATE\"])\r\n",
+					"display(fechas)\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 18
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df1.createOrReplaceTempView('table1')"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"CREATE OR REPLACE TEMPORARY VIEW table2 AS SELECT * FROM table1\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT * FROM table2"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df2 = spark.table('table2')\r\n",
+					"display(df2)"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"historico_NaturalOemParamValue = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/NATURALOEMPARAMVALUE_TEMP.parquet'\r\n",
+					"historico_OemParamType = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMPARAMTYPE_TEMP.parquet'\r\n",
+					"historico_OemInterface = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMINTERFACE_TEMP.parquet'\r\n",
+					"historico_EquipmentUnit = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/EQUIPMENTUNIT_TEMP.parquet'\r\n",
+					"\r\n",
+					"\r\n",
+					"historico_OemEventValue = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMEVENTVALUE_TEMP.parquet'\r\n",
+					"historico_OemEventType = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMEVENTTYPE_TEMP.parquet'\r\n",
+					"\r\n",
+					"\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 50
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"SELECT eu.[Name], oi.Name, MAX(DATEADD(hh, @GMTTime, ov.ReadTime)) AS ReadDateTime\r\n",
+					"FROM [dbo].[OemEventValue] ov WITH(nolock) \r\n",
+					"LEFT JOIN [dbo].[OemEventType] ev WITH (nolock) ON ev.Id = ov.OemEventTypeId\r\n",
+					"LEFT JOIN [dbo].[OemInterface] oi WITH (nolock) ON oi.Id = ev.OemInterfaceId\r\n",
+					"LEFT JOIN [dbo].[EquipmentUnit] eu WITH (nolock) ON eu.Id = ov.EquipmentId\r\n",
+					"WHERE dateadd(hh, @GMTTime, ov.ReadTime) > dateadd(mm, - 1, @currentDate)\r\n",
+					"AND ReadTime BETWEEN @startDate AND @endDate \r\n",
+					"AND DATEDIFF(hh, dateadd(hh, @GMTTime, ov.ReadTime), @currentDate) > - 1 \r\n",
+					"AND ov.EquipmentId IN (\r\n",
+					"\tSELECT eqmtId\r\n",
+					"\tFROM #statusDetails WITH(NOLOCK)\r\n",
+					")\r\n",
+					"AND ( -- Exclude Modular Interface generated events as this does not come from the OEM device --\r\n",
+					"\tev.Name NOT LIKE '%Interface%Timeout%'\r\n",
+					"\tOR ev.Name NOT LIKE '%Interface%Normal%'\r\n",
+					")\r\n",
+					"GROUP BY eu.[Name], oi.Name"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Carga dataframes\r\n",
+					"\r\n",
+					"df_oemeventvalue = spark.read.load(historico_OemEventValue,format='parquet')\r\n",
+					"df_OemEventType = spark.read.load(historico_OemEventType,format='parquet')\r\n",
+					"df_OemInterface = spark.read.load(historico_OemInterface,format='parquet')\r\n",
+					"df_equipmetunit = spark.read.load(historico_EquipmentUnit,format='parquet')\r\n",
+					"\r\n",
+					"#Con las tablas delta\r\n",
+					"#df_eth = spark.sql(\"select * from delta.EQUIPMENTTRACKHISTORY_HISTORICO\")\r\n",
+					"#df_eunit = spark.sql(\"select * from delta.EQUIPMENTUNIT_HISTORICO\")\r\n",
+					"\r\n",
+					"#Crea tabla temporal\r\n",
+					"df_oemeventvalue.createOrReplaceTempView('df_oemeventvalue')\r\n",
+					"df_OemEventType.createOrReplaceTempView('df_OemEventType')\r\n",
+					"df_OemInterface.createOrReplaceTempView('df_OemInterface')\r\n",
+					"df_equipmetunit.createOrReplaceTempView('df_equipmetunit')\r\n",
+					"\r\n",
+					"\r\n",
+					"#display(df_eunit.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 51
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT date_add(current_timestamp(), -90),\r\n",
+					"datediff((date_add(current_timestamp(), -90)),current_timestamp())"
+				],
+				"attachments": null,
+				"execution_count": 53
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT date_add(current_timestamp(), -90),\r\n",
+					"datediff((date_add(current_timestamp(), -90)),current_timestamp())\r\n",
+					"FROM df_oemeventvalue ov "
+				],
+				"attachments": null,
+				"execution_count": 52
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"SELECT eu.Name, oi.Name\r\n",
+					"--, MAX(DATEADD(hh, @GMTTime, ov.ReadTime)) AS ReadDateTime\r\n",
+					"FROM df_oemeventvalue ov \r\n",
+					"LEFT JOIN df_OemEventType ev  ON ev.Id = ov.OemEventTypeId\r\n",
+					"LEFT JOIN df_OemInterface oi  ON oi.Id = ev.OemInterfaceId\r\n",
+					"LEFT JOIN df_equipmetunit eu  ON eu.Id = ov.EquipmentId\r\n",
+					"\r\n",
+					"WHERE dateadd(current_timestamp(), ov.ReadTime) > date_add(current_timestamp(), -30)\r\n",
+					"AND ReadTime BETWEEN date_add(current_timestamp(), -90) AND current_timestamp()\r\n",
+					"AND datediff(date_add(current_timestamp(), ov.ReadTime), current_timestamp())\r\n",
+					"--DATEDIFF(hh, dateadd(hh, @GMTTime, ov.ReadTime), @currentDate) > - 1 \r\n",
+					"\r\n",
+					"limit 10 \r\n",
+					"\r\n",
+					"AND ov.EquipmentId IN (\r\n",
+					"\tSELECT eqmtId\r\n",
+					"\tFROM #statusDetails \r\n",
+					")\r\n",
+					"AND ( -- Exclude Modular Interface generated events as this does not come from the OEM device --\r\n",
+					"\tev.Name NOT LIKE '%Interface%Timeout%'\r\n",
+					"\tOR ev.Name NOT LIKE '%Interface%Normal%'\r\n",
+					")\r\n",
+					"GROUP BY eu.[Name], oi.Name\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 54
+			}
+		]
+	}
+}

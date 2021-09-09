@@ -1,0 +1,17 @@
+{
+	"name": "Create SQL external tables",
+	"properties": {
+		"content": {
+			"query": "drop table STG_Dispatch.DM_CREW\n\nCREATE EXTERNAL DATA SOURCE devproc\nWITH ( LOCATION = 'https://devmycdlake.blob.core.windows.net/devproc')\n\nCreate external file format [SynapseParquetFormat]\nWITH (FORMAT_TYPE = PARQUET)\n\nCREATE EXTERNAL TABLE STG_Dispatch.DM_CREW (\n     id_Crew nVARCHAR(100), \n     Crew nVARCHAR(100), \n     UpdateDate DATETIME2,\n     InsertDate DATETIME2\n) WITH (\n         LOCATION = 'DataMultidim/dispatch/delta/dm_Crew/*.parquet',\n         DATA_SOURCE = devproc,\n         FILE_FORMAT = [SynapseParquetFormat]\n);\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

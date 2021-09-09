@@ -1,0 +1,658 @@
+{
+	"name": "Spark_Load_dm_Model_Alex",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"eecbc632-0544-47e2-b358-53eaacb94e61": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "<N/A>",
+										"MaterialId": 1,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Esteril",
+										"MaterialId": 2,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"MaterialId": 3,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral",
+										"MaterialId": 4,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"MaterialId": 5,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"MaterialId": 6,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Remanejo",
+										"MaterialId": 7,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"MaterialId": "int",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"7588d177-824f-4d09-8605-2a1a5e5fa1b7": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-28T17:36:31.887Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594362915840,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100861,780439:101756,643255",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-29T00:03:31.917Z",
+										"OperatorName": "JUAN CARLOS BUSTOS TAPIA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "191817",
+										"EventId": 72057594362952080,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "99384,492055:100170,820694",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-29T06:30:04.047Z",
+										"OperatorName": "RAUL ALADIN SALAZAR BARRA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "193234",
+										"EventId": 72057594363019620,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100825,354155:101063,605710",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-29T20:23:59.563Z",
+										"OperatorName": "HENRY JHONNY ARANCIBIA DELGADO",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "192870",
+										"EventId": 72057594363167300,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100860,658806:101821,638943",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-30T18:14:33.783Z",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"EventId": 72057594363438430,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100841,448584:101801,067773",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-05-31T11:21:12.673Z",
+										"OperatorName": "Yasna Mabel Farias Lopez",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6148531",
+										"EventId": 72057594363646600,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100321,062763:100099,262699",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-01T07:55:43.907Z",
+										"OperatorName": "HECTOR GERARDO ESPINOZA JARA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6096522",
+										"EventId": 72057594363871700,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "98675,113419:98545,885009",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-01T12:12:29.48Z",
+										"OperatorName": "FRANCISCO JAVIER MORALES CURIN",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "192046",
+										"EventId": 72057594363911980,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "98294,970546:98514,214086",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-01T22:09:41.073Z",
+										"OperatorName": "CLAUDIO IVAN FUENTES JORQUERA",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6098483",
+										"EventId": 72057594364028670,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "100261,654703:100061,618125",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									},
+									{
+										"NotificationID": 72057594038027200,
+										"ModelId": 16777217,
+										"Level": 2,
+										"InterfaceId": 52,
+										"ModelName": "Generic Truck",
+										"Interface": "Adec Legacy",
+										"OemEventId": 872480769,
+										"EquipmentName": "CDH86",
+										"ReadTime": "2021-06-02T13:06:10.717Z",
+										"OperatorName": "RODRIGO ALEJANDRO ROJAS ROJAS",
+										"SiteId": 1,
+										"GroupId": 16777217,
+										"OperatorId": "6098491",
+										"EventId": 72057594364149250,
+										"EquipmentId": 16777277,
+										"NLevel": 1,
+										"GPSLocation": "99939,194989:98868,520573",
+										"OemEvent": "Yellow Indicator Lamp Status - On"
+									}
+								],
+								"schema": {
+									"NotificationID": "bigint",
+									"SiteId": "int",
+									"EventId": "bigint",
+									"ModelName": "string",
+									"ModelId": "int",
+									"EquipmentId": "int",
+									"EquipmentName": "string",
+									"GroupId": "int",
+									"OemEventId": "int",
+									"OemEvent": "string",
+									"OemId": "string",
+									"Interface": "string",
+									"InterfaceId": "int",
+									"Level": "int",
+									"NLevel": "int",
+									"ReadTime": "int",
+									"OperatorId": "string",
+									"OperatorName": "string",
+									"GPSLocation": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"NotificationID"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"3e73a8d6-363e-42ac-b51b-0dcdfa073050": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelName": "",
+										"ModelId": ""
+									},
+									{
+										"ModelName": "Generic Truck",
+										"ModelId": "16777217"
+									}
+								],
+								"schema": {
+									"ModelName": "string",
+									"ModelId": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"ModelName"
+									],
+									"seriesFieldKeys": [
+										"ModelName"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"22d82d96-2c5a-46e5-b24d-483a9d115c5d": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ModelName": "",
+										"ModelId": "",
+										"monotonically_increasing_id": 128849018880
+									},
+									{
+										"ModelName": "Generic Truck",
+										"ModelId": "16777217",
+										"monotonically_increasing_id": 137438953472
+									}
+								],
+								"schema": {
+									"ModelName": "string",
+									"ModelId": "string",
+									"monotonically_increasing_id": "bigint"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"ModelName"
+									],
+									"seriesFieldKeys": [
+										"monotonically_increasing_id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Model.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"# Se lee de form temporal de Temp ya que todavia no se tiene el archivo historico asociado en DataHistorica ni en history\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/MINECARE_NOTIFICATIONDETAILS_TEMP.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 34
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 47
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# ordenamos los datos de acuerdo al requerimento de la dimensión\r\n",
+					"df_dim = df.select('ModelName','ModelId').distinct().orderBy('ModelName','ModelId')\\\r\n",
+					".filter(df.ModelName != 'Vacio')# para dejar una fila vacía para las pruebas\r\n",
+					"display(df_dim)\r\n",
+					"cols = df_dim.columns\r\n",
+					"df_empty = spark.createDataFrame([('','')],cols)\r\n",
+					"df_dim = df_empty.union(df_dim)\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 48
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import monotonically_increasing_id, col, row_number\r\n",
+					"\r\n",
+					"# creamos un id incremental\r\n",
+					"df_dim = df_dim.withColumn(\"monotonically_increasing_id\", monotonically_increasing_id())\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 49
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql import Window\r\n",
+					"\r\n",
+					"# generamos el nro de id con row_number según el valor incremental creado antes\r\n",
+					"\r\n",
+					"window = df_dim.orderBy('monotonically_increasing_id')\r\n",
+					"df_dim_with_id = df_dim.withColumn('ModelId', row_number().over(window))#\\\r\n",
+					"#    .drop('monotonically_increasing_id')\\\r\n",
+					"#    .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					" \r\n",
+					"display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": 50
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# limpiamos los textos vacios y nulos de la columna MaterialType\r\n",
+					"from pyspark.sql.functions import when\r\n",
+					"\r\n",
+					"na_string = '<N/A>'\r\n",
+					"\r\n",
+					"df_dim_with_id = df_dim_with_id.withColumn('MaterialType', \\\r\n",
+					"       when(col('MaterialType')==\"\" ,na_string) \\\r\n",
+					"          .otherwise(col('MaterialType'))) \\\r\n",
+					"          .na.fill(value=na_string,subset=['MaterialType'])\r\n",
+					"display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": 73
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim_with_id.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 74
+			}
+		]
+	}
+}

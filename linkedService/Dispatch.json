@@ -1,0 +1,16 @@
+{
+	"name": "Dispatch",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=10.187.7.29;initial catalog=DLBReports;user id=DM-MANTENCION-READER",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3NjkzNWE0Zi1mNTdmLTRiNWUtOWQzOS1mNDYyMDgzYzZjODciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "devdfselfirsyncym",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

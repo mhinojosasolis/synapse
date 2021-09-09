@@ -1,0 +1,20 @@
+{
+	"name": "DLB_SHIFTLOADS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dispatch",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/1-DSSQLDispatch"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DLB_ShiftLoads"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

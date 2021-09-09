@@ -1,0 +1,287 @@
+{
+	"name": "Spark_Load_dm_OperatorDSP_Delta",
+	"properties": {
+		"folder": {
+			"name": "dispatch/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "sparksql"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%sql\r\n",
+					"with Operators as(\r\n",
+					"                        select distinct\r\n",
+					"                        truckOperId as Operid,TruckOperatorName AS OperatorName\r\n",
+					"                        from delta.dlb_shiftloads_historico --Dispatch_ST_ShiftLoads\r\n",
+					"                        union\r\n",
+					"                        select distinct\r\n",
+					"                        ExcavOperid, ExcavOperatorName\r\n",
+					"                        from delta.dlb_shiftloads_historico Dispatch_ST_ShiftLoads\r\n",
+					"                        union\r\n",
+					"                        select distinct\r\n",
+					"                        OperId,OperatorName\r\n",
+					"                        from delta.dlb_shiftstate_historico --Dispatch_ST_ShiftState\r\n",
+					"                        )\r\n",
+					"                        ,\r\n",
+					"                        Duplicados as(\r\n",
+					"                        select\r\n",
+					"                        ROW_NUMBER () over (partition by Operid order by Operid desc) as numero,\r\n",
+					"                        Operid,OperatorName\r\n",
+					"                        from Operators\r\n",
+					"                        )\r\n",
+					"                        select 0 as OperId, '<N/A>' as OperatorName\r\n",
+					"                        UNION\r\n",
+					"                        select\r\n",
+					"                        ifnull(Operid,'No Definido') as OperId\r\n",
+					"                        ,ifnull(OperatorName,'No Definido') as OperatorName\r\n",
+					"                        from Duplicados\r\n",
+					"                        where numero<=1;"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta, dependiendo si el archivo delta final existe o no se agrega fila de valores\n",
+					"# no definidos. Se agregn campos de fecha de update e insert\n",
+					"from pyspark.sql.functions import to_utc_timestamp, current_timestamp, lit\n",
+					"import dateutil.parser\n",
+					"\n",
+					"nombre_tabla = 'dm_OperatorDSP'\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/dispatch/delta/'+ nombre_tabla\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    sql_command = f'''\n",
+					"                    with Operators as(\n",
+					"                        select distinct\n",
+					"                        truckOperId as Operid,TruckOperatorName AS OperatorName\n",
+					"                        from delta.dlb_shiftloads_historico --Dispatch_ST_ShiftLoads\n",
+					"                        union\n",
+					"                        select distinct\n",
+					"                        ExcavOperid, ExcavOperatorName\n",
+					"                        from delta.dlb_shiftloads_historico Dispatch_ST_ShiftLoads\n",
+					"                        union\n",
+					"                        select distinct\n",
+					"                        OperId,OperatorName\n",
+					"                        from delta.dlb_shiftstate_historico --Dispatch_ST_ShiftState\n",
+					"                        )\n",
+					"                        ,\n",
+					"                        Duplicados as(\n",
+					"                        select\n",
+					"                        ROW_NUMBER () over (partition by Operid order by Operid desc) as numero,\n",
+					"                        Operid,OperatorName\n",
+					"                        from Operators\n",
+					"                        )\n",
+					"                        select\n",
+					"                        ifnull(Operid,'No Definido') as OperId\n",
+					"                        ,ifnull(OperatorName,'No Definido') as OperatorName\n",
+					"                        from Duplicados\n",
+					"                        where numero<=1\n",
+					"                    '''                \n",
+					"else:\n",
+					"    sql_command = f'''\n",
+					"                        with Operators as(\n",
+					"                        select distinct\n",
+					"                        truckOperId as Operid,TruckOperatorName AS OperatorName\n",
+					"                        from delta.dlb_shiftloads_historico --Dispatch_ST_ShiftLoads\n",
+					"                        union\n",
+					"                        select distinct\n",
+					"                        ExcavOperid, ExcavOperatorName\n",
+					"                        from delta.dlb_shiftloads_historico Dispatch_ST_ShiftLoads\n",
+					"                        union\n",
+					"                        select distinct\n",
+					"                        OperId,OperatorName\n",
+					"                        from delta.dlb_shiftstate_historico --Dispatch_ST_ShiftState\n",
+					"                        )\n",
+					"                        ,\n",
+					"                        Duplicados as(\n",
+					"                        select\n",
+					"                        ROW_NUMBER () over (partition by Operid order by Operid desc) as numero,\n",
+					"                        Operid,OperatorName\n",
+					"                        from Operators\n",
+					"                        )\n",
+					"                        select 0 as OperId, '<N/A>' as OperatorName\n",
+					"                        UNION\n",
+					"                        select\n",
+					"                        ifnull(Operid,'No Definido') as OperId\n",
+					"                        ,ifnull(OperatorName,'No Definido') as OperatorName\n",
+					"                        from Duplicados\n",
+					"                        where numero<=1\n",
+					"                    '''\n",
+					"\n",
+					"new_data = spark.sql(sql_command)\n",
+					"updatetime = dateutil.parser.parse('1901-01-01')\n",
+					"new_data = new_data.withColumn(\"UpdateDate\", to_utc_timestamp(lit(updatetime),\"UTC\")).withColumn(\"InsertDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))               \n",
+					"new_data.createOrReplaceTempView(nombre_tabla)"
+				],
+				"attachments": null,
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table dispatch.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"merge_command = \"historico.OperId = new_data.OperId\"\n",
+					"\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"        set = {\\\n",
+					"        \"OperId\": \"new_data.OperId\",\\\n",
+					"        \"OperatorName\": \"new_data.OperatorName\",\\\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\n",
+					"        }\\\n",
+					"                        )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()"
+				],
+				"attachments": null,
+				"execution_count": 12
+			}
+		]
+	}
+}

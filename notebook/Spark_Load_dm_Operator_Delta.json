@@ -1,0 +1,302 @@
+{
+	"name": "Spark_Load_dm_Operator_Delta",
+	"properties": {
+		"folder": {
+			"name": "Minecare/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_Operator"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen históricos\r\n",
+					"df_eth = spark.sql(\"select * from delta.equipmenttrackhistory_historico\")\r\n",
+					"df_ted = spark.sql(\"select * from delta.reporting_trendeventdetails_historico\")\r\n",
+					"df_eth.createOrReplaceTempView('df_eth')\r\n",
+					"df_ted.createOrReplaceTempView('df_ted')"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta, dependiendo si el archivo delta final existe o no se agrega fila de valores\r\n",
+					"# no definidos. Se agregn campos de fecha de update e insert\r\n",
+					"from pyspark.sql.functions import to_utc_timestamp, current_timestamp, lit\r\n",
+					"import dateutil.parser\r\n",
+					"nombre_tabla = 'dm_Operator'\r\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/minecare/delta/'+ nombre_tabla\r\n",
+					"\r\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\r\n",
+					"    sql_command = f'''\r\n",
+					"                    with AllOps as (\r\n",
+					"                      select distinct\r\n",
+					"                      OperatorId,\r\n",
+					"                      Operator as OperatorName\r\n",
+					"                      from df_eth\r\n",
+					"                      union\r\n",
+					"                      select \r\n",
+					"                      distinct\r\n",
+					"                      OperatorId\r\n",
+					"                      , OperatorName\r\n",
+					"                      from df_ted\r\n",
+					"                      union\r\n",
+					"                      select \r\n",
+					"                      distinct\r\n",
+					"                      OperatorId\r\n",
+					"                      , OperatorName\r\n",
+					"                      from df_ted\r\n",
+					"                      ),\r\n",
+					"                      Repetidos as (\r\n",
+					"                      select \r\n",
+					"                      RoW_Number() over (partition by OperatorId order by OperatorId desc) as qty,\r\n",
+					"                      OperatorId,\r\n",
+					"                      OperatorName\r\n",
+					"                      from AllOps\r\n",
+					"                      )\r\n",
+					"                      select \r\n",
+					"                      ifnull(OperatorId,'No Identificado') as OperatorId\r\n",
+					"                      ,ifnull(upper(OperatorName),'No Identificado') as OperatorName\r\n",
+					"                      from Repetidos\r\n",
+					"                      where qty=1 \r\n",
+					"                      order by OperatorId\r\n",
+					"                    '''                \r\n",
+					"else:\r\n",
+					"    sql_command = f'''\r\n",
+					"                    with AllOps as (\r\n",
+					"                      select distinct\r\n",
+					"                      OperatorId,\r\n",
+					"                      Operator as OperatorName\r\n",
+					"                      from df_eth\r\n",
+					"                      union\r\n",
+					"                      select \r\n",
+					"                      distinct\r\n",
+					"                      OperatorId\r\n",
+					"                      , OperatorName\r\n",
+					"                      from df_ted\r\n",
+					"                      union\r\n",
+					"                      select \r\n",
+					"                      distinct\r\n",
+					"                      OperatorId\r\n",
+					"                      , OperatorName\r\n",
+					"                      from df_ted\r\n",
+					"                      ),\r\n",
+					"                      Repetidos as (\r\n",
+					"                      select \r\n",
+					"                      RoW_Number() over (partition by OperatorId order by OperatorId desc) as qty,\r\n",
+					"                      OperatorId,\r\n",
+					"                      OperatorName\r\n",
+					"                      from AllOps\r\n",
+					"                      )\r\n",
+					"                      \r\n",
+					"                    select 0 OperatorId, '<N/A>' AS OperatorName \r\n",
+					"                    UNION\r\n",
+					"                      select \r\n",
+					"                      ifnull(OperatorId,'No Identificado') as OperatorId\r\n",
+					"                      ,ifnull(upper(OperatorName),'No Identificado') as OperatorName\r\n",
+					"                      from Repetidos\r\n",
+					"                      where qty=1 \r\n",
+					"                      order by OperatorId               \r\n",
+					"                    '''\r\n",
+					"\r\n",
+					"new_data = spark.sql(sql_command)\r\n",
+					"updatetime = dateutil.parser.parse('1901-01-01')\r\n",
+					"new_data = new_data.withColumn(\"UpdateDate\", to_utc_timestamp(lit(updatetime),\"UTC\")).withColumn(\"InsertDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))               \r\n",
+					"new_data.createOrReplaceTempView(nombre_tabla)"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").save(table_delta_path)\n",
+					"    spark.sql(f''' create table minecare.{nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"\r\n",
+					"if(DeltaTable.isDeltaTable(spark, table_delta_path)):\r\n",
+					"    merge_command = \"historico.OperatorId = new_data.OperatorId\"\r\n",
+					"\r\n",
+					"    deltaTable.alias(\"historico\").merge(\r\n",
+					"    new_data.alias(\"new_data\"),\r\n",
+					"    merge_command)\\\r\n",
+					"    .whenMatchedUpdate(\\\r\n",
+					"        set = {\\\r\n",
+					"        \"OperatorId\": \"new_data.OperatorId\",\\\r\n",
+					"        \"OperatorName\": \"new_data.OperatorName\",\\\r\n",
+					"        \"UpdateDate\": \"new_data.InsertDate\"\\\r\n",
+					"        }\\\r\n",
+					"                        )\\\r\n",
+					"    .whenNotMatchedInsertAll()\\\r\n",
+					"    .execute()"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

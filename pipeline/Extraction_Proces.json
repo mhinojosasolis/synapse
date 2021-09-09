@@ -1,0 +1,73 @@
+{
+	"name": "Extraction_Proces",
+	"properties": {
+		"activities": [
+			{
+				"name": "Extraction_Dispatch_Todo_Incremental",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraction_Dispatch_Todo_Incremental",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Proc_Modelo_Dispatch",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Extraction_Dispatch_Todo_Incremental",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Proc_Modelo_Dispatch",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Dispatch Kpis",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Proc_Modelo_Dispatch",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[DM_VitalSigns].[sp_load_ft_KPIs]"
+				}
+			}
+		],
+		"folder": {
+			"name": "Dispatch"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-09-03T23:42:45Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

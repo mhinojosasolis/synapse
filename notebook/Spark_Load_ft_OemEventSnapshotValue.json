@@ -1,0 +1,475 @@
+{
+	"name": "Spark_Load_ft_OemEventSnapshotValue",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"232e2c29-e462-45a2-82bb-b4b34c1e219f": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057597253536130,
+										"OemParamTypeId": 33619981,
+										"FloatValue": 797,
+										"ReadTime": "2021-03-02T00:30:01.877Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619968,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"Id": 72057597253536130,
+										"OemParamTypeId": 33619981,
+										"FloatValue": 797,
+										"ReadTime": "2021-03-02T00:30:03.98Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619968,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"Id": 72057597253536130,
+										"OemParamTypeId": 33619980,
+										"FloatValue": 58,
+										"ReadTime": "2021-03-02T00:30:01.877Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619968,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"Id": 72057597253536130,
+										"OemParamTypeId": 33619980,
+										"FloatValue": 58,
+										"ReadTime": "2021-03-02T00:30:03.98Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619968,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619981,
+										"FloatValue": 797,
+										"ReadTime": "2021-03-02T00:30:01.877Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619981,
+										"FloatValue": 797,
+										"ReadTime": "2021-03-02T00:30:03.98Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619981,
+										"FloatValue": 797,
+										"ReadTime": "2021-03-02T00:30:06Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619980,
+										"FloatValue": 58,
+										"ReadTime": "2021-03-02T00:30:01.877Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619980,
+										"FloatValue": 58,
+										"ReadTime": "2021-03-02T00:30:03.98Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"Id": 72057597253536160,
+										"OemParamTypeId": 33619980,
+										"FloatValue": 58,
+										"ReadTime": "2021-03-02T00:30:06Z",
+										"SiteId": 1,
+										"OemEventTypeId": 33619975,
+										"EquipmentId": 16777265,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"SiteId": "int",
+									"EquipmentId": "int",
+									"OemEventTypeId": "int",
+									"EventTime": "int",
+									"OemParamTypeId": "int",
+									"ReadTime": "int",
+									"FloatValue": "double",
+									"StringValue": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"47f8f25c-6e67-49cb-9192-857d4f46dcfa": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"FloatValue": 797,
+										"id_OemEventSnap": 72057597253536130,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619968,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"FloatValue": 797,
+										"id_OemEventSnap": 72057597253536130,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619968,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"FloatValue": 58,
+										"id_OemEventSnap": 72057597253536130,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619968,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"FloatValue": 58,
+										"id_OemEventSnap": 72057597253536130,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619968,
+										"EventTime": "2021-03-02T00:29:34.997Z"
+									},
+									{
+										"FloatValue": 797,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"FloatValue": 797,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"FloatValue": 797,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"FloatValue": 58,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"FloatValue": 58,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									},
+									{
+										"FloatValue": 58,
+										"id_OemEventSnap": 72057597253536160,
+										"SiteId": 1,
+										"id_Equipment": 16777265,
+										"OemEventTypeId": 33619975,
+										"EventTime": "2021-03-02T00:29:36.04Z"
+									}
+								],
+								"schema": {
+									"id_OemEventSnap": "bigint",
+									"SiteId": "int",
+									"id_Equipment": "int",
+									"OemEventTypeId": "int",
+									"EventTime": "int",
+									"FloatValue": "double",
+									"StringValue": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"SiteId"
+									],
+									"seriesFieldKeys": [
+										"id_OemEventSnap"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de ft_OemEventSnapshotValue"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_ft = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/ft_OemEventSnapshotValue.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/history/OEMEVENTSNAPSHOTVALUE_HIS.parquet'\r\n",
+					"# Carga de dimensiones relacionadas con la fact table para leer los id dimensionales\r\n",
+					"#dm_Equipment = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Equipment.parquet/'\r\n",
+					"#dm_Location = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Location.parquet/'\r\n",
+					"#dm_Operator = ''\r\n",
+					"#dm_MaterilaType = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_MaterialType.parquet/'\r\n",
+					"#dm_Action = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_Action.parquet/'"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traigo todas las columnas y le quito las columnas de la fecha de extracción y el checksum, que son determinísticos\r\n",
+					"# se captura el error en el caso de no existir la columna a remover.\r\n",
+					"cols = df.columns\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('ExtractDate')\r\n",
+					"except:\r\n",
+					"  print(\"la columna ExtractDate no existe\")\r\n",
+					"\r\n",
+					"try:\r\n",
+					"  cols.remove('checksum')\r\n",
+					"except:\r\n",
+					"  print(\"la columna checksum no existe\")\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se renombran las columnas y se generan los id dimensioanles\r\n",
+					"from pyspark.sql.functions import concat_ws, sha1, col, to_date, date_format,to_utc_timestamp, current_timestamp\r\n",
+					"\r\n",
+					"df = df.withColumnRenamed(\"Id\",\"id_OemEventSnap\").withColumnRenamed(\"EquipmentId\",\"id_Equipment\").withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\r\n",
+					"df = df.select(col(\"id_OemEventSnap\"),col(\"SiteId\"),col(\"id_Equipment\"),col(\"OemEventTypeId\"),col(\"EventTime\"),col(\"FloatValue\"),col(\"StringValue\"))\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df.write.mode(\"overwrite\").parquet(nombre_archivo_ft)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			}
+		]
+	}
+}

@@ -1,0 +1,208 @@
+{
+	"name": "DLB_ShiftState",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dispatch",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Dispatch/1-DSSQLDispatch"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "fieldid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "shiftid",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "shiftname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fullshiftname",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Shift",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ShiftDate",
+				"type": "date"
+			},
+			{
+				"name": "ShiftHour",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "StartTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EndTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Timestamp",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "shiftday",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "shiftmonth",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "shiftyear",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "crew",
+				"type": "nvarchar"
+			},
+			{
+				"name": "duration",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "ReasonId",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "reason",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TimeCatIdx",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "timecatid",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Timecat",
+				"type": "nvarchar"
+			},
+			{
+				"name": "vEvent",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StatusIdx",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "statusid",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Status",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fieldcomment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OperatorName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OperId",
+				"type": "nvarchar"
+			},
+			{
+				"name": "isauxil",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "unit",
+				"type": "nvarchar"
+			},
+			{
+				"name": "unittype",
+				"type": "varchar"
+			},
+			{
+				"name": "eqmttype",
+				"type": "nvarchar"
+			},
+			{
+				"name": "eqmt",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Events",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "fieldtime",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "nextFieldTime",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Start_hos",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "End_hos",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "GpsX",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "GpsY",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DLB_ShiftState"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

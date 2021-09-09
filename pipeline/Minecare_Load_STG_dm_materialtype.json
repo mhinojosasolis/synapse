@@ -1,0 +1,72 @@
+{
+	"name": "Minecare_Load_STG_dm_materialtype",
+	"properties": {
+		"activities": [
+			{
+				"name": "Load Stage to DIM-Load_dm_MaterialType_Delta",
+				"type": "SqlPoolStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Spark_Load_dm_MaterialType_Delta",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"sqlPool": {
+					"referenceName": "devmycpool1",
+					"type": "SqlPoolReference"
+				},
+				"typeProperties": {
+					"storedProcedureName": "[DM_Minecare].[sp_load_dm_MaterialType]"
+				}
+			},
+			{
+				"name": "Spark_Load_dm_MaterialType_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Minecare/Spark_Load_dm_MaterialType_Delta",
+					"baseParameters": {
+						"cdc": {
+							"value": "@pipeline().parameters.cdc",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"cdc": {
+				"type": "string",
+				"defaultValue": "1900-01-01"
+			}
+		},
+		"folder": {
+			"name": "Minecare/Load Stage"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-20T21:21:35Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

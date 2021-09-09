@@ -1,0 +1,135 @@
+{
+	"name": "Extraccion_Minecare_OemEventSnapShotValue_Historico",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data to OemEventSnapshotValue-Temp-His",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT [Id]\n      ,[SiteId]\n      ,[EquipmentId]\n      ,[OemEventTypeId]\n      ,[EventTime]\n      ,[OemParamTypeId]\n      ,[ReadTime]\n      ,[FloatValue]\n      ,[StringValue]\n  FROM [Minecare267].[dbo].[OemEventSnapshotValue]\n  where [ReadTime] BETWEEN  '@{pipeline().parameters.historico_desde}' and '@{pipeline().parameters.historico_hasta}'",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "MINECARE_SNAPSHOTVALUE_HIS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "MINECARE_RAWHISTORY_PARAMETRIZADO",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "@{variables('v_nombre_tabla')}_HIS.parquet"
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "v_nombre_tabla",
+					"value": "OEMEVENTSNAPSHOTVALUE"
+				}
+			},
+			{
+				"name": "Insert_Parquet_to_Delta",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy data to OemEventSnapshotValue-Temp-His",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/DEV/Common_Notebooks/Insert_Parquet_to_Delta",
+					"baseParameters": {
+						"p_nombre_tabla": {
+							"value": "@variables('v_nombre_tabla')",
+							"type": "Expression"
+						},
+						"p_tipo_carga": "HISTORICO",
+						"p_origen": "MINECARE"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"historico_desde": {
+				"type": "string"
+			},
+			"historico_hasta": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"v_nombre_tabla": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Minecare/History"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-13T21:50:18Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

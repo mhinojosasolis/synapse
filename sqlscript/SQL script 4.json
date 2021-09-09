@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nCREATE PROC [STG_Dispatch].[sp_drop_ft_shiftstate] AS\nBEGIN\nIF EXISTS (SELECT * FROM sys.objects O \n          JOIN sys.schemas S \n          ON O.schema_id = S.schema_id \n          WHERE O.NAME = 'FT_SHIFTSTATE' \n          AND O.TYPE = 'U' \n          AND S.NAME = 'STG_Dispatch')\nDROP TABLE [STG_Dispatch].[FT_SHIFTSTATE]\n\nEND\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

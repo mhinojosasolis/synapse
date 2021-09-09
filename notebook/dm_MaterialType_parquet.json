@@ -1,0 +1,981 @@
+{
+	"name": "dm_MaterialType_parquet",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"c9ab4b9d-53ea-421d-89fa-eb1fdae3e9ec": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "",
+										"monotonically_increasing_id": 0
+									},
+									{
+										"MaterialType": "Esteril",
+										"monotonically_increasing_id": 8589934592
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"monotonically_increasing_id": 17179869184
+									},
+									{
+										"MaterialType": "Mineral",
+										"monotonically_increasing_id": 25769803776
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"monotonically_increasing_id": 34359738368
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"monotonically_increasing_id": 42949672960
+									},
+									{
+										"MaterialType": "Remanejo",
+										"monotonically_increasing_id": 51539607552
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"monotonically_increasing_id": "bigint"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"monotonically_increasing_id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"540bd84e-1290-4e67-a8c8-141452e08da6": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "",
+										"MaterialId": 1,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Esteril",
+										"MaterialId": 2,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"MaterialId": 3,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral",
+										"MaterialId": 4,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"MaterialId": 5,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"MaterialId": 6,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Remanejo",
+										"MaterialId": 7,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"MaterialId": "int",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"eecbc632-0544-47e2-b358-53eaacb94e61": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "<N/A>",
+										"MaterialId": 1,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Esteril",
+										"MaterialId": 2,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"MaterialId": 3,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral",
+										"MaterialId": 4,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"MaterialId": 5,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"MaterialId": 6,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Remanejo",
+										"MaterialId": 7,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"MaterialId": "int",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"e2526653-5a0b-4cd1-a930-0e264a05edca": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "<N/A>",
+										"MaterialId": 1,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Esteril",
+										"MaterialId": 2,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"MaterialId": 3,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral",
+										"MaterialId": 4,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"MaterialId": 5,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"MaterialId": 6,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Remanejo",
+										"MaterialId": 7,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"MaterialId": "int",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"e746c623-b569-4c40-ae2a-07c642f06240": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "<N/A>",
+										"MaterialId": 1,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Esteril",
+										"MaterialId": 2,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Lixiviable",
+										"MaterialId": 3,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral",
+										"MaterialId": 4,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Alto AS",
+										"MaterialId": 5,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Mineral Primario",
+										"MaterialId": 6,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Remanejo",
+										"MaterialId": 7,
+										"BatchDate": "2021-06-15T23:41:12.393Z"
+									},
+									{
+										"MaterialType": "Vacio"
+									}
+								],
+								"schema": {
+									"MaterialType": "string",
+									"MaterialId": "int",
+									"BatchDate": "int"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialId"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"94a83061-2233-4fe8-b8dc-b4353eb48fa1": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 72057594070602720,
+										"Location": "NDO_INF7_TR01",
+										"LastActionTime": "2021-05-27T05:12:08Z",
+										"Operator": "YERSON ADIEL LAGOS SALAMANCA",
+										"NextActionTime": "2021-05-27T05:21:15Z",
+										"ReadTime": "2021-05-27T05:12:32.39Z",
+										"SiteId": 1,
+										"OperatorId": "6038660",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "dda4df838423c6323b60bdaa08056e339defbcb6",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T05:12:32.39Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070607470,
+										"Location": "NDO_INF5_TR03",
+										"LastActionTime": "2021-05-27T08:18:22Z",
+										"Operator": "VICTOR HUGO RIVERA MELLA",
+										"NextActionTime": "2021-05-27T08:29:23Z",
+										"ReadTime": "2021-05-27T08:18:47.357Z",
+										"SiteId": 1,
+										"OperatorId": "6032359",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "1464345f1e8c3189d00c37357112953e1d41ef4e",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T08:18:47.357Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070599500,
+										"Location": "NDO_INF5_TR01",
+										"LastActionTime": "2021-05-27T03:25:23Z",
+										"Operator": "YERSON ADIEL LAGOS SALAMANCA",
+										"NextActionTime": "2021-05-27T03:39:28Z",
+										"ReadTime": "2021-05-27T03:25:28.133Z",
+										"SiteId": 1,
+										"OperatorId": "6038660",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "655018df1dd94ae4e20f6f9b4666502ad9cc25c4",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T03:25:28.133Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070624540,
+										"Location": "STK_DONOSO_AL",
+										"LastActionTime": "2021-05-27T16:17:49Z",
+										"Operator": "ANDDY MEDEL VILLABLANCA",
+										"NextActionTime": "2021-05-27T16:18:45Z",
+										"ReadTime": "2021-05-27T16:17:57.39Z",
+										"SiteId": 1,
+										"OperatorId": "192869",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "8c02e79ff1f53bc0d7f5890d07a33675b1612a57",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T16:17:57.39Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070620500,
+										"Location": "NDO_INF5_TR09",
+										"LastActionTime": "2021-05-27T14:22:18Z",
+										"Operator": "ANDDY MEDEL VILLABLANCA",
+										"NextActionTime": "2021-05-27T14:41:05Z",
+										"ReadTime": "2021-05-27T14:22:32.4Z",
+										"SiteId": 1,
+										"OperatorId": "192869",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "f073d043eeb20bc47f36fbd6be6e9ffd995300ef",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T14:22:32.4Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070619520,
+										"Location": "NDO_MASMIL_TR02",
+										"LastActionTime": "2021-05-27T13:54:24Z",
+										"Operator": "ANDDY MEDEL VILLABLANCA",
+										"NextActionTime": "2021-05-27T13:59:28Z",
+										"ReadTime": "2021-05-27T13:54:37.96Z",
+										"SiteId": 1,
+										"OperatorId": "192869",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "fdec12b0be8dc31ff3c9c2c32de931becb78efa1",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T13:54:37.96Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070610340,
+										"Location": "NDO_INF5_TR01",
+										"LastActionTime": "2021-05-27T09:39:11Z",
+										"Operator": "VICTOR HUGO RIVERA MELLA",
+										"NextActionTime": "2021-05-27T09:49:21Z",
+										"ReadTime": "2021-05-27T09:39:12.407Z",
+										"SiteId": 1,
+										"OperatorId": "6032359",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "42a69febc22a35e4740d15f585f953cf14ff46be",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Mineral",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T09:39:12.407Z",
+										"NextAction": "Llegada"
+									},
+									{
+										"Id": 72057594070603740,
+										"Location": "BOT_LIX_3535_SUPERIOR",
+										"LastActionTime": "2021-05-27T05:49:00Z",
+										"Operator": "YERSON ADIEL LAGOS SALAMANCA",
+										"NextActionTime": "2021-05-27T05:50:27Z",
+										"ReadTime": "2021-05-27T05:49:12.387Z",
+										"SiteId": 1,
+										"OperatorId": "6038660",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "02d0d9edd0399c4d7ba9cb9f7588f3a74975829f",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Lixiviable",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T05:49:12.387Z",
+										"NextAction": "Asignar"
+									},
+									{
+										"Id": 72057594070606880,
+										"Location": "IS5-3445-643",
+										"LastActionTime": "2021-05-27T07:59:27Z",
+										"Operator": "VICTOR HUGO RIVERA MELLA",
+										"NextActionTime": "2021-05-27T18:12:15Z",
+										"ReadTime": "2021-05-27T07:59:37.357Z",
+										"SiteId": 1,
+										"OperatorId": "6032359",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "641971ef8d31f300c70a421bd1356ffc303351c4",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05-27",
+										"LastAction": "Llegada",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-27T07:59:37.357Z",
+										"NextAction": "Ini. Carga"
+									},
+									{
+										"Id": 72057594070660460,
+										"Location": "PETROLERA SF",
+										"LastActionTime": "2021-05-28T13:58:13Z",
+										"Operator": "CARLOS CEPEDA SILVA",
+										"NextActionTime": "2021-05-28T14:11:15Z",
+										"ReadTime": "2021-05-28T13:58:22.393Z",
+										"SiteId": 1,
+										"OperatorId": "193342",
+										"ExtractDate": "2021-06-11T01:52:53.99Z",
+										"checksum": "142473460300185c9b2a81fa43535aa5f8c70897",
+										"MineRealmId": 0,
+										"EquipmentId": 16777255,
+										"ReasonCodeDescription": "Operativo",
+										"MaterialType": "Vacio",
+										"PartitionDate": "2021-05-28",
+										"LastAction": "Asignar",
+										"ReasonCode": 2,
+										"StatusId": 2,
+										"UpdateTime": "2021-05-28T13:58:22.393Z",
+										"NextAction": "Llegada"
+									}
+								],
+								"schema": {
+									"Id": "bigint",
+									"EquipmentId": "int",
+									"SiteId": "int",
+									"UpdateTime": "int",
+									"ReadTime": "int",
+									"Location": "string",
+									"OperatorId": "string",
+									"Operator": "string",
+									"MaterialType": "string",
+									"GpsLocation": "string",
+									"LastAction": "string",
+									"LastActionTime": "int",
+									"NextAction": "string",
+									"NextActionTime": "int",
+									"ReasonCode": "int",
+									"StatusId": "int",
+									"ReasonCodeDescription": "string",
+									"MineRealmId": "int",
+									"ExtractDate": "int",
+									"checksum": "string",
+									"PartitionDate": "date"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"EquipmentId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"fda70ad2-a8a5-4f33-b83d-62fad30adeaf": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"MaterialType": "<N/A>"
+									},
+									{
+										"MaterialType": "Esteril"
+									},
+									{
+										"MaterialType": "Lixiviable"
+									},
+									{
+										"MaterialType": "Mineral"
+									},
+									{
+										"MaterialType": "Mineral Alto AS"
+									},
+									{
+										"MaterialType": "Mineral Primario"
+									},
+									{
+										"MaterialType": "Remanejo"
+									},
+									{
+										"MaterialType": "Vacio"
+									}
+								],
+								"schema": {
+									"MaterialType": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"MaterialType"
+									],
+									"seriesFieldKeys": [
+										"MaterialType"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga incremental de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_MaterialType.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen para armar el incremental\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import when, col\r\n",
+					"\r\n",
+					"# ordenamos los datos de acuerdo al requerimento de la dimensión\r\n",
+					"df_dim_new = df.select('MaterialType').distinct().orderBy('MaterialType')\r\n",
+					"\r\n",
+					"# limpiamos los textos vacios y nulos de la columna MaterialType\r\n",
+					"\r\n",
+					"na_string = '<N/A>'\r\n",
+					"\r\n",
+					"df_dim_new = df_dim_new.withColumn('MaterialType', \\\r\n",
+					"       when(col('MaterialType')==\"\" ,na_string) \\\r\n",
+					"          .otherwise(col('MaterialType'))) \\\r\n",
+					"          .na.fill(value=na_string,subset=['MaterialType'])\\\r\n",
+					"          .orderBy('MaterialType')\r\n",
+					"display(df_dim_new)"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traigo la dimensión original del data lake\r\n",
+					"df_dim_original = spark.read.load(nombre_archivo_dimesion, format='parquet')\r\n",
+					"\r\n",
+					"display(df_dim_original.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df_new_rows = df_dim_new.join(df_dim_original, df_dim_new.MaterialType ==  df_dim_original.MaterialType, 'left')\r\n",
+					"display(df_new_rows)"
+				],
+				"attachments": null,
+				"execution_count": 19
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Comparo los datos con la dimensión original del data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import monotonically_increasing_id, row_number\r\n",
+					"\r\n",
+					"# creamos un id incremental\r\n",
+					"# genera un id único e incremental, pero no consecutivo\r\n",
+					"# ref: https://kb.databricks.com/sql/gen-unique-increasing-values.html\r\n",
+					"\r\n",
+					"df_dim = df_dim.withColumn(\"monotonically_increasing_id\", monotonically_increasing_id())\r\n",
+					"display(df_dim)"
+				],
+				"attachments": null,
+				"execution_count": 71
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# generamos el nro de id con row_number según el valor incremental creado antes\r\n",
+					"\r\n",
+					"window = Window.orderBy(col('monotonically_increasing_id'))\r\n",
+					"df_dim_with_id = df_dim.withColumn('MaterialId', row_number().over(window))\\\r\n",
+					"    .drop('monotonically_increasing_id')\\\r\n",
+					"    .withColumn(\"BatchDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))\\\r\n",
+					" \r\n",
+					"display(df_dim_with_id)"
+				],
+				"attachments": null,
+				"execution_count": 72
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					""
+				],
+				"attachments": null,
+				"execution_count": 73
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim_with_id.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 74
+			}
+		]
+	}
+}

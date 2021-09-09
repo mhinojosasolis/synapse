@@ -1,0 +1,20 @@
+{
+	"name": "Minecare_AGGREGATEDOEMPARAMVALUE_HIS",
+	"properties": {
+		"folder": {
+			"name": "minecare"
+		},
+		"content": {
+			"query": "SELECT count(*) As Filas, MIN(ReadTime) AS MinReadTime, MAX(ReadTime) AS MinReadTime, MAX(ExtractDate) AS LastExtractDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/minecare/history/AGGREGATEDOEMPARAMVALUE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,65 @@
+{
+	"name": "Extraction_Dispatch_Todo_Incremental",
+	"properties": {
+		"activities": [
+			{
+				"name": "Extraccion_Dispach_DLB_ShiftInfo",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispach_DLB_ShiftInfo",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Extraccion_Dispatch_DLB_KPIs_Hours",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_DLB_KPIs_Hours",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Extraccion_Dispatch_DBL_ShiftState",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_DBL_ShiftState",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Extraccion_Dispatch_DLB_ShiftLoads",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Extraccion_Dispatch_DLB_ShiftLoads",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Dispatch"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-06T21:18:48Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

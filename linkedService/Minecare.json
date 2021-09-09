@@ -1,0 +1,17 @@
+{
+	"name": "Minecare",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "Minecare SQL",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=10.187.7.29;initial catalog=minecare267;user id=DM-MANTENCION-READER",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NjNhMTY3OC1iMzFlLTQxYjItODAyNi1iZjViMzc1MzM2YjMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "devdfselfirsyncym",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

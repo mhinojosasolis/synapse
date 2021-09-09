@@ -1,0 +1,357 @@
+{
+	"name": "Spark_Load_ft_NaturalOemParamValue_Delta",
+	"properties": {
+		"folder": {
+			"name": "Minecare/Modelo"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "SampleSpark1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/SampleSpark1",
+				"name": "SampleSpark1",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SampleSpark1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de ft_NaturalOemParamValue"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"p_nombre_tabla = 'ft_NaturalOemParamValue'\r\n",
+					"p_origen ='minecare'"
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Imports\n",
+					"from notebookutils import mssparkutils\n",
+					"from delta.tables import *"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%run Init_variables"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"#Cargo Archivo con info de Tablas, Pk y Campo Date.\r\n",
+					"archivo = f'''{blobstorage_raw_path}/parametros/MODEL_PK_DATE.csv'''\r\n",
+					"tablas = spark.read.load(archivo, format='csv',header='True')\r\n",
+					"tablas.createOrReplaceTempView('tablas')"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se obtienen los valores de clave proncipal de la tabla y campo fecha (no utilizado todavía)\r\n",
+					"sql_command = f'''\r\n",
+					"                select key, date from tablas\r\n",
+					"                where upper(trim(table)) = upper(trim('{p_nombre_tabla}'))\r\n",
+					"                '''\r\n",
+					"df_tablas = spark.sql(sql_command)   \r\n",
+					"key_cols = df_tablas.collect()[0]['key']\r\n",
+					"date_col = df_tablas.collect()[0]['date']\r\n",
+					"array_key = key_cols.split(',')"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Traemos los datos desde tabla delta historica. Se agregan campos de fecha de update e insert\r\n",
+					"# Se considera eliminar registros duplicados por clave primaria\r\n",
+					"from pyspark.sql.functions import to_utc_timestamp, current_timestamp, lit\r\n",
+					"import dateutil.parser\r\n",
+					"\r\n",
+					"table_delta_path = blobstorage_proc_path+'/DataMultidim/'+p_origen.lower()+'/delta/'+ p_nombre_tabla\r\n",
+					"\r\n",
+					"sql_command = f'''\r\n",
+					"          SELECT id as Id_NaturalOemPar\r\n",
+					"            ,EquipmentId as id_Equipment\r\n",
+					"            ,OemParamTypeId\r\n",
+					"            ,ReadTime\r\n",
+					"            ,FloatValue\r\n",
+					"            ,StringValue\r\n",
+					"            ,SiteId\r\n",
+					"            ,Date_format(current_timestamp(),'yyyy-MM') as Month\r\n",
+					"             FROM delta.naturaloemparamvalue_historico\r\n",
+					"             '''\r\n",
+					"\r\n",
+					"new_data = spark.sql(sql_command).dropDuplicates(array_key)\r\n",
+					"updatetime = dateutil.parser.parse('1901-01-01')\r\n",
+					"new_data = new_data.withColumn(\"UpdateDate\", to_utc_timestamp(lit(updatetime),\"UTC\")).withColumn(\"InsertDate\", to_utc_timestamp(current_timestamp(), \"UTC\"))               \r\n",
+					"new_data.createOrReplaceTempView(p_nombre_tabla)"
+				],
+				"attachments": null,
+				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Se crea delta si no existe o se carga en caso de existir, se particiona por el mes de carga asociado al registro\n",
+					"\n",
+					"if (DeltaTable.isDeltaTable(spark, table_delta_path)):\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"else:\n",
+					"    new_data.write.format(\"delta\").partitionBy('Month').save(table_delta_path)\n",
+					"    spark.sql(f''' create table minecare.{p_nombre_tabla} using delta location '{table_delta_path}' ''')\n",
+					"    deltaTable = DeltaTable.forPath(spark, table_delta_path)\n",
+					"    mssparkutils.notebook.exit('fin')"
+				],
+				"attachments": null,
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Construcción de sentencia para campos clave del merge\r\n",
+					"\r\n",
+					"merge_command = \"\"\r\n",
+					"for i in array_key:    \r\n",
+					"    merge_command = merge_command + \"historico.\"+i + \" = new_data.\" +i + \" and \"\r\n",
+					"merge_command = merge_command[:len(merge_command) - 5]\r\n",
+					"\r\n",
+					"print(merge_command)"
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# Construción de sentencia de update en merge, se eliminan las columnas de fechas agregadas y las columnas de los campos clave\r\n",
+					"\r\n",
+					"cols = new_data.columns\r\n",
+					"try:\r\n",
+					"    cols.remove(\"UpdateDate\")\r\n",
+					"except:\r\n",
+					"    print(\"la columna UpdateDate no existe\")\r\n",
+					"try:   \r\n",
+					"    cols.remove(\"InsertDate\")\r\n",
+					"except:\r\n",
+					"    print(\"la columna InsertDate no existe\")\r\n",
+					"\r\n",
+					"for i in array_key:\r\n",
+					"    try:\r\n",
+					"        cols.remove(i)\r\n",
+					"    except:\r\n",
+					"        print(\"la columna no existe\")\r\n",
+					"\r\n",
+					"\r\n",
+					"merge_command_update = \"{\"\r\n",
+					"for column in cols:\r\n",
+					"    merge_command_update = merge_command_update + \"\\\"\"+column+ \"\\\"\" + \": \\\"new_data.\" +column+ \"\\\",\"\r\n",
+					"\r\n",
+					"merge_command_update = merge_command_update + \"\\\"UpdateDate\\\": \\\"new_data.InsertDate\\\"\"\r\n",
+					"merge_command_update = merge_command_update + \"}\"\r\n",
+					"\r\n",
+					"# Se convierte la variable merge_command_update tipo string a tipo diccionario para poder utilizarla en la sentencia merge\r\n",
+					"merge_command_update = eval(merge_command_update)\r\n",
+					"print(merge_command_update)\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se realiza el merge\n",
+					"deltaTable.alias(\"historico\").merge(\n",
+					"    new_data.alias(\"new_data\"),\n",
+					"    merge_command)\\\n",
+					"    .whenMatchedUpdate(\\\n",
+					"     set = merge_command_update )\\\n",
+					"    .whenNotMatchedInsertAll()\\\n",
+					"    .execute()"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}

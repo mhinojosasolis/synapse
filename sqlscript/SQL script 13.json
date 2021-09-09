@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 13",
+	"properties": {
+		"content": {
+			"query": "SET ANSI_NULLS ON\nGO\nSET QUOTED_IDENTIFIER ON\nGO\n\nCREATE EXTERNAL TABLE [STG_Dispatch].[DM_CREW]\n( \n\t[id_Crew] [nvarchar](100)  NULL,\n\t[Crew] [nvarchar](100)  NULL,\n\t[UpdateDate] [datetime2](7)  NULL,\n\t[InsertDate] [datetime2](7)  NULL\n)\nWITH (DATA_SOURCE = [devproc], LOCATION = N'DataMultidim/dispatch/delta/dm_Crew/*.parquet', FILE_FORMAT = [SynapseParquetFormat], REJECT_TYPE = VALUE, REJECT_VALUE = 0 )\nGO\n\n\nCREATE EXTERNAL DATA SOURCE DeltaLakeStorage\nWITH ( LOCATION = 'https://sqlondemandstorage.blob.core.windows.net/delta-lake/' );\nGO\n\nSELECT TOP 10 *\nFROM OPENROWSET(\n        BULK 'https://devmycdlake.blob.core.windows.net/devproc/DataMultidim/dispatch/delta/dm_Crew',\n        FORMAT = 'delta'\n    ) as rows;\n\n\thttps://devmycdlake.blob.core.windows.net/devproc\n\n\n\n\tselect id_ShiftState, count(*) from DM_Dispatch.FT_SHIFTSTATE\ngroup by id_ShiftState\nhaving count(*) >1\n\n\nselect top 10 * from DM_Dispatch.FT_SHIFTSTATE\n\ntruncate table DM_Dispatch.FT_SHIFTSTATE",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

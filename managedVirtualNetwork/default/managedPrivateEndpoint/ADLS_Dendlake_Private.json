@@ -1,0 +1,10 @@
+{
+	"name": "ADLS_Dendlake_Private",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Storage/storageAccounts/devdlake",
+		"groupId": "dfs",
+		"fqdns": [
+			"devdlake.dfs.core.windows.net"
+		]
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL_HIS_Dispatch",
+	"properties": {
+		"content": {
+			"query": "SELECT 'DLB_KPIS_HOUR_HIS' AS TableName, count(*) As Filas, MIN(ShiftId) AS MinShiftId, MAX(ShiftId) AS MaxShiftId, MAX(ExtractDate) AS LastExtractDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/dispatch/history/DLB_KPIS_HOUR_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION \nSELECT 'DLB_SHIFTLOADS_HIS' AS TableName, count(*) As Filas, MIN(ShiftId) AS MinShiftId, MAX(ShiftId) AS MaxShiftId, NULL AS LastExtractDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/dispatch/history/DLB_SHIFTLOADS_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\nUNION\nSELECT 'DLB_SHIFTSTATE_HIS' AS TableName, count(*) As Filas, MIN(ShiftId) AS MinShiftId, MAX(ShiftId) AS MaxShiftId, NULL AS LastExtractDate\nFROM\n    OPENROWSET(\n        BULK 'https://devmycdlake.dfs.core.windows.net/devraw/dispatch/history/DLB_SHIFTSTATE_HIS.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

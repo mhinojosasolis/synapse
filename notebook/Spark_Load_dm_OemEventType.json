@@ -1,0 +1,351 @@
+{
+	"name": "Spark_Load_dm_OemEventType",
+	"properties": {
+		"folder": {
+			"name": "Minecare/x_no usados"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "devsyncymspark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"050f209b-497c-4e30-a1b8-856aa4389a1c": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"Id": 33619968,
+										"OemInterfaceId": 2,
+										"Name": "Dipper"
+									},
+									{
+										"Id": 33619969,
+										"OemInterfaceId": 2,
+										"Name": "Dump"
+									},
+									{
+										"Id": 33619970,
+										"OemInterfaceId": 2,
+										"Name": "Tons"
+									},
+									{
+										"Id": 33619971,
+										"OemInterfaceId": 2,
+										"Name": "Quick Estimate"
+									},
+									{
+										"Id": 33619972,
+										"OemInterfaceId": 2,
+										"Name": "Cycle"
+									},
+									{
+										"Id": 33619973,
+										"OemInterfaceId": 2,
+										"Name": "Stopped Without Load"
+									},
+									{
+										"Id": 33619974,
+										"OemInterfaceId": 2,
+										"Name": "Running Without Load"
+									},
+									{
+										"Id": 33619975,
+										"OemInterfaceId": 2,
+										"Name": "Loading"
+									},
+									{
+										"Id": 33619976,
+										"OemInterfaceId": 2,
+										"Name": "Running With Load"
+									},
+									{
+										"Id": 33619977,
+										"OemInterfaceId": 2,
+										"Name": "Stopped With Load"
+									}
+								],
+								"schema": {
+									"Id": "int",
+									"OemInterfaceId": "int",
+									"OemId": "string",
+									"Name": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"OemInterfaceId"
+									],
+									"seriesFieldKeys": [
+										"Id"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"e5705d6e-b2e8-437a-8fdb-a9e2145d53bc": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"id_OemEventType": "0",
+										"OemInterfaceId": "",
+										"OemId": "",
+										"Name": "<N/A>"
+									},
+									{
+										"id_OemEventType": "33619968",
+										"OemInterfaceId": "2",
+										"Name": "Dipper"
+									},
+									{
+										"id_OemEventType": "33619969",
+										"OemInterfaceId": "2",
+										"Name": "Dump"
+									},
+									{
+										"id_OemEventType": "33619970",
+										"OemInterfaceId": "2",
+										"Name": "Tons"
+									},
+									{
+										"id_OemEventType": "33619971",
+										"OemInterfaceId": "2",
+										"Name": "Quick Estimate"
+									},
+									{
+										"id_OemEventType": "33619972",
+										"OemInterfaceId": "2",
+										"Name": "Cycle"
+									},
+									{
+										"id_OemEventType": "33619973",
+										"OemInterfaceId": "2",
+										"Name": "Stopped Without Load"
+									},
+									{
+										"id_OemEventType": "33619974",
+										"OemInterfaceId": "2",
+										"Name": "Running Without Load"
+									},
+									{
+										"id_OemEventType": "33619975",
+										"OemInterfaceId": "2",
+										"Name": "Loading"
+									},
+									{
+										"id_OemEventType": "33619976",
+										"OemInterfaceId": "2",
+										"Name": "Running With Load"
+									}
+								],
+								"schema": {
+									"id_OemEventType": "string",
+									"OemInterfaceId": "string",
+									"OemId": "string",
+									"Name": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"id_OemEventType"
+									],
+									"seriesFieldKeys": [
+										"id_OemEventType"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/dab9cf92-bd13-4888-9e53-624f4546db3c/resourceGroups/mbrs-rg-dev-copperdamart-001/providers/Microsoft.Synapse/workspaces/mbrs-synapse-dev-cym-001/bigDataPools/devsyncymspark",
+				"name": "devsyncymspark",
+				"type": "Spark",
+				"endpoint": "https://mbrs-synapse-dev-cym-001.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/devsyncymspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"### Notebook para carga inicial de dimensión dm_MaterialType"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"\r\n",
+					"nombre_archivo_dimesion = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataMultidim/minecare/dm_OemEventType.parquet'\r\n",
+					"# nombre_archivo_historico = 'abfss://devproc@devmycdlake.dfs.core.windows.net/DataHistorica/minecare/EQUIPMENTTRACKHISTORY_HISTORICO.parquet'\r\n",
+					"nombre_archivo_historico = 'abfss://devraw@devmycdlake.dfs.core.windows.net/minecare/temp/OEMEVENTTYPE_TEMP.parquet'"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# traemos los datos de origen incrementales\r\n",
+					"df = spark.read.load(nombre_archivo_historico, format='parquet')\r\n",
+					"display(df.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"# Se agregan valores iniciales y se renombra columna según el modelo\r\n",
+					"\r\n",
+					"cols = df.columns\r\n",
+					"df_empty = spark.createDataFrame([('0','','','<N/A>')],cols)\r\n",
+					"\r\n",
+					"df_dim = (df_empty.union(df)).withColumnRenamed('Id','id_OemEventType')\r\n",
+					"display(df_dim.limit(10))\r\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"#### Genero la dimensión final a grabar en el data lake"
+				],
+				"attachments": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"# grabo la versión final de la dimension\r\n",
+					"df_dim.write.mode(\"overwrite\").parquet(nombre_archivo_dimesion)"
+				],
+				"attachments": null,
+				"execution_count": 6
+			}
+		]
+	}
+}

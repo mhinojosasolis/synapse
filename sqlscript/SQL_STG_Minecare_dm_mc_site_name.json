@@ -1,0 +1,17 @@
+{
+	"name": "SQL_STG_Minecare_dm_mc_site_name",
+	"properties": {
+		"content": {
+			"query": "CREATE PROC STG_Minecare.bulk_load_dm_mc_site_name\nAS\nBEGIN\nCOPY INTO STG_Minecare.dm_mc_site_name\n(mc_site_name 1, UpdateDate 2, InsertDate 3)\nFROM 'https://devmycdlake.dfs.core.windows.net/devproc/DataMultidim/minecare/delta/dm_mc_site_name'\nWITH\n(\n\tFILE_TYPE = 'PARQUET'\n\t,MAXERRORS = 0\n\t,COMPRESSION = 'snappy'\n)\nEND\nGO\n\nSELECT TOP 100 * FROM STG_Minecare.dm_mc_site_name\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "devmycpool1",
+				"poolName": "devmycpool1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [NotificationID]\n,[SiteId]\n,[EventId]\n,[ModelName]\n,[ModelId]\n,[EquipmentId]\n,[EquipmentName]\n,[GroupId]\n,[OemEventId]\n,[OemEvent]\n,[OemId]\n,[Interface]\n,[InterfaceId]\n,[Level]\n,[NLevel]\n,[ReadTime]\n,[OperatorId]\n,[OperatorName]\n,[GPSLocation]\n,[checksum]\n,[PartitionDate]\n FROM [delta].[dbo].[notificatiodetails_his]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "delta",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
